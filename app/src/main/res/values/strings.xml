@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">The Fixer</string>
+    <string name="entrar">Entrar</string>
+    <string name="text_cadastro_cliente">Não possui conta? Crie uma aqui!</string>
+    <string name="text_cadastro_profissional">Deseja oferecer serviços? Começe agora!</string>
+    <string name="title_cadastro">Seja bem vindo(a)!</string>
+    <string name="title_cadastro_profissional">Ofereça já seus serviços!</string>
+
+</resources>

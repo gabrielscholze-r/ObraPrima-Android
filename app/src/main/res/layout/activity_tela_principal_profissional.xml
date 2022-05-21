@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.core.widget.NestedScrollView
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background"
+        tools:context=".TelaPrincipalProfissional"
+        tools:ignore="ExtraText">
+
+
+        <View
+            android:id="@+id/containerProfile"
+            android:layout_width="72dp"
+            android:layout_height="69dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/container_profile"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.952"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/containerIcon"
+            android:layout_width="79dp"
+            android:layout_height="61dp"
+            android:src="@drawable/ic_profile"
+            app:layout_constraintBottom_toBottomOf="@id/containerProfile"
+            app:layout_constraintEnd_toEndOf="@id/containerProfile"
+            app:layout_constraintStart_toStartOf="@id/containerProfile"
+            app:layout_constraintTop_toTopOf="@id/containerProfile" />
+
+
+        <Button
+            android:id="@+id/bt_deslogar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="16dp"
+            android:backgroundTint="@color/black"
+            android:padding="20dp"
+            android:text="Deslogar"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <EditText
+            android:id="@+id/editTextDate"
+            android:layout_width="265dp"
+            android:layout_height="46dp"
+            android:ems="10"
+            android:inputType="date"
+            android:text="Visita técnica: "
+            android:drawableRight="@drawable/ic_calender"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.481" />
+
+        <EditText
+            android:id="@+id/editTextDate2"
+            android:layout_width="265dp"
+            android:layout_height="46dp"
+            android:layout_marginTop="40dp"
+            android:ems="10"
+            android:inputType="date"
+            android:text="Reparo de encanamento: "
+            android:drawableRight="@drawable/ic_calender"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextDate" />
+
+        <EditText
+            android:id="@+id/editTextDate3"
+            android:layout_width="265dp"
+            android:layout_height="46dp"
+            android:layout_marginTop="40dp"
+            android:ems="10"
+            android:inputType="date"
+            android:text="Reparo de tubulação de gás: "
+            android:drawableRight="@drawable/ic_calender"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextDate2" />
+
+        <EditText
+            android:id="@+id/editTextDate4"
+            android:layout_width="265dp"
+            android:layout_height="46dp"
+            android:layout_marginTop="40dp"
+            android:ems="10"
+            android:inputType="date"
+            android:text="Troca de piso: "
+            android:drawableRight="@drawable/ic_calender"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextDate3" />
+
+        <EditText
+            android:id="@+id/editTextTextPersonName"
+            android:layout_width="258dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="84dp"
+            android:drawableRight="@drawable/ic_notification"
+            android:ems="10"
+            android:hint="Solicitações de contato"
+            android:inputType="textPersonName"
+            android:textSize="21dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Olá Sergio!"
+            android:textColor="@color/white"
+            android:textSize="50dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/containerProfile"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <CalendarView
+            android:id="@+id/calendarView2"
+            android:layout_width="257dp"
+            android:layout_height="182dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/editTextDate"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.493"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
+            app:layout_constraintVertical_bias="1.0" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.core.widget.NestedScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background">
+
+
+        <EditText
+            android:id="@+id/editTextTextPersonName2"
+            android:layout_width="258dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="84dp"
+            android:drawableRight="@drawable/ic_search"
+            android:ems="10"
+            android:hint="Pesquisar serviços"
+            android:inputType="textPersonName"
+            android:textSize="21dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Bem vindo João!"
+            android:textColor="@color/white"
+            android:textSize="40dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/containerProfile"
+            app:layout_constraintHorizontal_bias="0.666"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/containerProfile"
+            android:layout_width="72dp"
+            android:layout_height="69dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/container_profile"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.952"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/containerIcon"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:src="@drawable/ic_profile"
+            app:layout_constraintBottom_toBottomOf="@id/containerProfile"
+            app:layout_constraintEnd_toEndOf="@id/containerProfile"
+            app:layout_constraintStart_toStartOf="@id/containerProfile"
+            app:layout_constraintTop_toTopOf="@+id/containerProfile"
+            tools:layout_editor_absoluteX="144dp" />
+
+        <Button
+            android:id="@+id/bt_deslogar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:layout_marginBottom="52dp"
+            android:backgroundTint="@color/black"
+            android:padding="20dp"
+            android:text="Deslogar"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.4"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+        <RatingBar
+            android:id="@+id/ratingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="108dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
+
+        <View
+            android:id="@+id/containerComponents"
+            style="@style/ContainerComponents"
+            android:layout_width="369dp"
+            android:layout_height="295dp"
+            app:layout_constraintBottom_toTopOf="@+id/bt_deslogar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.428"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ratingBar"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <EditText
+            android:id="@+id/historico"
+            style="@style/Edit_Text"
+            android:layout_width="323dp"
+            android:layout_height="68dp"
+            android:layout_marginStart="9dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="30dp"
+            android:inputType="numberPassword"
+            app:layout_constraintEnd_toEndOf="@+id/containerComponents"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/containerComponents"
+            app:layout_constraintTop_toBottomOf="@+id/historico3" />
+
+        <EditText
+            android:id="@+id/historico3"
+            style="@style/Edit_Text"
+            android:layout_width="323dp"
+            android:layout_height="68dp"
+            android:layout_marginStart="9dp"
+            android:layout_marginTop="48dp"
+            android:layout_marginEnd="30dp"
+            android:inputType="numberPassword"
+            app:layout_constraintEnd_toEndOf="@+id/containerComponents"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/containerComponents"
+            app:layout_constraintTop_toTopOf="@+id/containerComponents" />
+
+        <EditText
+            android:id="@+id/historico2"
+            style="@style/Edit_Text"
+            android:layout_width="323dp"
+            android:layout_height="68dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="28dp"
+            android:inputType="numberPassword"
+            app:layout_constraintEnd_toEndOf="@+id/containerComponents"
+            app:layout_constraintTop_toBottomOf="@+id/historico" />
+
+        <EditText
+            android:id="@+id/editTextTextPersonName3"
+            android:layout_width="323dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="20dp"
+            android:drawableRight="@drawable/ic_history"
+            android:ems="10"
+            android:hint="Histórico"
+            android:inputType="textPersonName"
+            android:textSize="21dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.42"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ratingBar" />
+
+        <EditText
+            android:id="@+id/avaliacao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableRight="@drawable/ic_star"
+            android:ems="10"
+            android:hint="Avaliar último serviço"
+            android:inputType="textPersonName"
+            android:textSize="21dp"
+            app:layout_constraintBottom_toTopOf="@+id/ratingBar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2"
+            app:layout_constraintVertical_bias="1.0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>
