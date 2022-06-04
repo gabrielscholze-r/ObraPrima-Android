@@ -12,9 +12,20 @@
         android:layout_height="match_parent"
         android:background="@drawable/background">
 
+        <View
+            android:id="@+id/containerComponents"
+            style="@style/ContainerComponents"
+            android:layout_width="362dp"
+            android:layout_height="503dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/bt_deslogar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.489"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pesquisa"
+            app:layout_constraintVertical_bias="0.937" />
 
         <EditText
-            android:textColorHint="@color/white"
             android:id="@+id/pesquisa"
             android:layout_width="258dp"
             android:layout_height="48dp"
@@ -23,12 +34,50 @@
             android:ems="10"
             android:hint="Pesquisar serviços"
             android:inputType="textPersonName"
+            android:backgroundTint="@color/white"
+            android:textColorHint="@color/white"
+            android:drawableTint="#FFFFFF"
             android:textSize="21dp"
-
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.496"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/editText2"
+            android:layout_width="283dp"
+            android:layout_height="211dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="136dp" />
+
+        <RatingBar
+            android:id="@+id/ratingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="255dp" />
+
+        <RatingBar
+            android:id="@+id/ratingBar2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="482dp" />
+
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="283dp"
+            android:layout_height="211dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editText2" />
+
 
 
 
@@ -51,99 +100,7 @@
             app:layout_constraintStart_toStartOf="parent" />
 
 
-        <View
-            android:id="@+id/containerComponents"
-            style="@style/ContainerComponents"
-            android:layout_width="362dp"
-            android:layout_height="503dp"
-            android:layout_marginBottom="16dp"
-            app:layout_constraintBottom_toTopOf="@+id/bt_deslogar"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.489"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/pesquisa"
-            app:layout_constraintVertical_bias="0.937" />
 
-        <EditText
-            android:id="@+id/historico1"
-            style="@style/Edit_Text"
-            android:layout_width="323dp"
-            android:layout_height="68dp"
-            android:layout_marginTop="84dp"
-            android:drawableLeft="@drawable/ic_positivo"
-            android:drawableRight="@mipmap/ic_star"
-            android:inputType="numberPassword"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/containerComponents" />
-
-        <EditText
-            android:id="@+id/historico2"
-            style="@style/Edit_Text"
-            android:layout_width="323dp"
-            android:layout_height="68dp"
-            android:layout_marginTop="16dp"
-            android:drawableLeft="@drawable/ic_negativo"
-            android:drawableRight="@drawable/ic_star"
-            android:inputType="numberPassword"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/historico1" />
-
-        <EditText
-            android:id="@+id/historico3"
-            style="@style/Edit_Text"
-            android:layout_width="323dp"
-            android:layout_height="68dp"
-            android:layout_marginTop="16dp"
-            android:drawableLeft="@drawable/ic_positivo"
-            android:drawableRight="@mipmap/ic_star"
-            android:inputType="numberPassword"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/historico2" />
-
-        <EditText
-            android:id="@+id/historico4"
-            style="@style/Edit_Text"
-            android:layout_width="323dp"
-            android:layout_height="68dp"
-            android:layout_marginTop="16dp"
-            android:drawableLeft="@drawable/ic_negativo"
-            android:drawableRight="@drawable/ic_star"
-            android:inputType="numberPassword"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/historico3" />
-
-        <EditText
-            android:id="@+id/historico5"
-            style="@style/Edit_Text"
-            android:layout_width="323dp"
-            android:layout_height="68dp"
-            android:layout_marginTop="16dp"
-            android:drawableLeft="@drawable/ic_positivo"
-            android:drawableRight="@mipmap/ic_star"
-            android:inputType="numberPassword"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/historico4" />
-
-
-        <EditText
-            android:id="@+id/profissonais"
-            android:layout_width="158dp"
-            android:layout_height="48dp"
-            android:layout_marginTop="20dp"
-            android:drawableRight="@drawable/ic_service"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Profissonais"
-            android:textSize="21dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.496"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/containerComponents" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

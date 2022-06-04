@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<androidx.core.widget.NestedScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    style="-"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    android:foregroundTint="@color/white">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -19,15 +21,18 @@
             android:layout_height="48dp"
             android:layout_marginTop="84dp"
             android:drawableRight="@drawable/ic_search"
+            android:backgroundTint="@color/white"
+            android:textColorHint="@color/white"
+            android:drawableTint="#FFFFFF"
             android:ems="10"
             android:hint="Pesquisar serviços"
             android:inputType="textPersonName"
+            android:textColor="@color/white"
             android:textSize="21dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.496"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
 
 
         <TextView
@@ -115,7 +120,8 @@
             android:layout_marginStart="9dp"
             android:layout_marginTop="12dp"
             android:layout_marginEnd="30dp"
-            android:inputType="numberPassword"
+            android:inputType="text"
+            android:text="Reparo do chuveiro       23/06"
             app:layout_constraintEnd_toEndOf="@+id/containerComponents"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="@+id/containerComponents"
@@ -129,7 +135,8 @@
             android:layout_marginStart="9dp"
             android:layout_marginTop="48dp"
             android:layout_marginEnd="30dp"
-            android:inputType="numberPassword"
+            android:inputType="text"
+            android:text="Visita técnica           06/01"
             app:layout_constraintEnd_toEndOf="@+id/containerComponents"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="@+id/containerComponents"
@@ -142,7 +149,8 @@
             android:layout_height="68dp"
             android:layout_marginTop="12dp"
             android:layout_marginEnd="28dp"
-            android:inputType="numberPassword"
+            android:inputType="text"
+            android:text="Reparo da janela         10/04"
             app:layout_constraintEnd_toEndOf="@+id/containerComponents"
             app:layout_constraintTop_toBottomOf="@+id/historico" />
 
@@ -166,6 +174,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:drawableRight="@drawable/ic_star"
+            android:backgroundTint="@color/white"
+            android:textColorHint="@color/white"
+            android:drawableTint="#FFFFFF"
             android:ems="10"
             android:hint="Avaliar último serviço"
             android:inputType="textPersonName"

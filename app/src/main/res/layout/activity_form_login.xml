@@ -16,32 +16,36 @@
 
         <ImageView
             android:id="@+id/login"
-            android:layout_width="369dp"
-            android:layout_height="317dp"
-            android:src="@drawable/obra"
+            android:layout_width="411dp"
+            android:layout_height="270dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/obra_prima"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+
         <View
             android:id="@+id/containerComponents"
             style="@style/ContainerComponents"
-            android:layout_marginTop="104dp"
+            android:layout_marginTop="44dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.525"
+            app:layout_constraintHorizontal_bias="0.4"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/login" />
+            app:layout_constraintTop_toBottomOf="@+id/login"
+            />
+
 
         <EditText
             android:id="@+id/edit_email"
-            android:textColor="@color/black"
             style="@style/Edit_Text"
             android:drawableRight="@drawable/ic_email"
-            android:hint="Email"
             android:inputType="textEmailAddress"
+            android:hint="Email"
             app:layout_constraintEnd_toEndOf="@+id/containerComponents"
             app:layout_constraintStart_toStartOf="@+id/containerComponents"
-            app:layout_constraintTop_toTopOf="@+id/containerComponents" />
+            app:layout_constraintTop_toTopOf="@+id/containerComponents"
+            />
 
 
         <EditText
@@ -49,7 +53,6 @@
             style="@style/Edit_Text"
             android:drawableRight="@drawable/ic_password"
             android:inputType="numberPassword"
-            android:textColor="@color/black"
             android:hint="Senha"
             app:layout_constraintEnd_toEndOf="@+id/containerComponents"
             app:layout_constraintTop_toBottomOf="@+id/edit_email"
@@ -81,13 +84,12 @@
             android:id="@+id/cadastro_profissional"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="24dp"
             android:text="@string/text_cadastro_profissional"
             android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cadastro_cliente" />
 
