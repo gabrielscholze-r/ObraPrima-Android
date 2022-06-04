@@ -30,6 +30,12 @@ public class TelaPrincipalCliente extends AppCompatActivity {
         ArrayList<Pedidos> pedidos = Database.getPedidos();
         et1.setText(pedidos.get(0).getTituloPedido() + "           "+ pedidos.get(0).getDia()+"/"+pedidos.get(0).getMes());
 
+        EditText et2 = (EditText) findViewById(R.id.historico2);
+        et2.setText(pedidos.get(2).getTituloPedido() + "           "+ pedidos.get(2).getDia()+"/"+pedidos.get(2).getMes());
+
+        EditText et3 = (EditText) findViewById(R.id.historico);
+        et3.setText(pedidos.get(1).getTituloPedido() + "           "+ pedidos.get(1).getDia()+"/"+pedidos.get(1).getMes());
+
         bt_deslogar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
