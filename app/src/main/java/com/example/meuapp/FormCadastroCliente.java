@@ -20,7 +20,10 @@ public class FormCadastroCliente extends AppCompatActivity {
         getSupportActionBar().hide();
         IniciarComponentes();
 
+
+
         bt_cadastrar.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View view) {
 
