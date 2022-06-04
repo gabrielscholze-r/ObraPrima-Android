@@ -26,6 +26,7 @@ public class TelaPrincipalCliente extends AppCompatActivity {
         getSupportActionBar().hide();
         IniciarComponentes();
 
+
         EditText et1 = (EditText) findViewById(R.id.historico3);
         ArrayList<Pedidos> pedidos = Database.getPedidos();
         et1.setText(pedidos.get(0).getTituloPedido() + "           "+ pedidos.get(0).getDia()+"/"+pedidos.get(0).getMes());
