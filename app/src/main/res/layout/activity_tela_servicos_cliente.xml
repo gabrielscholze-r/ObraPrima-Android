@@ -55,19 +55,13 @@
             android:id="@+id/ratingBar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="143dp"
+            android:layout_marginBottom="35dp"
+            app:layout_constraintBottom_toBottomOf="@+id/editText2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="255dp" />
-
-        <RatingBar
-            android:id="@+id/ratingBar2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="482dp" />
+            app:layout_constraintTop_toTopOf="@+id/containerComponents" />
 
         <EditText
             android:id="@+id/editText"
@@ -78,7 +72,17 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editText2" />
 
-
+        <RatingBar
+            android:id="@+id/ratingBar2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="119dp"
+            android:layout_marginBottom="35dp"
+            app:layout_constraintBottom_toBottomOf="@+id/editText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/editText" />
 
 
         <Button
