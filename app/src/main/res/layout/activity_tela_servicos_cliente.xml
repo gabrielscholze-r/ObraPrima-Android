@@ -20,10 +20,25 @@
             android:layout_marginBottom="16dp"
             app:layout_constraintBottom_toTopOf="@+id/bt_deslogar"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.489"
+            app:layout_constraintHorizontal_bias="0.326"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/pesquisa"
-            app:layout_constraintVertical_bias="0.937" />
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="241dp"
+            android:layout_height="46dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="13dp"
+            android:text="João"
+            android:textSize="30dp"
+            app:layout_constraintBottom_toTopOf="@+id/textView5"
+            app:layout_constraintEnd_toEndOf="@+id/containerComponents"
+            app:layout_constraintHorizontal_bias="0.504"
+            app:layout_constraintStart_toStartOf="@+id/containerComponents"
+            app:layout_constraintTop_toBottomOf="@+id/ratingBar"
+            app:layout_constraintVertical_bias="1.0" />
 
         <EditText
             android:id="@+id/pesquisa"
@@ -43,46 +58,26 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <EditText
-            android:id="@+id/editText2"
-            android:layout_width="283dp"
-            android:layout_height="211dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="136dp" />
-
         <RatingBar
             android:id="@+id/ratingBar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="143dp"
-            android:layout_marginBottom="35dp"
-            app:layout_constraintBottom_toBottomOf="@+id/editText2"
+            android:layout_marginTop="160dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/containerComponents" />
 
-        <EditText
-            android:id="@+id/editText"
-            android:layout_width="283dp"
-            android:layout_height="211dp"
-            android:layout_marginTop="16dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText2" />
-
         <RatingBar
             android:id="@+id/ratingBar2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="119dp"
-            android:layout_marginBottom="35dp"
-            app:layout_constraintBottom_toBottomOf="@+id/editText"
+            android:layout_marginTop="170dp"
+            app:layout_constraintBottom_toBottomOf="@+id/containerComponents"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/editText" />
+            app:layout_constraintTop_toBottomOf="@+id/ratingBar" />
 
 
         <Button
@@ -103,8 +98,40 @@
             app:layout_constraintHorizontal_bias="0.4"
             app:layout_constraintStart_toStartOf="parent" />
 
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="241dp"
+            android:layout_height="46dp"
+            android:text="Mario"
+            android:textSize="30dp"
+            app:layout_constraintEnd_toEndOf="@+id/containerComponents"
+            app:layout_constraintHorizontal_bias="0.512"
+            app:layout_constraintStart_toStartOf="@+id/containerComponents"
+            app:layout_constraintTop_toTopOf="@+id/containerComponents" />
 
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="241dp"
+            android:layout_height="88dp"
+            android:layout_marginTop="7dp"
+            android:text="Realizou uma troca de canos.\n30/04"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toEndOf="@+id/containerComponents"
+            app:layout_constraintHorizontal_bias="0.508"
+            app:layout_constraintStart_toStartOf="@+id/containerComponents"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="241dp"
+            android:layout_height="88dp"
+            android:layout_marginBottom="15dp"
+            android:text="Instalou o pressurizador.\n28/04"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toTopOf="@+id/ratingBar2"
+            app:layout_constraintEnd_toEndOf="@+id/containerComponents"
+            app:layout_constraintHorizontal_bias="0.504"
+            app:layout_constraintStart_toStartOf="@+id/containerComponents" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

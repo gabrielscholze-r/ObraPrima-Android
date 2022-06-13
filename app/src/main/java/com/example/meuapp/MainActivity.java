@@ -9,7 +9,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Database.loadDatabase();
+//        Database.loadDatabase();
 
         setContentView(R.layout.activity_main);
 

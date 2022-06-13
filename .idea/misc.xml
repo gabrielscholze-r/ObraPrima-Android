@@ -5,7 +5,9 @@
       <map>
         <entry key="..\:/AndroidStudio/ObraPrima-Android/app/src/main/res/drawable/background.xml" value="0.2635" />
         <entry key="..\:/AndroidStudio/ObraPrima-Android/app/src/main/res/drawable/button.xml" value="0.1565" />
-        <entry key="..\:/AndroidStudio/ObraPrima-Android/app/src/main/res/layout/activity_form_login.xml" value="0.14791666666666667" />
+        <entry key="..\:/AndroidStudio/ObraPrima-Android/app/src/main/res/drawable/ic_calender.xml" value="0.1935" />
+        <entry key="..\:/AndroidStudio/ObraPrima-Android/app/src/main/res/layout/activity_form_cadastro_cliente.xml" value="0.31567028985507245" />
+        <entry key="..\:/AndroidStudio/ObraPrima-Android/app/src/main/res/layout/activity_form_login.xml" value="0.33" />
         <entry key="..\:/AndroidStudio/ObraPrima-Android/app/src/main/res/layout/activity_tela_principal_cliente.xml" value="0.3211050724637681" />
         <entry key="..\:/AndroidStudio/ObraPrima-Android/app/src/main/res/layout/activity_tela_principal_profissional.xml" value="0.3211050724637681" />
         <entry key="..\:/AndroidStudio/ObraPrima-Android/app/src/main/res/layout/activity_tela_servicos_cliente.xml" value="0.3211050724637681" />

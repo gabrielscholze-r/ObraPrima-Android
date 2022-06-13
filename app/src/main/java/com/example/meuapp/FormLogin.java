@@ -6,7 +6,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+
+import com.example.meuapp.data.Database;
 
 public class FormLogin extends AppCompatActivity {
 
@@ -19,6 +22,7 @@ public class FormLogin extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Database.loadDatabase();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_form_login);
 
@@ -29,9 +33,11 @@ public class FormLogin extends AppCompatActivity {
         bt_entrar.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 //Para testar a outra tela mudar o "TelaServicosCliente.class" por "TelaPrincipalCliente.class"
-                Intent intent = new Intent(FormLogin.this, TelaServicosCliente.class);
-                startActivity(intent);
-
+                EditText login = (EditText)findViewById(R.id.edit_email);
+                if(login.getText().toString().equals("Pedro")){
+                    Intent intent = new Intent(FormLogin.this, TelaServicosCliente.class);
+                    startActivity(intent);
+                }
             }
         });
 
