@@ -9,9 +9,9 @@ public class Database {
 
 
     public static void loadDatabase(){
-        Profissional encanador = new Profissional("Antônio Augusto Moraes Liberato","41988888888",1234567891,"Encanador");
-        Profissional pedreiro = new Profissional("Luis Felipe Scolari","41977777777",1234567891,"Pedreiro");
-        Profissional eletricista = new Profissional("Rogerio Ceni","4199999999",1234567891,"Eletricista");
+        Profissional encanador = new Profissional("Antônio","Augusto Moraes Liberato","41988888888",1234567891,"Encanador",4.5);
+        Profissional pedreiro = new Profissional("Luis","Felipe Scolari","41977777777",1234567891,"Pedreiro",3.0);
+        Profissional eletricista = new Profissional("Rogerio","Ceni","4199999999",1234567891,"Eletricista",5.0);
 
         profissionais.add(encanador);
         profissionais.add(pedreiro);

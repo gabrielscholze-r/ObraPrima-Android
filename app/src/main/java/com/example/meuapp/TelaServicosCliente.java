@@ -10,6 +10,7 @@ import android.widget.Button;
 public class TelaServicosCliente extends AppCompatActivity {
 
     private Button bt_deslogar;
+    private Button bt_home;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +29,15 @@ public class TelaServicosCliente extends AppCompatActivity {
             }
 
         });
+        bt_home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(TelaServicosCliente.this, TelaPrincipalCliente.class);
+                startActivity(intent);
+                finish();
+            }
+
+        } );
 
     }
 
@@ -35,5 +45,6 @@ public class TelaServicosCliente extends AppCompatActivity {
 
     private void IniciarComponentes(){
         bt_deslogar = findViewById(R.id.bt_deslogar);
+        bt_home = findViewById(R.id.button_home);
     }
 }

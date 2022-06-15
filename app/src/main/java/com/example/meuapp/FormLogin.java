@@ -35,7 +35,10 @@ public class FormLogin extends AppCompatActivity {
                 //Para testar a outra tela mudar o "TelaServicosCliente.class" por "TelaPrincipalCliente.class"
                 EditText login = (EditText)findViewById(R.id.edit_email);
                 if(login.getText().toString().equals("Pedro")){
-                    Intent intent = new Intent(FormLogin.this, TelaServicosCliente.class);
+                    Intent intent = new Intent(FormLogin.this, TelaPrincipalCliente.class);
+                    startActivity(intent);
+                }else if(login.getText().toString().equals("Sergio")){
+                    Intent intent = new Intent(FormLogin.this, TelaPrincipalProfissional.class);
                     startActivity(intent);
                 }
             }
