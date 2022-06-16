@@ -30,16 +30,16 @@ public class TelaPrincipalProfissional extends AppCompatActivity {
         TextView titulo = findViewById(R.id.textTituloPro);
         titulo.setText("Bem vindo\n"+loginAtual.getProfissional().getNome()+"!");
 
-        EditText et1 = (EditText) findViewById(R.id.editTextDate);
+        TextView et1 = findViewById(R.id.jobView);
         et1.setText(pedidos.get(0).getTituloPedido()+":     "+pedidos.get(0).getDia()+"/"+pedidos.get(0).getMes());
 
-        EditText et2 = (EditText) findViewById(R.id.editTextDate2);
+        TextView et2 = findViewById(R.id.jobView2);
         et2.setText(pedidos.get(1).getTituloPedido()+":     "+pedidos.get(1).getDia()+"/"+pedidos.get(1).getMes());
 
-        EditText et3 = (EditText) findViewById(R.id.editTextDate3);
+        TextView et3 = findViewById(R.id.jobView3);
         et3.setText(pedidos.get(2).getTituloPedido()+":     "+pedidos.get(2).getDia()+"/"+pedidos.get(2).getMes());
 
-        EditText et4 = (EditText) findViewById(R.id.editTextDate4);
+        TextView et4 = findViewById(R.id.jobView4);
         et4.setText(pedidos.get(3).getTituloPedido()+":     "+pedidos.get(3).getDia()+"/"+pedidos.get(3).getMes());
 
         getSupportActionBar().hide();
