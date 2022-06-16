@@ -25,8 +25,7 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            />
+            app:layout_constraintTop_toTopOf="parent" />
 
 
         <View
@@ -40,6 +39,22 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/title_cadastre"
             app:layout_constraintVertical_bias="0.094" />
+
+        <TextView
+            android:id="@+id/errorMessage3"
+            android:layout_width="295dp"
+            android:layout_height="29dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginBottom="8dp"
+            android:text=""
+            android:textAlignment="center"
+            android:textColor="#FF0505"
+            android:textSize="15dp"
+            app:layout_constraintBottom_toTopOf="@+id/containerComponents"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.517"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title_cadastre" />
 
         <EditText
             android:drawableTint="@color/black"
@@ -158,12 +173,15 @@
             style="@style/ButtonEntrar"
             android:layout_width="197dp"
             android:layout_height="77dp"
-            android:layout_marginBottom="36dp"
+            android:layout_marginTop="136dp"
+            android:layout_marginBottom="166dp"
             android:text="Cadastrar"
             android:textSize="30dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/confirmPassword"
+            app:layout_constraintVertical_bias="0.0" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

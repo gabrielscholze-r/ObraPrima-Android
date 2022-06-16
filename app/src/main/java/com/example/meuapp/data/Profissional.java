@@ -5,12 +5,12 @@ import java.util.ArrayList;
 public class Profissional {
     private String Nome;
     private String telefone;
-    private long cpf;
+    private String cpf;
     private String ramo;
     private double rating;
     private ArrayList<Pedidos> pedidos;
 
-    public Profissional(String nome, String telefone, long cpf, String ramo, double rating) {
+    public Profissional(String nome, String telefone, String cpf, String ramo, double rating) {
         this.Nome = nome;
         this.telefone = telefone;
         this.cpf = cpf;
@@ -35,11 +35,11 @@ public class Profissional {
         this.telefone = telefone;
     }
 
-    public long getCpf() {
+    public String getCpf() {
         return cpf;
     }
 
-    public void setCpf(long cpf) {
+    public void setCpf(String cpf) {
         this.cpf = cpf;
     }
 

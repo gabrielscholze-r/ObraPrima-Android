@@ -12,9 +12,9 @@ public class Database {
 
 
     public static void loadDatabase(){
-        Profissional encanador = new Profissional("Antônio","41988888888",1234567891,"Encanador",4.5);
-        Profissional pedreiro = new Profissional("Luis","41977777777",1234567891,"Pedreiro",3.0);
-        Profissional eletricista = new Profissional("Rogerio","4199999999",1234567891,"Eletricista",5.0);
+        Profissional encanador = new Profissional("Antônio","41988888888","1234567891","Encanador",4.5);
+        Profissional pedreiro = new Profissional("Luis","41977777777","1234567891","Pedreiro",3.0);
+        Profissional eletricista = new Profissional("Rogerio","4199999999","1234567891","Eletricista",5.0);
 
         Cliente cliente1 = new Cliente("Sergio", "sergio123@gmail.com","12345678912","999999999","1234");
         Cliente cliente2 = new Cliente("Claudio", "claudio123@gmail.com","12345678912","999999999","1234");

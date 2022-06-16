@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.example.meuapp.data.Cliente;
 import com.example.meuapp.data.Database;
@@ -48,6 +49,8 @@ public class FormCadastroCliente extends AppCompatActivity {
                 if(senhaString.equals(confirmarSenhaString)){
                     if(nomeString.equals("") || emailString.equals("") || cpfString.equals("") || telefoneString.equals("") ||
                             senhaString.equals("") || confirmarSenhaString.equals("")){//caso algum dos dados esteja em branco
+                        TextView error = findViewById(R.id.errorMessage3);
+                        error.setText("Informações faltando");
                     } else{
                         Cliente cliente = new Cliente(nomeString,emailString,cpfString,telefoneString,senhaString);
                         clientes.add(cliente);
@@ -56,7 +59,8 @@ public class FormCadastroCliente extends AppCompatActivity {
                         startActivity(intent);
                     }
                 }else{//caso as senhas sejam diferentes
-
+                    TextView error = findViewById(R.id.errorMessage3);
+                    error.setText("Senhas devem ser iguais");
                 }
             }
         });

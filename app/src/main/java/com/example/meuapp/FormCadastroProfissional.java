@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.example.meuapp.data.Cliente;
 import com.example.meuapp.data.Database;
@@ -37,7 +38,7 @@ public class FormCadastroProfissional extends AppCompatActivity {
                 EditText email = (EditText)findViewById(R.id.editTextEmailAddress);
                 String emailString = email.getText().toString();
                 EditText cpf = (EditText)findViewById(R.id.editTextCPF);
-                Long cpfString = Long.parseLong(cpf.getText().toString());
+                String cpfString = cpf.getText().toString();
                 EditText telefone = (EditText)findViewById(R.id.editTextPhone);
                 String telefoneString = telefone.getText().toString();
                 EditText senha = (EditText)findViewById(R.id.createPassword);
@@ -49,7 +50,8 @@ public class FormCadastroProfissional extends AppCompatActivity {
                 if(senhaString.equals(confirmarSenhaString)){
                     if(nomeString.equals("") || emailString.equals("") || cpfString.equals("") || telefoneString.equals("") ||
                             senhaString.equals("") || confirmarSenhaString.equals("") || ramoServicoString.equals("")){
-                        //caso algum dos dados esteja em branco
+                        TextView error = findViewById(R.id.errorMessage2);
+                        error.setText("Informações faltando");
                     } else{
                         Profissional profissional = new Profissional(nomeString,telefoneString,cpfString,ramoServicoString,0.0);
                         profissionais.add(profissional);
@@ -58,7 +60,8 @@ public class FormCadastroProfissional extends AppCompatActivity {
                         startActivity(intent);
                     }
                 }else{//caso as senhas sejam diferentes
-
+                    TextView error = findViewById(R.id.errorMessage2);
+                    error.setText("Senhas devem ser iguais");
                 }
             }
         });

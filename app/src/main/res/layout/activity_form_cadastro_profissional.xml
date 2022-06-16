@@ -15,6 +15,19 @@
 
 
         <TextView
+            android:id="@+id/errorMessage2"
+            android:layout_width="295dp"
+            android:layout_height="29dp"
+            android:text=""
+            android:textAlignment="center"
+            android:textColor="#FF0505"
+            android:textSize="15dp"
+            app:layout_constraintBottom_toTopOf="@+id/containerComponents"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title_cadastro_profissional" />
+
+        <TextView
             android:id="@+id/title_cadastro_profissional"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -25,8 +38,7 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            />
+            app:layout_constraintTop_toTopOf="parent" />
 
 
         <View
@@ -38,8 +50,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/title_cadastro_profissional"
-            app:layout_constraintVertical_bias="0.0"
-            />
+            app:layout_constraintVertical_bias="0.0" />
 
 
         <EditText

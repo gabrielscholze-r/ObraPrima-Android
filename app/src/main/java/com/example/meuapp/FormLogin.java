@@ -43,12 +43,15 @@ public class FormLogin extends AppCompatActivity {
             public void onClick(View v) {
                 //Para testar a outra tela mudar o "TelaServicosCliente.class" por "TelaPrincipalCliente.class"
                 EditText login = (EditText)findViewById(R.id.edit_email);
+                boolean logged = false;
                 for(Cliente cliente : clientes){
                     if(login.getText().toString().equals(cliente.getNome())){
                         loginAtual.setCliente(cliente);
                         Intent intent = new Intent(FormLogin.this, TelaPrincipalCliente.class);
                         startActivity(intent);
+                        logged = true;
                         break;
+
                     }
                 }
                 for(Profissional profissional : profissionais){
@@ -56,8 +59,13 @@ public class FormLogin extends AppCompatActivity {
                         loginAtual.setProfissional(profissional);
                         Intent intent = new Intent(FormLogin.this, TelaPrincipalProfissional.class);
                         startActivity(intent);
+                        logged = true;
                         break;
                     }
+                }
+                if(!logged){
+                    TextView error = findViewById(R.id.errorMessage);
+                    error.setText("Usuário não encontrado");
                 }
             }
         });
