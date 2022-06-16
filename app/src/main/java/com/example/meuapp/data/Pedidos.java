@@ -4,22 +4,12 @@ public class Pedidos {
     private String dia;
     private String mes;
     private String tituloPedido;
-    private Profissional profissional;
 
-    public Pedidos(String dia, String mes, String tituloPedido, Profissional profissional) {
+    public Pedidos(String dia, String mes, String tituloPedido) {
         this.dia = dia;
         this.mes = mes;
         this.tituloPedido = tituloPedido;
-        this.profissional = profissional;
 
-    }
-
-    public Profissional getProfissional() {
-        return profissional;
-    }
-
-    public void setProfissional(Profissional profissional) {
-        this.profissional = profissional;
     }
 
     public String getDia() {

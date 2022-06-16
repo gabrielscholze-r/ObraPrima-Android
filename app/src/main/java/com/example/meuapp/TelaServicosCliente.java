@@ -7,6 +7,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.meuapp.data.Database;
+import com.example.meuapp.data.LoginAtual;
+
 public class TelaServicosCliente extends AppCompatActivity {
 
     private Button bt_deslogar;
@@ -24,6 +27,8 @@ public class TelaServicosCliente extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(TelaServicosCliente.this, FormLogin.class);
+                LoginAtual l = new LoginAtual();
+                Database.setLoginAtual(l);
                 startActivity(intent);
                 finish();
             }

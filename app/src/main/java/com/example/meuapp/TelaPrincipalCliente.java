@@ -11,8 +11,11 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.meuapp.data.Database;
+import com.example.meuapp.data.LoginAtual;
 import com.example.meuapp.data.Pedidos;
 import com.example.meuapp.data.Profissional;
+
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
@@ -28,22 +31,28 @@ public class TelaPrincipalCliente extends AppCompatActivity {
 
         getSupportActionBar().hide();
         IniciarComponentes();
-
-
-        TextView et1 = (TextView) findViewById(R.id.historico3);
         ArrayList<Profissional> profissionais = Database.getProfissionais();
+        LoginAtual loginAtual = Database.getLoginAtual();
+
+
+        TextView et1 = findViewById(R.id.historico3);
         et1.setText(profissionais.get(0).getNome()+"      "+profissionais.get(0).getRamo()+"      "+profissionais.get(0).getRating());
 
-        TextView et2 = (TextView) findViewById(R.id.historico2);
+        TextView et2 = findViewById(R.id.historico2);
         et2.setText(profissionais.get(1).getNome()+"      "+profissionais.get(1).getRamo()+"      "+profissionais.get(1).getRating());
 
-        TextView et3 = (TextView) findViewById(R.id.historico);
+        TextView et3 = findViewById(R.id.historico);
         et3.setText(profissionais.get(2).getNome()+"      "+profissionais.get(2).getRamo()+"      "+profissionais.get(2).getRating());
+
+        TextView titulo = findViewById(R.id.textTitulo);
+        titulo.setText("Bem vindo\n"+loginAtual.getCliente().getNome()+"!");
 
         bt_deslogar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(TelaPrincipalCliente.this, FormLogin.class);
+                LoginAtual l = new LoginAtual();
+                Database.setLoginAtual(l);
                 startActivity(intent);
                 finish();
             }

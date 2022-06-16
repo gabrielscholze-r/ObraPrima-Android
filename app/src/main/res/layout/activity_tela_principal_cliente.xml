@@ -20,7 +20,8 @@
             android:id="@+id/editTextTextPersonName2"
             android:layout_width="258dp"
             android:layout_height="48dp"
-            android:layout_marginTop="84dp"
+            android:layout_marginTop="89dp"
+            android:layout_marginBottom="23dp"
             android:backgroundTint="@color/white"
             android:drawableRight="@drawable/ic_search"
             android:drawableTint="#FFFFFF"
@@ -30,23 +31,21 @@
             android:textColor="@color/white"
             android:textColorHint="@color/white"
             android:textSize="21dp"
+            app:layout_constraintBottom_toTopOf="@+id/bt_historico"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.496"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
+            app:layout_constraintTop_toBottomOf="@+id/textTitulo" />
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/textTitulo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            android:layout_marginBottom="7dp"
-            android:text="Bem vindo Pedro!"
+            android:text="Bem vindo -----"
             android:textColor="@color/white"
             android:textSize="40dp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName2"
             app:layout_constraintEnd_toStartOf="@+id/containerProfile"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -55,10 +54,10 @@
             android:id="@+id/containerProfile"
             android:layout_width="54dp"
             android:layout_height="49dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="28dp"
             android:background="@drawable/container_profile"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.949"
+            app:layout_constraintHorizontal_bias="0.935"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -66,10 +65,9 @@
             android:id="@+id/containerIcon"
             android:layout_width="52dp"
             android:layout_height="45dp"
+            android:layout_marginTop="4dp"
             android:src="@drawable/ic_profile"
-            app:layout_constraintBottom_toBottomOf="@id/containerProfile"
-            app:layout_constraintEnd_toEndOf="@id/containerProfile"
-            app:layout_constraintStart_toStartOf="@id/containerProfile"
+            app:layout_constraintStart_toStartOf="@+id/containerProfile"
             app:layout_constraintTop_toTopOf="@+id/containerProfile" />
 
         <Button
@@ -174,15 +172,13 @@
             android:id="@+id/bt_historico"
             android:layout_width="271dp"
             android:layout_height="78dp"
-            android:layout_marginTop="66dp"
             android:layout_marginBottom="5dp"
             android:backgroundTint="@android:color/black"
-            android:textColor="@color/white"
             android:text="Avaliar últimos serviços"
+            android:textColor="@color/white"
             app:layout_constraintBottom_toTopOf="@+id/containerComponents"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
+            app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

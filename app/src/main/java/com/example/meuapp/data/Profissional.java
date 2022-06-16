@@ -1,20 +1,22 @@
 package com.example.meuapp.data;
 
+import java.util.ArrayList;
+
 public class Profissional {
     private String Nome;
-    private String Sobrenome;
     private String telefone;
     private long cpf;
     private String ramo;
     private double rating;
+    private ArrayList<Pedidos> pedidos;
 
-    public Profissional(String nome, String sobrenome, String telefone, long cpf, String ramo, double rating) {
+    public Profissional(String nome, String telefone, long cpf, String ramo, double rating) {
         this.Nome = nome;
-        this.Sobrenome = sobrenome;
         this.telefone = telefone;
         this.cpf = cpf;
         this.ramo = ramo;
         this.rating = rating;
+        this.pedidos = new ArrayList<>();
     }
 
     public String getNome() {
@@ -57,11 +59,16 @@ public class Profissional {
         this.rating = rating;
     }
 
-    public String getSobrenome() {
-        return Sobrenome;
+    public void setRating(double rating) {
+        this.rating = rating;
     }
 
-    public void setSobrenome(String sobrenome) {
-        Sobrenome = sobrenome;
+    public ArrayList<Pedidos> getPedidos() {
+        return pedidos;
+    }
+
+    public void setPedidos(ArrayList<Pedidos> pedidos) {
+        this.pedidos = pedidos;
     }
 }
+

@@ -62,7 +62,7 @@
             android:drawableTint="@color/black"
             android:textColorHint="@color/black"
             android:textColor="@color/black"
-            android:id="@+id/editTextTextEmailAddress"
+            android:id="@+id/editTextEmailAddress"
             android:drawableRight="@drawable/ic_email"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -81,7 +81,7 @@
             android:drawableTint="@color/black"
             android:textColorHint="@color/black"
             android:textColor="@color/black"
-            android:id="@+id/editTextNumber"
+            android:id="@+id/editTextCPF"
             android:drawableRight="@drawable/ic_cpf"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -92,7 +92,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.502"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress"
+            app:layout_constraintTop_toBottomOf="@+id/editTextEmailAddress"
             />
 
 
@@ -111,7 +111,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.502"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextNumber"
+            app:layout_constraintTop_toBottomOf="@+id/editTextCPF"
             />
 
 

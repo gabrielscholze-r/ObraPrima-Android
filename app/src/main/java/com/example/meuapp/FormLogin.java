@@ -9,7 +9,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.meuapp.data.Cliente;
 import com.example.meuapp.data.Database;
+import com.example.meuapp.data.LoginAtual;
+import com.example.meuapp.data.Profissional;
+
+import java.util.ArrayList;
+import java.util.Locale;
 
 public class FormLogin extends AppCompatActivity {
 
@@ -29,17 +35,29 @@ public class FormLogin extends AppCompatActivity {
         getSupportActionBar().hide();
         IniciarComponentes();
 
+        ArrayList<Profissional> profissionais = Database.getProfissionais();
+        ArrayList<Cliente> clientes = Database.getClientes();
+        LoginAtual loginAtual = Database.getLoginAtual();
 
         bt_entrar.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 //Para testar a outra tela mudar o "TelaServicosCliente.class" por "TelaPrincipalCliente.class"
                 EditText login = (EditText)findViewById(R.id.edit_email);
-                if(login.getText().toString().equals("Pedro")){
-                    Intent intent = new Intent(FormLogin.this, TelaPrincipalCliente.class);
-                    startActivity(intent);
-                }else if(login.getText().toString().equals("Sergio")){
-                    Intent intent = new Intent(FormLogin.this, TelaPrincipalProfissional.class);
-                    startActivity(intent);
+                for(Cliente cliente : clientes){
+                    if(login.getText().toString().equals(cliente.getNome())){
+                        loginAtual.setCliente(cliente);
+                        Intent intent = new Intent(FormLogin.this, TelaPrincipalCliente.class);
+                        startActivity(intent);
+                        break;
+                    }
+                }
+                for(Profissional profissional : profissionais){
+                    if(login.getText().toString().equals(profissional.getNome())){
+                        loginAtual.setProfissional(profissional);
+                        Intent intent = new Intent(FormLogin.this, TelaPrincipalProfissional.class);
+                        startActivity(intent);
+                        break;
+                    }
                 }
             }
         });
