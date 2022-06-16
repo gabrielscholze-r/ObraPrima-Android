@@ -14,9 +14,9 @@ public class Database {
         Profissional pedreiro = new Profissional("Luis","Felipe Scolari","41977777777",1234567891,"Pedreiro",3.0);
         Profissional eletricista = new Profissional("Rogerio","Ceni","4199999999",1234567891,"Eletricista",5.0);
 
-        Cliente cliente1 = new Cliente("Sergio", "sergio123@gmail.com","12345678912","999999999","1234")
-        Cliente cliente2 = new Cliente("Claudio", "claudio123@gmail.com","12345678912","999999999","1234")
-        Cliente cliente3 = new Cliente("Roberto", "roberto123@gmail.com","12345678912","999999999","1234")
+        Cliente cliente1 = new Cliente("Sergio", "sergio123@gmail.com","12345678912","999999999","1234");
+        Cliente cliente2 = new Cliente("Claudio", "claudio123@gmail.com","12345678912","999999999","1234");
+        Cliente cliente3 = new Cliente("Roberto", "roberto123@gmail.com","12345678912","999999999","1234");
 
         profissionais.add(encanador);
         profissionais.add(pedreiro);

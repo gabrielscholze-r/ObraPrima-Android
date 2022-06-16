@@ -46,6 +46,10 @@
 
 
         <EditText
+
+            android:drawableTint="@color/black"
+            android:textColorHint="@color/black"
+            android:textColor="@color/black"
             android:id="@+id/editPersonName"
             android:drawableRight="@drawable/ic_name"
             android:layout_width="wrap_content"
@@ -62,6 +66,9 @@
 
 
         <EditText
+            android:drawableTint="@color/black"
+            android:textColorHint="@color/black"
+            android:textColor="@color/black"
             android:id="@+id/editTextTextEmailAddress"
             android:drawableRight="@drawable/ic_email"
             android:layout_width="wrap_content"
@@ -78,6 +85,9 @@
 
 
         <EditText
+            android:drawableTint="@color/black"
+            android:textColorHint="@color/black"
+            android:textColor="@color/black"
             android:id="@+id/editTextNumber"
             android:drawableRight="@drawable/ic_cpf"
             android:layout_width="wrap_content"
@@ -94,6 +104,9 @@
 
 
         <EditText
+            android:drawableTint="@color/black"
+            android:textColorHint="@color/black"
+            android:textColor="@color/black"
             android:id="@+id/editTextPhone"
             android:drawableRight="@drawable/ic_phone_android"
             android:layout_width="wrap_content"
@@ -110,6 +123,9 @@
 
 
         <EditText
+            android:drawableTint="@color/black"
+            android:textColorHint="@color/black"
+            android:textColor="@color/black"
             android:id="@+id/createPassword"
             android:drawableRight="@drawable/ic_password"
             android:layout_width="wrap_content"
@@ -126,6 +142,9 @@
 
 
         <EditText
+            android:drawableTint="@color/black"
+            android:textColorHint="@color/black"
+            android:textColor="@color/black"
             android:id="@+id/confirmPassword"
             android:drawableRight="@drawable/ic_password_confirm"
             android:layout_width="wrap_content"
@@ -142,6 +161,9 @@
 
 
         <AutoCompleteTextView
+            android:drawableTint="@color/black"
+            android:textColorHint="@color/black"
+            android:textColor="@color/black"
             android:id="@+id/ramodoservico"
             android:drawableRight="@drawable/ic_service"
             android:layout_width="wrap_content"

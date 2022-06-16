@@ -37,6 +37,9 @@
 
 
         <EditText
+            android:drawableTint="@color/black"
+            android:textColorHint="@color/black"
+            android:textColor="@color/black"
             android:id="@+id/edit_email"
             style="@style/Edit_Text"
             android:drawableRight="@drawable/ic_email"
@@ -49,6 +52,9 @@
 
 
         <EditText
+            android:drawableTint="@color/black"
+            android:textColorHint="@color/black"
+            android:textColor="@color/black"
             android:id="@+id/password"
             style="@style/Edit_Text"
             android:drawableRight="@drawable/ic_password"
