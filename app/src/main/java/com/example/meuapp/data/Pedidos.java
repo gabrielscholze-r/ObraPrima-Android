@@ -4,12 +4,21 @@ public class Pedidos {
     private String dia;
     private String mes;
     private String tituloPedido;
+    private String nomeCliente;
 
-    public Pedidos(String dia, String mes, String tituloPedido) {
+    public Pedidos(String dia, String mes, String tituloPedido, String nomeCliente) {
         this.dia = dia;
         this.mes = mes;
         this.tituloPedido = tituloPedido;
+        this.nomeCliente = nomeCliente;
+    }
 
+    public String getNomeCliente() {
+        return nomeCliente;
+    }
+
+    public void setNomeCliente(String nomeCliente) {
+        this.nomeCliente = nomeCliente;
     }
 
     public String getDia() {

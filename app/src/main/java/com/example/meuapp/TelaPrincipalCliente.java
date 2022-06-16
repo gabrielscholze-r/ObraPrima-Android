@@ -23,11 +23,18 @@ public class TelaPrincipalCliente extends AppCompatActivity {
 
     private Button bt_deslogar;
     private Button bt_historico;
+    private Button bt_contratar1;
+    private Button bt_contratar2;
+    private Button bt_contratar3;
+    private int x,y,z;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela_principal_cliente);
+        x = 0;
+        y = 0;
+        z = 0;
 
         getSupportActionBar().hide();
         IniciarComponentes();
@@ -69,6 +76,44 @@ public class TelaPrincipalCliente extends AppCompatActivity {
 
         });
 
+        bt_contratar1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(x < 1){
+                    ArrayList<Pedidos> pedidos =  profissionais.get(0).getPedidos();
+                    pedidos.add(new Pedidos("18","05","Visita tecnica", loginAtual.getCliente().getNome()));
+                    et1.setText("Pedido Feito!");
+                    x++;
+                }
+            }
+
+        });
+
+        bt_contratar2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(y < 1){
+                    ArrayList<Pedidos> pedidos =  profissionais.get(1).getPedidos();
+                    pedidos.add(new Pedidos("18","05","Visita tecnica", loginAtual.getCliente().getNome()));
+                    et3.setText("Pedido Feito!");
+                    y++;
+                }
+            }
+
+        });
+
+        bt_contratar3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(z < 1){
+                    ArrayList<Pedidos> pedidos =  profissionais.get(2).getPedidos();
+                    pedidos.add(new Pedidos("18","05","Visita tecnica", loginAtual.getCliente().getNome()));
+                    et2.setText("Pedido Feito!");
+                    z++;
+                }
+            }
+
+        });
     }
 
 
@@ -76,5 +121,8 @@ public class TelaPrincipalCliente extends AppCompatActivity {
     private void IniciarComponentes(){
         bt_deslogar = findViewById(R.id.bt_deslogar);
         bt_historico = findViewById(R.id.bt_historico);
+        bt_contratar1 = findViewById(R.id.bt_Contratar1);
+        bt_contratar2 = findViewById(R.id.bt_Contratar2);
+        bt_contratar3 = findViewById(R.id.bt_Contratar3);
     }
 }

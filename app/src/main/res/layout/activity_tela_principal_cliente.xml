@@ -180,6 +180,42 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
+        <Button
+            android:id="@+id/bt_Contratar1"
+            android:layout_width="137dp"
+            android:layout_height="38dp"
+            android:layout_marginTop="40dp"
+            android:backgroundTint="@android:color/black"
+            android:text="Contratar"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="@+id/historico3"
+            app:layout_constraintStart_toStartOf="@+id/historico3"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3" />
+
+        <Button
+            android:id="@+id/bt_Contratar2"
+            android:layout_width="137dp"
+            android:layout_height="38dp"
+            android:layout_marginTop="40dp"
+            android:backgroundTint="@android:color/black"
+            android:text="Contratar"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="@+id/historico"
+            app:layout_constraintStart_toStartOf="@+id/historico"
+            app:layout_constraintTop_toBottomOf="@+id/bt_Contratar1" />
+
+        <Button
+            android:id="@+id/bt_Contratar3"
+            android:layout_width="137dp"
+            android:layout_height="38dp"
+            android:layout_marginTop="40dp"
+            android:backgroundTint="@android:color/black"
+            android:text="Contratar"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="@+id/historico2"
+            app:layout_constraintStart_toStartOf="@+id/historico2"
+            app:layout_constraintTop_toBottomOf="@+id/bt_Contratar2" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.core.widget.NestedScrollView>

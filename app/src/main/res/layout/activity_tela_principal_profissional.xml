@@ -100,98 +100,51 @@
 -->
 
         <TextView
-            android:id="@+id/jobView"
-            android:layout_width="340dp"
-            android:layout_height="22dp"
-            android:layout_marginTop="44dp"
-            android:layout_marginBottom="36dp"
-            android:backgroundTint="@color/white"
-            android:drawableRight="@drawable/ic_service"
-            android:drawableTint="#FFFFFF"
-            android:ems="10"
-            android:inputType="date"
-            android:text="Visita técnica: "
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textSize="15dp"
-            app:layout_constraintBottom_toTopOf="@+id/jobView4"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.517"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/containerComponents" />
-
-        <TextView
-            android:id="@+id/jobView2"
-            android:layout_width="341dp"
-            android:layout_height="21dp"
-            android:layout_marginBottom="186dp"
-            android:backgroundTint="@color/white"
-            android:drawableRight="@drawable/ic_service"
-            android:drawableTint="#FFFFFF"
-            android:ems="10"
-            android:inputType="date"
-            android:text="Visita técnica: "
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textSize="15dp"
-            app:layout_constraintBottom_toTopOf="@+id/bt_deslogar"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <TextView
-            android:id="@+id/jobView3"
-            android:layout_width="341dp"
-            android:layout_height="26dp"
-            android:layout_marginBottom="23dp"
-            android:backgroundTint="@color/white"
-            android:drawableRight="@drawable/ic_service"
-            android:drawableTint="#FFFFFF"
-            android:ems="10"
-            android:inputType="date"
-            android:text="Visita técnica: "
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textSize="15dp"
-            app:layout_constraintBottom_toTopOf="@+id/jobView2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.542"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <TextView
-            android:id="@+id/jobView4"
-            android:layout_width="340dp"
-            android:layout_height="22dp"
-            android:layout_marginBottom="29dp"
-            android:backgroundTint="@color/white"
-            android:drawableRight="@drawable/ic_service"
-            android:drawableTint="#FFFFFF"
-            android:ems="10"
-            android:inputType="date"
-            android:text="Visita técnica: "
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textSize="15dp"
-            app:layout_constraintBottom_toTopOf="@+id/jobView3"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.517"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <TextView
             android:id="@+id/textTituloPro"
-            android:layout_width="249dp"
-            android:layout_height="54dp"
+            android:layout_width="303dp"
+            android:layout_height="93dp"
             android:layout_marginTop="12dp"
             android:layout_marginBottom="52dp"
             android:text="Olá ------!"
             android:textColor="@color/white"
-            android:textSize="40dp"
+            android:textSize="30dp"
             android:textStyle="bold"
+            app:flow_verticalAlign="center"
             app:layout_constraintBottom_toTopOf="@+id/calendarView2"
             app:layout_constraintEnd_toStartOf="@+id/containerProfile"
-            app:layout_constraintHorizontal_bias="0.472"
+            app:layout_constraintHorizontal_bias="0.8"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintVertical_bias="0.0" />
+
+        <ListView
+            android:textAlignment="center"
+            android:id="@+id/listapedidos"
+            android:layout_width="330dp"
+            android:layout_height="369dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="#FFFFFF"
+            app:layout_constraintBottom_toTopOf="@+id/bt_deslogar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.493"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/calendarView2"
+            app:layout_constraintVertical_bias="0.75" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="255dp"
+            android:layout_height="29dp"
+            android:layout_marginTop="16dp"
+            android:text="Lista de Pedidos"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toTopOf="@+id/listapedidos"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/containerComponents" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
