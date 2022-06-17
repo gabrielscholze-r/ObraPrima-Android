@@ -1,15 +1,26 @@
 package com.example.meuapp;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import androidx.recyclerview.widget.RecyclerView.Adapter;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.meuapp.adapter.RecycleAdapter;
 import com.example.meuapp.data.Database;
 import com.example.meuapp.data.LoginAtual;
 import com.example.meuapp.data.Pedidos;
@@ -17,7 +28,10 @@ import com.example.meuapp.data.Profissional;
 
 import org.w3c.dom.Text;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 
 public class TelaPrincipalCliente extends AppCompatActivity {
 
@@ -27,10 +41,15 @@ public class TelaPrincipalCliente extends AppCompatActivity {
     private Button bt_contratar2;
     private Button bt_contratar3;
     private int x,y,z;
+    private RecyclerView RView;
+    private String ClienteNome;
+    private ArrayList<Profissional> profissionais;
+    private RecycleAdapter.RecyclerViewClickListener listener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_tela_principal_cliente);
         x = 0;
         y = 0;
@@ -38,19 +57,12 @@ public class TelaPrincipalCliente extends AppCompatActivity {
 
         getSupportActionBar().hide();
         IniciarComponentes();
-        ArrayList<Profissional> profissionais = Database.getProfissionais();
+        profissionais = Database.getProfissionais();
+        RView = findViewById(R.id.recyclerView);
+        setAdapter();
         LoginAtual loginAtual = Database.getLoginAtual();
-
-
-        TextView et1 = findViewById(R.id.historico3);
-        et1.setText(profissionais.get(0).getNome()+"      "+profissionais.get(0).getRamo()+"      "+profissionais.get(0).getRating());
-
-        TextView et2 = findViewById(R.id.historico2);
-        et2.setText(profissionais.get(1).getNome()+"      "+profissionais.get(1).getRamo()+"      "+profissionais.get(1).getRating());
-
-        TextView et3 = findViewById(R.id.historico);
-        et3.setText(profissionais.get(2).getNome()+"      "+profissionais.get(2).getRamo()+"      "+profissionais.get(2).getRating());
-
+        ClienteNome = loginAtual.getCliente().getNome();
+        ArrayList<String> views = new ArrayList<>();
         TextView titulo = findViewById(R.id.textTitulo);
         titulo.setText("Bem vindo\n"+loginAtual.getCliente().getNome()+"!");
 
@@ -75,54 +87,49 @@ public class TelaPrincipalCliente extends AppCompatActivity {
             }
 
         });
+    }
 
-        bt_contratar1.setOnClickListener(new View.OnClickListener() {
+    private void setAdapter() {
+        setOnClickListener();
+        RecycleAdapter adapter = new RecycleAdapter(profissionais, listener);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
+        RView.setLayoutManager(layoutManager);
+        RView.setItemAnimator(new DefaultItemAnimator());
+        RView.setAdapter(adapter);
+    }
+
+    private void setOnClickListener() {
+        listener = new RecycleAdapter.RecyclerViewClickListener() {
             @Override
-            public void onClick(View view) {
-                if(x < 1){
-                    ArrayList<Pedidos> pedidos =  profissionais.get(0).getPedidos();
-                    pedidos.add(new Pedidos("18","05","Visita tecnica", loginAtual.getCliente().getNome()));
-                    et1.setText("Pedido Feito!");
-                    x++;
-                }
+            public void onClick(View v, int position) {
+                LocalDate d = LocalDate.now();
+                ArrayList<Pedidos> pedidos = profissionais.get(position).getPedidos();
+                pedidos.add(new Pedidos(d.getDayOfMonth(),d.getMonth().toString(),"Visita Tecnica", ClienteNome));
+                profissionais.get(position).setPedidos(pedidos);
+                Database.setProfissionais(profissionais);
+                Toast.makeText(getApplicationContext(),"Pedido feito!",Toast.LENGTH_SHORT).show();
             }
-
-        });
-
-        bt_contratar2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(y < 1){
-                    ArrayList<Pedidos> pedidos =  profissionais.get(1).getPedidos();
-                    pedidos.add(new Pedidos("18","05","Visita tecnica", loginAtual.getCliente().getNome()));
-                    et3.setText("Pedido Feito!");
-                    y++;
-                }
-            }
-
-        });
-
-        bt_contratar3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(z < 1){
-                    ArrayList<Pedidos> pedidos =  profissionais.get(2).getPedidos();
-                    pedidos.add(new Pedidos("18","05","Visita tecnica", loginAtual.getCliente().getNome()));
-                    et2.setText("Pedido Feito!");
-                    z++;
-                }
-            }
-
-        });
+        };
     }
 
 
-
+    public void adicionarPedido(TextView v){
+        LocalDate date = LocalDate.now();
+        ArrayList<Profissional> profissionais = Database.getProfissionais();
+        String t = v.getText().toString();
+        String[] splitted = t.split(" ");
+        for (Profissional p : profissionais){
+            if(p.getNome().equals(splitted[0])){
+                ArrayList<Pedidos> p2 = p.getPedidos();
+                p2.add(new Pedidos(date.getDayOfMonth(),date.getMonth().toString(),"Visita Tecnica",ClienteNome));
+            }
+        }
+    }
     private void IniciarComponentes(){
         bt_deslogar = findViewById(R.id.bt_deslogar);
         bt_historico = findViewById(R.id.bt_historico);
-        bt_contratar1 = findViewById(R.id.bt_Contratar1);
-        bt_contratar2 = findViewById(R.id.bt_Contratar2);
-        bt_contratar3 = findViewById(R.id.bt_Contratar3);
+//        bt_contratar1 = findViewById(R.id.bt_Contratar1);
+//        bt_contratar2 = findViewById(R.id.bt_Contratar2);
+//        bt_contratar3 = findViewById(R.id.bt_Contratar3);
     }
 }
