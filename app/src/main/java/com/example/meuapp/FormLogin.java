@@ -28,7 +28,7 @@ public class FormLogin extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Database.loadDatabase();
+//        Database.loadDatabase();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_form_login);
 
