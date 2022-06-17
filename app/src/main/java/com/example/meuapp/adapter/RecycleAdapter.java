@@ -15,17 +15,25 @@ import java.util.ArrayList;
 
 public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.MyViewHolder> {
     private ArrayList<Profissional> profissionais;
+    private RecyclerViewClickListener listener;
 
-    public RecycleAdapter(ArrayList<Profissional> profissionais) {
+    public RecycleAdapter(ArrayList<Profissional> profissionais, RecyclerViewClickListener listener) {
         this.profissionais = profissionais;
+        this.listener = listener;
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder{
+    public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
         private TextView nameText;
         public MyViewHolder(final View view) {
             super(view);
             nameText = view.findViewById(R.id.profissional);
+            view.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View view) {
+            listener.onClick(view, getAdapterPosition());
         }
     }
 
@@ -47,5 +55,9 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.MyViewHo
     @Override
     public int getItemCount() {
         return profissionais.size();
+    }
+
+    public interface RecyclerViewClickListener{
+        void onClick(View v, int position);
     }
 }

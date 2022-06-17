@@ -18,6 +18,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.meuapp.adapter.RecycleAdapter;
 import com.example.meuapp.data.Database;
@@ -43,6 +44,7 @@ public class TelaPrincipalCliente extends AppCompatActivity {
     private RecyclerView RView;
     private String ClienteNome;
     private ArrayList<Profissional> profissionais;
+    private RecycleAdapter.RecyclerViewClickListener listener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,36 +63,6 @@ public class TelaPrincipalCliente extends AppCompatActivity {
         LoginAtual loginAtual = Database.getLoginAtual();
         ClienteNome = loginAtual.getCliente().getNome();
         ArrayList<String> views = new ArrayList<>();
-
-
-//        RView.setOnTouchListener(new ListView.OnTouchListener() {
-//            @SuppressLint("ClickableViewAccessibility")
-//            @Override
-//            public boolean onTouch(View v, MotionEvent event) {
-//                int action = event.getAction();
-//                switch (action) {
-//                    case MotionEvent.ACTION_DOWN:
-//                        // Disallow ScrollView to intercept touch events.
-//                        v.getParent().requestDisallowInterceptTouchEvent(true);
-//                        break;
-//
-//                    case MotionEvent.ACTION_UP:
-//                        // Allow ScrollView to intercept touch events.
-//                        v.getParent().requestDisallowInterceptTouchEvent(false);
-//                        break;
-//                }
-//
-//                // Handle ListView touch events.
-//                v.onTouchEvent(event);
-//                return true;
-//            }
-//        });
-
-//        for (Profissional p : profissionais){
-//            String n = p.getNome() + " - "+p.getRamo() + " - " + p.getRating();
-//            views.add(n);
-//        }
-
         TextView titulo = findViewById(R.id.textTitulo);
         titulo.setText("Bem vindo\n"+loginAtual.getCliente().getNome()+"!");
 
@@ -115,54 +87,29 @@ public class TelaPrincipalCliente extends AppCompatActivity {
             }
 
         });
-
-
-//        bt_contratar1.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-////                if(x < 1){
-////                    ArrayList<Pedidos> pedidos =  profissionais.get(0).getPedidos();
-////                    pedidos.add(new Pedidos("18","05","Visita tecnica", loginAtual.getCliente().getNome()));
-////                    et1.setText("Pedido Feito!");
-////                    x++;
-////                }
-//            }
-//
-//        });
-
-//        bt_contratar2.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-////                if(y < 1){
-////                    ArrayList<Pedidos> pedidos =  profissionais.get(1).getPedidos();
-////                    pedidos.add(new Pedidos("18","05","Visita tecnica", loginAtual.getCliente().getNome()));
-////                    et3.setText("Pedido Feito!");
-////                    y++;
-////                }
-//            }
-//
-//        });
-
-//        bt_contratar3.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                if(z < 1){
-//                    ArrayList<Pedidos> pedidos =  profissionais.get(2).getPedidos();
-//                    pedidos.add(new Pedidos("18","05","Visita tecnica", loginAtual.getCliente().getNome()));
-//                    et2.setText("Pedido Feito!");
-//                    z++;
-//                }
-//            }
-//
-//        });
     }
 
     private void setAdapter() {
-        RecycleAdapter adapter = new RecycleAdapter(profissionais);
+        setOnClickListener();
+        RecycleAdapter adapter = new RecycleAdapter(profissionais, listener);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
         RView.setLayoutManager(layoutManager);
         RView.setItemAnimator(new DefaultItemAnimator());
         RView.setAdapter(adapter);
+    }
+
+    private void setOnClickListener() {
+        listener = new RecycleAdapter.RecyclerViewClickListener() {
+            @Override
+            public void onClick(View v, int position) {
+                LocalDate d = LocalDate.now();
+                ArrayList<Pedidos> pedidos = profissionais.get(position).getPedidos();
+                pedidos.add(new Pedidos(d.getDayOfMonth(),d.getMonth().toString(),"Visita Tecnica", ClienteNome));
+                profissionais.get(position).setPedidos(pedidos);
+                Database.setProfissionais(profissionais);
+                Toast.makeText(getApplicationContext(),"Pedido feito!",Toast.LENGTH_SHORT).show();
+            }
+        };
     }
 
 

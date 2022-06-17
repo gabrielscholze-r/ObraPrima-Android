@@ -21,10 +21,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
+            android:layout_marginBottom="108dp"
             android:text="Bem vindo -----"
             android:textColor="@color/white"
             android:textSize="40dp"
             android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/bt_historico"
             app:layout_constraintEnd_toStartOf="@+id/containerProfile"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -41,6 +43,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
+            app:tint="@color/black"
             android:id="@+id/containerIcon"
             android:layout_width="52dp"
             android:layout_height="45dp"
