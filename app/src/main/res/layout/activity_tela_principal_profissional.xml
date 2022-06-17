@@ -18,20 +18,20 @@
         <View
             android:id="@+id/containerComponents"
             style="@style/ContainerComponents"
-            android:layout_width="270dp"
-            android:layout_height="184dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="282dp"
+            android:layout_height="276dp"
+            android:layout_marginBottom="123dp"
+            app:layout_constraintBottom_toTopOf="@+id/textView"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.546"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.233" />
+            app:layout_constraintHorizontal_bias="0.488"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <CalendarView
             android:id="@+id/calendarView2"
-            android:layout_width="271dp"
-            android:layout_height="229dp"
-            android:layout_marginTop="131dp"
+            android:layout_width="280dp"
+            android:layout_height="319dp"
+            android:layout_marginTop="88dp"
+            android:layout_marginBottom="19dp"
             android:backgroundTint="@color/black"
             android:dateTextAppearance="@style/CalenderViewDateCustomText"
             android:drawableTint="#000000"
@@ -41,10 +41,12 @@
             android:theme="@style/CalenderViewCustom"
             android:unfocusedMonthDateColor="@style/CalenderViewDateCustomText"
             android:weekDayTextAppearance="@color/black"
+            app:layout_constraintBottom_toTopOf="@+id/textView"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.535"
+            app:layout_constraintHorizontal_bias="0.496"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
 
         <View
             android:id="@+id/containerProfile"
@@ -117,34 +119,28 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0" />
 
-        <ListView
-            android:textAlignment="center"
-            android:id="@+id/listapedidos"
-            android:layout_width="330dp"
-            android:layout_height="369dp"
-            android:layout_marginTop="1dp"
-            android:layout_marginBottom="1dp"
-            android:background="#FFFFFF"
-            app:layout_constraintBottom_toTopOf="@+id/bt_deslogar"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.493"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/calendarView2"
-            app:layout_constraintVertical_bias="0.75" />
-
         <TextView
             android:id="@+id/textView"
             android:layout_width="255dp"
             android:layout_height="29dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginBottom="5dp"
             android:text="Lista de Pedidos"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="20dp"
-            app:layout_constraintBottom_toTopOf="@+id/listapedidos"
+            app:layout_constraintBottom_toTopOf="@+id/recyclerView2"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/containerComponents" />
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView2"
+            android:layout_width="342dp"
+            android:layout_height="334dp"
+            android:layout_marginBottom="1dp"
+            android:background="#FFFFFF"
+            app:layout_constraintBottom_toTopOf="@+id/bt_deslogar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

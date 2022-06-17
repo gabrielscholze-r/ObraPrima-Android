@@ -104,7 +104,7 @@ public class TelaPrincipalCliente extends AppCompatActivity {
             public void onClick(View v, int position) {
                 LocalDate d = LocalDate.now();
                 ArrayList<Pedidos> pedidos = profissionais.get(position).getPedidos();
-                pedidos.add(new Pedidos(d.getDayOfMonth(),d.getMonth().toString(),"Visita Tecnica", ClienteNome));
+                pedidos.add(new Pedidos(d.getDayOfMonth(),d.getMonth().toString(),"Visita Tecnica", ClienteNome, profissionais.get(position).getNome()));
                 profissionais.get(position).setPedidos(pedidos);
                 Database.setProfissionais(profissionais);
                 Toast.makeText(getApplicationContext(),"Pedido feito!",Toast.LENGTH_SHORT).show();
@@ -113,18 +113,6 @@ public class TelaPrincipalCliente extends AppCompatActivity {
     }
 
 
-    public void adicionarPedido(TextView v){
-        LocalDate date = LocalDate.now();
-        ArrayList<Profissional> profissionais = Database.getProfissionais();
-        String t = v.getText().toString();
-        String[] splitted = t.split(" ");
-        for (Profissional p : profissionais){
-            if(p.getNome().equals(splitted[0])){
-                ArrayList<Pedidos> p2 = p.getPedidos();
-                p2.add(new Pedidos(date.getDayOfMonth(),date.getMonth().toString(),"Visita Tecnica",ClienteNome));
-            }
-        }
-    }
     private void IniciarComponentes(){
         bt_deslogar = findViewById(R.id.bt_deslogar);
         bt_historico = findViewById(R.id.bt_historico);
