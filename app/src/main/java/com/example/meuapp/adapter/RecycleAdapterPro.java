@@ -16,17 +16,25 @@ import java.util.ArrayList;
 
 public class RecycleAdapterPro extends RecyclerView.Adapter<RecycleAdapterPro.MyViewHolder> {
     private ArrayList<Pedidos> pedidos;
+    private RecycleAdapterPro.RecyclerViewClickListener listener;
 
-    public RecycleAdapterPro(ArrayList<Pedidos> pedidos) {
+    public RecycleAdapterPro(ArrayList<Pedidos> pedidos, RecycleAdapterPro.RecyclerViewClickListener listener) {
         this.pedidos = pedidos;
+        this.listener = listener;
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder{
+    public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
         private TextView nameText;
         public MyViewHolder(final View view) {
             super(view);
             nameText = view.findViewById(R.id.profissional);
+            view.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View view) {
+            listener.onClick(view, getAdapterPosition());
         }
     }
 
@@ -49,4 +57,7 @@ public class RecycleAdapterPro extends RecyclerView.Adapter<RecycleAdapterPro.My
         return pedidos.size();
     }
 
+    public interface RecyclerViewClickListener{
+        void onClick(View v, int position);
+    }
 }
