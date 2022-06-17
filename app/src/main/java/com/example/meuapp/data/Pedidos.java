@@ -1,12 +1,12 @@
 package com.example.meuapp.data;
 
 public class Pedidos {
-    private String dia;
+    private int dia;
     private String mes;
     private String tituloPedido;
     private String nomeCliente;
 
-    public Pedidos(String dia, String mes, String tituloPedido, String nomeCliente) {
+    public Pedidos(int dia, String mes, String tituloPedido, String nomeCliente) {
         this.dia = dia;
         this.mes = mes;
         this.tituloPedido = tituloPedido;
@@ -21,11 +21,11 @@ public class Pedidos {
         this.nomeCliente = nomeCliente;
     }
 
-    public String getDia() {
+    public int getDia() {
         return dia;
     }
 
-    public void setDia(String dia) {
+    public void setDia(int dia) {
         this.dia = dia;
     }
 

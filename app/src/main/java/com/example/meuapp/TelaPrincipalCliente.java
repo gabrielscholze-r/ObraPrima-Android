@@ -2,12 +2,16 @@ package com.example.meuapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.meuapp.data.Database;
@@ -17,7 +21,10 @@ import com.example.meuapp.data.Profissional;
 
 import org.w3c.dom.Text;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 
 public class TelaPrincipalCliente extends AppCompatActivity {
 
@@ -27,6 +34,8 @@ public class TelaPrincipalCliente extends AppCompatActivity {
     private Button bt_contratar2;
     private Button bt_contratar3;
     private int x,y,z;
+    private ListView listView;
+    private String ClienteNome;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,16 +49,41 @@ public class TelaPrincipalCliente extends AppCompatActivity {
         IniciarComponentes();
         ArrayList<Profissional> profissionais = Database.getProfissionais();
         LoginAtual loginAtual = Database.getLoginAtual();
+        ClienteNome = loginAtual.getCliente().getNome();
+        ArrayList<String> views = new ArrayList<>();
+        listView = findViewById(R.id.listPro);
+        listView.setBackgroundResource(R.drawable.custom_shape);
 
+        listView.setOnTouchListener(new ListView.OnTouchListener() {
+            @SuppressLint("ClickableViewAccessibility")
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                int action = event.getAction();
+                switch (action) {
+                    case MotionEvent.ACTION_DOWN:
+                        // Disallow ScrollView to intercept touch events.
+                        v.getParent().requestDisallowInterceptTouchEvent(true);
+                        break;
 
-        TextView et1 = findViewById(R.id.historico3);
-        et1.setText(profissionais.get(0).getNome()+"      "+profissionais.get(0).getRamo()+"      "+profissionais.get(0).getRating());
+                    case MotionEvent.ACTION_UP:
+                        // Allow ScrollView to intercept touch events.
+                        v.getParent().requestDisallowInterceptTouchEvent(false);
+                        break;
+                }
 
-        TextView et2 = findViewById(R.id.historico2);
-        et2.setText(profissionais.get(1).getNome()+"      "+profissionais.get(1).getRamo()+"      "+profissionais.get(1).getRating());
+                // Handle ListView touch events.
+                v.onTouchEvent(event);
+                return true;
+            }
+        });
 
-        TextView et3 = findViewById(R.id.historico);
-        et3.setText(profissionais.get(2).getNome()+"      "+profissionais.get(2).getRamo()+"      "+profissionais.get(2).getRating());
+        for (Profissional p : profissionais){
+            String n = p.getNome() + " - "+p.getRamo() + " - " + p.getRating();
+            views.add(n);
+        }
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.list_pro,views);
+        listView.setAdapter(adapter);
+
 
         TextView titulo = findViewById(R.id.textTitulo);
         titulo.setText("Bem vindo\n"+loginAtual.getCliente().getNome()+"!");
@@ -76,53 +110,65 @@ public class TelaPrincipalCliente extends AppCompatActivity {
 
         });
 
-        bt_contratar1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(x < 1){
-                    ArrayList<Pedidos> pedidos =  profissionais.get(0).getPedidos();
-                    pedidos.add(new Pedidos("18","05","Visita tecnica", loginAtual.getCliente().getNome()));
-                    et1.setText("Pedido Feito!");
-                    x++;
-                }
-            }
 
-        });
+//        bt_contratar1.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+////                if(x < 1){
+////                    ArrayList<Pedidos> pedidos =  profissionais.get(0).getPedidos();
+////                    pedidos.add(new Pedidos("18","05","Visita tecnica", loginAtual.getCliente().getNome()));
+////                    et1.setText("Pedido Feito!");
+////                    x++;
+////                }
+//            }
+//
+//        });
 
-        bt_contratar2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(y < 1){
-                    ArrayList<Pedidos> pedidos =  profissionais.get(1).getPedidos();
-                    pedidos.add(new Pedidos("18","05","Visita tecnica", loginAtual.getCliente().getNome()));
-                    et3.setText("Pedido Feito!");
-                    y++;
-                }
-            }
+//        bt_contratar2.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+////                if(y < 1){
+////                    ArrayList<Pedidos> pedidos =  profissionais.get(1).getPedidos();
+////                    pedidos.add(new Pedidos("18","05","Visita tecnica", loginAtual.getCliente().getNome()));
+////                    et3.setText("Pedido Feito!");
+////                    y++;
+////                }
+//            }
+//
+//        });
 
-        });
-
-        bt_contratar3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(z < 1){
-                    ArrayList<Pedidos> pedidos =  profissionais.get(2).getPedidos();
-                    pedidos.add(new Pedidos("18","05","Visita tecnica", loginAtual.getCliente().getNome()));
-                    et2.setText("Pedido Feito!");
-                    z++;
-                }
-            }
-
-        });
+//        bt_contratar3.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                if(z < 1){
+//                    ArrayList<Pedidos> pedidos =  profissionais.get(2).getPedidos();
+//                    pedidos.add(new Pedidos("18","05","Visita tecnica", loginAtual.getCliente().getNome()));
+//                    et2.setText("Pedido Feito!");
+//                    z++;
+//                }
+//            }
+//
+//        });
     }
 
 
-
+    public void adicionarPedido(TextView v){
+        LocalDate date = LocalDate.now();
+        ArrayList<Profissional> profissionais = Database.getProfissionais();
+        String t = v.getText().toString();
+        String[] splitted = t.split(" ");
+        for (Profissional p : profissionais){
+            if(p.getNome().equals(splitted[0])){
+                ArrayList<Pedidos> p2 = p.getPedidos();
+                p2.add(new Pedidos(date.getDayOfMonth(),date.getMonth().toString(),"Visita Tecnica",ClienteNome));
+            }
+        }
+    }
     private void IniciarComponentes(){
         bt_deslogar = findViewById(R.id.bt_deslogar);
         bt_historico = findViewById(R.id.bt_historico);
-        bt_contratar1 = findViewById(R.id.bt_Contratar1);
-        bt_contratar2 = findViewById(R.id.bt_Contratar2);
-        bt_contratar3 = findViewById(R.id.bt_Contratar3);
+//        bt_contratar1 = findViewById(R.id.bt_Contratar1);
+//        bt_contratar2 = findViewById(R.id.bt_Contratar2);
+//        bt_contratar3 = findViewById(R.id.bt_Contratar3);
     }
 }

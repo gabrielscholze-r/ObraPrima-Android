@@ -89,132 +89,35 @@
             app:layout_constraintStart_toStartOf="parent" />
 
 
-        <View
-            android:id="@+id/containerComponents"
-            style="@style/ContainerComponents"
-            android:layout_width="369dp"
-            android:layout_height="295dp"
-            app:layout_constraintBottom_toTopOf="@+id/bt_deslogar"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.428"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <TextView
-            android:textColorHint="@color/black"
-            android:textColor="@color/black"
-            android:id="@+id/historico"
-            style="@style/Edit_Text"
-            android:layout_width="323dp"
-            android:layout_height="68dp"
-            android:layout_marginStart="9dp"
-            android:layout_marginTop="12dp"
-            android:layout_marginEnd="30dp"
-            android:maxLength="100"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="@+id/containerComponents"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="@+id/containerComponents"
-            app:layout_constraintTop_toBottomOf="@+id/historico3" />
-
-        <TextView
-            android:textColorHint="@color/black"
-            android:textColor="@color/black"
-            android:id="@+id/historico3"
-            style="@style/Edit_Text"
-            android:layout_width="323dp"
-            android:layout_height="68dp"
-            android:layout_marginStart="9dp"
-            android:layout_marginTop="48dp"
-            android:layout_marginEnd="30dp"
-            android:maxLength="100"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="@+id/containerComponents"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="@+id/containerComponents"
-            app:layout_constraintTop_toTopOf="@+id/containerComponents" />
-
-        <TextView
-            android:textColorHint="@color/black"
-            android:textColor="@color/black"
-            android:id="@+id/historico2"
-            style="@style/Edit_Text"
-            android:layout_width="323dp"
-            android:layout_height="68dp"
-            android:layout_marginStart="9dp"
-            android:layout_marginTop="12dp"
-            android:layout_marginEnd="30dp"
-            android:maxLength="100"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="@+id/containerComponents"
-            app:layout_constraintTop_toBottomOf="@+id/historico" />
-
-
-        <EditText
-            android:textColorHint="@color/black"
-            android:textColor="@color/black"
-            android:id="@+id/editTextTextPersonName3"
-            android:layout_width="323dp"
-            android:layout_height="48dp"
-            android:layout_marginTop="24dp"
-            android:ems="10"
-            android:hint="Buscar novo serviço"
-            android:textSize="21dp"
-            app:layout_constraintBottom_toTopOf="@+id/historico3"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.42"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/bt_historico" />
-
         <Button
             android:id="@+id/bt_historico"
             android:layout_width="271dp"
             android:layout_height="78dp"
-            android:layout_marginBottom="5dp"
+            android:layout_marginBottom="1dp"
             android:backgroundTint="@android:color/black"
             android:text="Avaliar últimos serviços"
             android:textColor="@color/white"
-            app:layout_constraintBottom_toTopOf="@+id/containerComponents"
+            app:layout_constraintBottom_toTopOf="@+id/listPro"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
-        <Button
-            android:id="@+id/bt_Contratar1"
-            android:layout_width="137dp"
-            android:layout_height="38dp"
-            android:layout_marginTop="40dp"
-            android:backgroundTint="@android:color/black"
-            android:text="Contratar"
-            android:textColor="@color/white"
-            app:layout_constraintEnd_toEndOf="@+id/historico3"
-            app:layout_constraintStart_toStartOf="@+id/historico3"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3" />
-
-        <Button
-            android:id="@+id/bt_Contratar2"
-            android:layout_width="137dp"
-            android:layout_height="38dp"
-            android:layout_marginTop="40dp"
-            android:backgroundTint="@android:color/black"
-            android:text="Contratar"
-            android:textColor="@color/white"
-            app:layout_constraintEnd_toEndOf="@+id/historico"
-            app:layout_constraintStart_toStartOf="@+id/historico"
-            app:layout_constraintTop_toBottomOf="@+id/bt_Contratar1" />
-
-        <Button
-            android:id="@+id/bt_Contratar3"
-            android:layout_width="137dp"
-            android:layout_height="38dp"
-            android:layout_marginTop="40dp"
-            android:backgroundTint="@android:color/black"
-            android:text="Contratar"
-            android:textColor="@color/white"
-            app:layout_constraintEnd_toEndOf="@+id/historico2"
-            app:layout_constraintStart_toStartOf="@+id/historico2"
-            app:layout_constraintTop_toBottomOf="@+id/bt_Contratar2" />
+        <ListView
+            android:id="@+id/listPro"
+            android:layout_width="365dp"
+            android:layout_height="328dp"
+            android:layout_marginBottom="1dp"
+            android:layout_weight="1"
+            android:background="#FFFFFF"
+            android:divider="@drawable/edit_text"
+            android:scrollbarSize="3dp"
+            android:scrollbarStyle="outsideOverlay"
+            android:scrollbars="vertical"
+            android:scrollingCache="true"
+            android:smoothScrollbar="true"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toTopOf="@+id/bt_deslogar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
