@@ -1,6 +1,10 @@
 package com.example.meuapp;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -8,12 +12,14 @@ import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import androidx.recyclerview.widget.RecyclerView.Adapter;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.example.meuapp.adapter.RecycleAdapter;
 import com.example.meuapp.data.Database;
 import com.example.meuapp.data.LoginAtual;
 import com.example.meuapp.data.Pedidos;
@@ -34,12 +40,14 @@ public class TelaPrincipalCliente extends AppCompatActivity {
     private Button bt_contratar2;
     private Button bt_contratar3;
     private int x,y,z;
-    private ListView listView;
+    private RecyclerView RView;
     private String ClienteNome;
+    private ArrayList<Profissional> profissionais;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_tela_principal_cliente);
         x = 0;
         y = 0;
@@ -47,43 +55,41 @@ public class TelaPrincipalCliente extends AppCompatActivity {
 
         getSupportActionBar().hide();
         IniciarComponentes();
-        ArrayList<Profissional> profissionais = Database.getProfissionais();
+        profissionais = Database.getProfissionais();
+        RView = findViewById(R.id.recyclerView);
+        setAdapter();
         LoginAtual loginAtual = Database.getLoginAtual();
         ClienteNome = loginAtual.getCliente().getNome();
         ArrayList<String> views = new ArrayList<>();
-        listView = findViewById(R.id.listPro);
-        listView.setBackgroundResource(R.drawable.custom_shape);
 
-        listView.setOnTouchListener(new ListView.OnTouchListener() {
-            @SuppressLint("ClickableViewAccessibility")
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                int action = event.getAction();
-                switch (action) {
-                    case MotionEvent.ACTION_DOWN:
-                        // Disallow ScrollView to intercept touch events.
-                        v.getParent().requestDisallowInterceptTouchEvent(true);
-                        break;
 
-                    case MotionEvent.ACTION_UP:
-                        // Allow ScrollView to intercept touch events.
-                        v.getParent().requestDisallowInterceptTouchEvent(false);
-                        break;
-                }
+//        RView.setOnTouchListener(new ListView.OnTouchListener() {
+//            @SuppressLint("ClickableViewAccessibility")
+//            @Override
+//            public boolean onTouch(View v, MotionEvent event) {
+//                int action = event.getAction();
+//                switch (action) {
+//                    case MotionEvent.ACTION_DOWN:
+//                        // Disallow ScrollView to intercept touch events.
+//                        v.getParent().requestDisallowInterceptTouchEvent(true);
+//                        break;
+//
+//                    case MotionEvent.ACTION_UP:
+//                        // Allow ScrollView to intercept touch events.
+//                        v.getParent().requestDisallowInterceptTouchEvent(false);
+//                        break;
+//                }
+//
+//                // Handle ListView touch events.
+//                v.onTouchEvent(event);
+//                return true;
+//            }
+//        });
 
-                // Handle ListView touch events.
-                v.onTouchEvent(event);
-                return true;
-            }
-        });
-
-        for (Profissional p : profissionais){
-            String n = p.getNome() + " - "+p.getRamo() + " - " + p.getRating();
-            views.add(n);
-        }
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.list_pro,views);
-        listView.setAdapter(adapter);
-
+//        for (Profissional p : profissionais){
+//            String n = p.getNome() + " - "+p.getRamo() + " - " + p.getRating();
+//            views.add(n);
+//        }
 
         TextView titulo = findViewById(R.id.textTitulo);
         titulo.setText("Bem vindo\n"+loginAtual.getCliente().getNome()+"!");
@@ -149,6 +155,14 @@ public class TelaPrincipalCliente extends AppCompatActivity {
 //            }
 //
 //        });
+    }
+
+    private void setAdapter() {
+        RecycleAdapter adapter = new RecycleAdapter(profissionais);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
+        RView.setLayoutManager(layoutManager);
+        RView.setItemAnimator(new DefaultItemAnimator());
+        RView.setAdapter(adapter);
     }
 
 

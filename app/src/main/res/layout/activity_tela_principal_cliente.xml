@@ -17,27 +17,6 @@
 
 
         <TextView
-            android:id="@+id/editTextTextPersonName2"
-            android:layout_width="258dp"
-            android:layout_height="48dp"
-            android:layout_marginTop="89dp"
-            android:layout_marginBottom="23dp"
-            android:backgroundTint="@color/white"
-            android:drawableRight="@drawable/ic_search"
-            android:drawableTint="#FFFFFF"
-            android:ems="10"
-            android:hint="Pesquisar serviços"
-            android:inputType="textPersonName"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white"
-            android:textSize="21dp"
-            app:layout_constraintBottom_toTopOf="@+id/bt_historico"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.496"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textTitulo" />
-
-        <TextView
             android:id="@+id/textTitulo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -93,31 +72,36 @@
             android:id="@+id/bt_historico"
             android:layout_width="271dp"
             android:layout_height="78dp"
-            android:layout_marginBottom="1dp"
+            android:layout_marginBottom="64dp"
             android:backgroundTint="@android:color/black"
             android:text="Avaliar últimos serviços"
             android:textColor="@color/white"
-            app:layout_constraintBottom_toTopOf="@+id/listPro"
+            app:layout_constraintBottom_toTopOf="@+id/textView7"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
-        <ListView
-            android:id="@+id/listPro"
-            android:layout_width="365dp"
-            android:layout_height="328dp"
-            android:layout_marginBottom="1dp"
-            android:layout_weight="1"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="356dp"
+            android:layout_height="376dp"
+            android:layout_marginBottom="44dp"
             android:background="#FFFFFF"
-            android:divider="@drawable/edit_text"
-            android:scrollbarSize="3dp"
-            android:scrollbarStyle="outsideOverlay"
-            android:scrollbars="vertical"
-            android:scrollingCache="true"
-            android:smoothScrollbar="true"
-            android:textAlignment="center"
             app:layout_constraintBottom_toTopOf="@+id/bt_deslogar"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.491"
             app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="291dp"
+            android:layout_height="29dp"
+            android:layout_marginBottom="16dp"
+            android:text="Profissionais Disponíveis"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toTopOf="@+id/recyclerView"
+            tools:layout_editor_absoluteX="60dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
