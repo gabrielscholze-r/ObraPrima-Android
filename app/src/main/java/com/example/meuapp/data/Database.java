@@ -48,28 +48,28 @@ public class Database {
 
         ArrayList<Pedidos> pedidosEncanador = encanador.getPedidos();
 
-        pedidosEncanador.add(new Pedidos(10, "06", "Visita tecnica", "Sergio"));
-        pedidosEncanador.add(new Pedidos(20, "06", "Visita tecnica", "Claudio"));
-        pedidosEncanador.add(new Pedidos(10, "07", "Visita tecnica", "Roberto"));
-        pedidosEncanador.add(new Pedidos(20, "07", "Visita tecnica", "Sergio"));
+        pedidosEncanador.add(new Pedidos(10, "06", "Visita tecnica", "Sergio", "Antonio"));
+        pedidosEncanador.add(new Pedidos(20, "06", "Visita tecnica", "Claudio", "Antonio"));
+        pedidosEncanador.add(new Pedidos(10, "07", "Visita tecnica", "Roberto", "Antonio"));
+        pedidosEncanador.add(new Pedidos(20, "07", "Visita tecnica", "Sergio", "Antonio"));
 
         encanador.setPedidos(pedidosEncanador);
 
         ArrayList<Pedidos> pedidosPedreiro = pedreiro.getPedidos();
 
-        pedidosPedreiro.add(new Pedidos(10, "06", "Visita tecnica", "Sergio"));
-        pedidosPedreiro.add(new Pedidos(20, "06", "Visita tecnica", "Claudio"));
-        pedidosPedreiro.add(new Pedidos(10, "07", "Visita tecnica", "Roberto"));
-        pedidosPedreiro.add(new Pedidos(20, "07", "Visita tecnica", "Sergio"));
+        pedidosPedreiro.add(new Pedidos(10, "06", "Visita tecnica", "Sergio","Luis"));
+        pedidosPedreiro.add(new Pedidos(20, "06", "Visita tecnica", "Claudio","Luis"));
+        pedidosPedreiro.add(new Pedidos(10, "07", "Visita tecnica", "Roberto","Luis"));
+        pedidosPedreiro.add(new Pedidos(20, "07", "Visita tecnica", "Sergio","Luis"));
 
         pedreiro.setPedidos(pedidosPedreiro);
 
         ArrayList<Pedidos> pedidosEletricista = eletricista.getPedidos();
 
-        pedidosEletricista.add(new Pedidos(10, "06", "Visita tecnica", "Roberto"));
-        pedidosEletricista.add(new Pedidos(20, "06", "Visita tecnica", "Sergio"));
-        pedidosEletricista.add(new Pedidos(10, "07", "Visita tecnica", "Claudio"));
-        pedidosEletricista.add(new Pedidos(20, "07", "Visita tecnica", "Sergio"));
+        pedidosEletricista.add(new Pedidos(10, "06", "Visita tecnica", "Roberto","Rogerio"));
+        pedidosEletricista.add(new Pedidos(20, "06", "Visita tecnica", "Sergio","Rogerio"));
+        pedidosEletricista.add(new Pedidos(10, "07", "Visita tecnica", "Claudio","Rogerio"));
+        pedidosEletricista.add(new Pedidos(20, "07", "Visita tecnica", "Sergio","Rogerio"));
 
         eletricista.setPedidos(pedidosEletricista);
     }
