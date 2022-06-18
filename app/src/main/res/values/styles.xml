@@ -30,6 +30,10 @@
     <style name="Recycler_view">
         <item name="android:background">@drawable/prolist</item>
     </style>
+
+    <style name="text_border">
+        <item name="android:background">@drawable/text_border</item>
+    </style>
     
     <style name="ButtonEntrar">
         <item name="android:layout_width">match_parent</item>

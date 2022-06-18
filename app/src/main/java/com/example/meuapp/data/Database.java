@@ -97,4 +97,21 @@ public class Database {
     public static void setLoginAtual(LoginAtual loginAtual) {
         Database.loginAtual = loginAtual;
     }
+
+    public static Profissional findProfissionalByName(String name){
+        for(Profissional p : profissionais){
+            if(p.getNome().equals(name)){
+                return p;
+            }
+        }
+        return null;
+    }
+
+    public static void removeProfissionalByName(String name){
+        for (Profissional p : profissionais){
+            if(p.getNome().equals(name)){
+                profissionais.remove(p);
+            }
+        }
+    }
 }

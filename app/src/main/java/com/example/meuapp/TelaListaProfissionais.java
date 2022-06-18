@@ -55,7 +55,9 @@ public class TelaListaProfissionais extends AppCompatActivity {
         listener = new RecycleAdapter.RecyclerViewClickListener() {
             @Override
             public void onClick(View v, int position) {
-                System.out.println(profissionais.get(position).getNome());
+                Intent intent = new Intent(TelaListaProfissionais.this, TelaPerfilProfissional.class);
+                intent.putExtra("nomeProfissional", profissionais.get(position).getNome());
+                startActivity(intent);
             }
         };
     }

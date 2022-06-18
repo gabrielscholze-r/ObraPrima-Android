@@ -48,12 +48,7 @@ public class TelaPrincipalCliente extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_tela_principal_cliente);
-        x = 0;
-        y = 0;
-        z = 0;
-
         getSupportActionBar().hide();
         IniciarComponentes();
         profissionais = Database.getProfissionais();
@@ -75,7 +70,6 @@ public class TelaPrincipalCliente extends AppCompatActivity {
             }
 
         });
-
         bt_historico.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
