@@ -47,13 +47,15 @@ public class FormCadastroProfissional extends AppCompatActivity {
                 String confirmarSenhaString = confirmarSenha.getText().toString();
                 EditText ramoServico = (EditText)findViewById(R.id.ramodoservico);
                 String ramoServicoString = ramoServico.getText().toString();
+                EditText bio = (EditText) findViewById(R.id.editBio);
+                String bioString = bio.getText().toString();
                 if(senhaString.equals(confirmarSenhaString)){
                     if(nomeString.equals("") || emailString.equals("") || cpfString.equals("") || telefoneString.equals("") ||
                             senhaString.equals("") || confirmarSenhaString.equals("") || ramoServicoString.equals("")){
                         TextView error = findViewById(R.id.errorMessage2);
                         error.setText("Informações faltando");
                     } else{
-                        Profissional profissional = new Profissional(nomeString,telefoneString,cpfString,ramoServicoString,0.0);
+                        Profissional profissional = new Profissional(nomeString,telefoneString,cpfString,ramoServicoString,0.0,emailString, senhaString,bioString);
                         profissionais.add(profissional);
                         Database.setProfissionais(profissionais);
                         Intent intent = new Intent(FormCadastroProfissional.this, FormLogin.class);

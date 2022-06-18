@@ -44,14 +44,14 @@
         <View
             android:id="@+id/containerComponents"
             style="@style/ContainerComponents"
-            android:layout_width="300dp"
-            android:layout_height="500dp"
+            android:layout_width="304dp"
+            android:layout_height="675dp"
             app:layout_constraintBottom_toTopOf="@+id/bt_cadastrar"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/title_cadastro_profissional"
-            app:layout_constraintVertical_bias="0.0" />
-
+            app:layout_constraintVertical_bias="0.257" />
 
         <EditText
 
@@ -129,58 +129,70 @@
 
 
         <EditText
+            android:id="@+id/editBio"
+            android:layout_width="204dp"
+            android:layout_height="108dp"
+            android:layout_marginTop="44dp"
+            android:drawableRight="@drawable/ic_service"
             android:drawableTint="@color/black"
-            android:textColorHint="@color/black"
+            android:ems="10"
+            android:hint="Descrição"
+            android:inputType="phone"
             android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextPhone" />
+
+        <EditText
             android:id="@+id/createPassword"
-            android:drawableRight="@drawable/ic_password"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="41dp"
+            android:drawableRight="@drawable/ic_password"
+            android:drawableTint="@color/black"
             android:ems="10"
             android:hint="Crie sua senha"
             android:inputType="textPassword"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.502"
+            app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextPhone"
-            />
-
+            app:layout_constraintTop_toBottomOf="@+id/editBio" />
 
         <EditText
-            android:drawableTint="@color/black"
-            android:textColorHint="@color/black"
-            android:textColor="@color/black"
             android:id="@+id/confirmPassword"
-            android:drawableRight="@drawable/ic_password_confirm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="28dp"
+            android:drawableRight="@drawable/ic_password_confirm"
+            android:drawableTint="@color/black"
             android:ems="10"
             android:hint="Confirme sua senha"
             android:inputType="textPassword"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.502"
+            app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/createPassword"
-            />
-
+            app:layout_constraintTop_toBottomOf="@+id/createPassword" />
 
         <AutoCompleteTextView
-            android:drawableTint="@color/black"
-            android:textColorHint="@color/black"
-            android:textColor="@color/black"
             android:id="@+id/ramodoservico"
-            android:drawableRight="@drawable/ic_service"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="218dp"
+            android:layout_height="45dp"
             android:layout_marginTop="24dp"
+            android:drawableRight="@drawable/ic_service"
+            android:drawableTint="@color/black"
             android:hint="Ramo de serviço"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/confirmPassword"
-            />
-
+            app:layout_constraintTop_toBottomOf="@+id/confirmPassword" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/bt_cadastrar"
