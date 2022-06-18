@@ -40,6 +40,7 @@ public class TelaPrincipalCliente extends AppCompatActivity {
     private Button bt_contratar1;
     private Button bt_contratar2;
     private Button bt_contratar3;
+    private Button bt_lista_pro;
     private int x,y,z;
     private RecyclerView RView;
     private String ClienteNome;
@@ -87,6 +88,13 @@ public class TelaPrincipalCliente extends AppCompatActivity {
             }
 
         });
+        bt_lista_pro.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(TelaPrincipalCliente.this, TelaListaProfissionais.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void setAdapter() {
@@ -115,7 +123,8 @@ public class TelaPrincipalCliente extends AppCompatActivity {
 
     private void IniciarComponentes(){
         bt_deslogar = findViewById(R.id.bt_deslogar);
-        bt_historico = findViewById(R.id.bt_historico);
+        bt_historico = findViewById(R.id.bt_historico2);
+        bt_lista_pro = findViewById(R.id.bt_lista_pro);
 //        bt_contratar1 = findViewById(R.id.bt_Contratar1);
 //        bt_contratar2 = findViewById(R.id.bt_Contratar2);
 //        bt_contratar3 = findViewById(R.id.bt_Contratar3);

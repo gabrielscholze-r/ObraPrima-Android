@@ -21,12 +21,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            android:layout_marginBottom="108dp"
+            android:layout_marginBottom="57dp"
             android:text="Bem vindo -----"
             android:textColor="@color/white"
             android:textSize="40dp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/bt_historico"
+            app:layout_constraintBottom_toTopOf="@+id/bt_historico2"
             app:layout_constraintEnd_toStartOf="@+id/containerProfile"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -72,15 +72,28 @@
 
 
         <Button
-            android:id="@+id/bt_historico"
+            android:id="@+id/bt_lista_pro"
             android:layout_width="271dp"
             android:layout_height="78dp"
-            android:layout_marginBottom="64dp"
+            android:layout_marginBottom="36dp"
             android:backgroundTint="@android:color/black"
-            android:text="Meus pedidos"
+            android:text="Fazer Pedido"
             android:textColor="@color/white"
             app:layout_constraintBottom_toTopOf="@+id/textView7"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/bt_historico2"
+            android:layout_width="271dp"
+            android:layout_height="78dp"
+            android:layout_marginBottom="27dp"
+            android:backgroundTint="@android:color/black"
+            android:text="Meus pedidos"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@+id/bt_lista_pro"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.45"
             app:layout_constraintStart_toStartOf="parent" />
 
         <androidx.recyclerview.widget.RecyclerView

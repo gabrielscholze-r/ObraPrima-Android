@@ -14,15 +14,13 @@
 
             <category android:name="android.intent.category.LAUNCHER" />
         </intent-filter></activity>
-        <activity android:name=".FormCadastroProfissional"/>
-        <activity android:name=".FormCadastroCliente"/>
-        <activity android:name=".TelaPrincipalCliente"/>
-        <activity android:name=".TelaPrincipalProfissional"/>
-        <activity android:name=".TelaServicosCliente"/>
-        <activity android:name=".FormLogin"
-            >
-
-        </activity>
+        <activity android:name=".FormCadastroProfissional" android:launchMode="singleTask"/>
+        <activity android:name=".FormCadastroCliente" android:launchMode="singleTask"/>
+        <activity android:name=".TelaPrincipalCliente" android:launchMode="singleTask"/>
+        <activity android:name=".TelaPrincipalProfissional" android:launchMode="singleTask"/>
+        <activity android:name=".TelaServicosCliente" android:launchMode="singleTask"/>
+        <activity android:name=".FormLogin" android:launchMode="singleTask"/>
+        <activity android:name=".TelaListaProfissionais" android:launchMode="singleTask"/>
     </application>
 
 </manifest>
