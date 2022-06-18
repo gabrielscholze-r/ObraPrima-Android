@@ -42,10 +42,8 @@ public class TelaPrincipalCliente extends AppCompatActivity {
     private Button bt_contratar3;
     private Button bt_lista_pro;
     private int x,y,z;
-    private RecyclerView RView;
     private String ClienteNome;
     private ArrayList<Profissional> profissionais;
-    private RecycleAdapter.RecyclerViewClickListener listener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,8 +57,6 @@ public class TelaPrincipalCliente extends AppCompatActivity {
         getSupportActionBar().hide();
         IniciarComponentes();
         profissionais = Database.getProfissionais();
-        RView = findViewById(R.id.recyclerView);
-        setAdapter();
         LoginAtual loginAtual = Database.getLoginAtual();
         ClienteNome = loginAtual.getCliente().getNome();
         ArrayList<String> views = new ArrayList<>();
@@ -71,6 +67,7 @@ public class TelaPrincipalCliente extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(TelaPrincipalCliente.this, FormLogin.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 LoginAtual l = new LoginAtual();
                 Database.setLoginAtual(l);
                 startActivity(intent);
@@ -83,8 +80,8 @@ public class TelaPrincipalCliente extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(TelaPrincipalCliente.this, TelaServicosCliente.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_PREVIOUS_IS_TOP);
                 startActivity(intent);
-                finish();
             }
 
         });
@@ -92,33 +89,12 @@ public class TelaPrincipalCliente extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(TelaPrincipalCliente.this, TelaListaProfissionais.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_PREVIOUS_IS_TOP);
                 startActivity(intent);
             }
         });
     }
 
-    private void setAdapter() {
-        setOnClickListener();
-        RecycleAdapter adapter = new RecycleAdapter(profissionais, listener);
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
-        RView.setLayoutManager(layoutManager);
-        RView.setItemAnimator(new DefaultItemAnimator());
-        RView.setAdapter(adapter);
-    }
-
-    private void setOnClickListener() {
-        listener = new RecycleAdapter.RecyclerViewClickListener() {
-            @Override
-            public void onClick(View v, int position) {
-                LocalDate d = LocalDate.now();
-                ArrayList<Pedidos> pedidos = profissionais.get(position).getPedidos();
-                pedidos.add(new Pedidos(d.getDayOfMonth(),d.getMonth().toString(),"Visita Tecnica", ClienteNome, profissionais.get(position).getNome()));
-                profissionais.get(position).setPedidos(pedidos);
-                Database.setProfissionais(profissionais);
-                Toast.makeText(getApplicationContext(),"Pedido feito!",Toast.LENGTH_SHORT).show();
-            }
-        };
-    }
 
 
     private void IniciarComponentes(){

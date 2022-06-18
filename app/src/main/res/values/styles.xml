@@ -26,6 +26,10 @@
         <item name="android:padding">20dp</item>
         <item name="android:maxLength">30</item>
     </style>
+
+    <style name="Recycler_view">
+        <item name="android:background">@drawable/prolist</item>
+    </style>
     
     <style name="ButtonEntrar">
         <item name="android:layout_width">match_parent</item>

@@ -73,8 +73,11 @@ public class FormLogin extends AppCompatActivity {
 
                     }
                 }
-                TextView error = findViewById(R.id.errorMessage);
-                error.setText("Email não encontrado");
+                if(!logged){
+                    TextView error = findViewById(R.id.errorMessage);
+                    error.setText("Email não encontrado");
+                }
+
             }
         });
 
