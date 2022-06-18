@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="69dp"
             android:text="Bem vindo -----"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="40dp"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/textView3"
@@ -41,15 +41,13 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
-
             android:layout_width="356dp"
             android:layout_height="468dp"
             android:layout_marginBottom="44dp"
-            android:background="#FFFFFF"
+            android:background="#D5DDDDDD"
             app:layout_constraintBottom_toTopOf="@+id/bt_deslogar"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent">
-
         </androidx.recyclerview.widget.RecyclerView>
 
 
@@ -59,6 +57,7 @@
             android:layout_height="56dp"
             android:layout_marginTop="4dp"
             android:background="@android:color/transparent"
+            android:backgroundTint="@color/white"
             android:drawableRight="@drawable/ic_baseline_home_24"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -71,13 +70,13 @@
             android:layout_height="48dp"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="63dp"
-            android:backgroundTint="@color/white"
+            android:backgroundTint="@color/black"
             android:drawableRight="@drawable/ic_search"
-            android:drawableTint="#FFFFFF"
+            android:drawableTint="#000000"
             android:ems="10"
             android:hint="Pesquisar serviços"
             android:inputType="textPersonName"
-            android:textColorHint="@color/white"
+            android:textColorHint="@color/black"
             android:textSize="21dp"
             app:layout_constraintBottom_toTopOf="@+id/textTitulo2"
             app:layout_constraintEnd_toEndOf="parent"
@@ -109,7 +108,7 @@
             android:layout_height="16dp"
             android:text="CLIQUE EM QUALQUER SERVIÇO PARA CANCELAR"
             android:textAlignment="center"
-            android:textColor="#FF0000"
+            android:textColor="#FDEC56"
             android:textSize="15dp"
             app:layout_constraintBottom_toTopOf="@+id/recyclerView"
             app:layout_constraintEnd_toEndOf="parent"

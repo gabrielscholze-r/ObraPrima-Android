@@ -108,7 +108,7 @@
             android:layout_marginTop="12dp"
             android:layout_marginBottom="52dp"
             android:text="Olá ------!"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="30dp"
             android:textStyle="bold"
             app:flow_verticalAlign="center"
@@ -150,10 +150,11 @@
             android:layout_marginBottom="1dp"
             android:text="CLIQUE PARA CANCELAR UM SERVIÇO"
             android:textAlignment="center"
-            android:textColor="#FF0000"
+            android:textColor="#FDEC56"
             app:layout_constraintBottom_toTopOf="@+id/recyclerView2"
-            app:layout_constraintTop_toBottomOf="@+id/textView"
-            tools:layout_editor_absoluteX="35dp" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
