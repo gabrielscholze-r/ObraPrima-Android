@@ -24,8 +24,6 @@ public class FormLogin extends AppCompatActivity {
     private Button bt_entrar;
 
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Database.loadDatabase();
@@ -42,31 +40,42 @@ public class FormLogin extends AppCompatActivity {
         bt_entrar.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 //Para testar a outra tela mudar o "TelaServicosCliente.class" por "TelaPrincipalCliente.class"
-                EditText login = (EditText)findViewById(R.id.edit_email);
+                EditText login = (EditText) findViewById(R.id.edit_email);
+                EditText password = (EditText) findViewById(R.id.password);
                 boolean logged = false;
-                for(Cliente cliente : clientes){
-                    if(login.getText().toString().equals(cliente.getNome())){
-                        loginAtual.setCliente(cliente);
-                        Intent intent = new Intent(FormLogin.this, TelaPrincipalCliente.class);
-                        startActivity(intent);
-                        logged = true;
-                        break;
+                for (Cliente cliente : clientes) {
+                    if (login.getText().toString().equals(cliente.getEmail())) {
+                        if (password.getText().toString().equals(cliente.getSenha())) {
+                            loginAtual.setCliente(cliente);
+                            Intent intent = new Intent(FormLogin.this, TelaPrincipalCliente.class);
+                            startActivity(intent);
+                            logged = true;
+                            break;
+                        } else {
+                            TextView error = findViewById(R.id.errorMessage);
+                            error.setText("Email ou senha incorretos");
+                        }
+
 
                     }
                 }
-                for(Profissional profissional : profissionais){
-                    if(login.getText().toString().equals(profissional.getNome())){
-                        loginAtual.setProfissional(profissional);
-                        Intent intent = new Intent(FormLogin.this, TelaPrincipalProfissional.class);
-                        startActivity(intent);
-                        logged = true;
-                        break;
+                for (Profissional profissional : profissionais) {
+                    if (login.getText().toString().equals(profissional.getEmail())) {
+                        if (password.getText().toString().equals(profissional.getEmail())) {
+                            loginAtual.setProfissional(profissional);
+                            Intent intent = new Intent(FormLogin.this, TelaPrincipalProfissional.class);
+                            startActivity(intent);
+                            logged = true;
+                            break;
+                        } else {
+                            TextView error = findViewById(R.id.errorMessage);
+                            error.setText("Email ou senha incorretos");
+                        }
+
                     }
                 }
-                if(!logged){
-                    TextView error = findViewById(R.id.errorMessage);
-                    error.setText("Usuário não encontrado");
-                }
+                TextView error = findViewById(R.id.errorMessage);
+                error.setText("Email não encontrado");
             }
         });
 
@@ -80,9 +89,9 @@ public class FormLogin extends AppCompatActivity {
             }
         });
 
-        text_cadastro_profissional.setOnClickListener(new View.OnClickListener(){
+        text_cadastro_profissional.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v){
+            public void onClick(View v) {
 
                 Intent intent = new Intent(FormLogin.this, FormCadastroProfissional.class);
                 startActivity(intent);
@@ -91,7 +100,7 @@ public class FormLogin extends AppCompatActivity {
         });
     }
 
-    private void IniciarComponentes(){
+    private void IniciarComponentes() {
         text_cadastro_profissional = findViewById(R.id.cadastro_profissional);
         text_cadastro_cliente = findViewById(R.id.cadastro_cliente);
         bt_entrar = findViewById(R.id.bt_entrar);

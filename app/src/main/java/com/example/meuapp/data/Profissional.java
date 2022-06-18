@@ -7,16 +7,26 @@ public class Profissional {
     private String telefone;
     private String cpf;
     private String ramo;
+    private String email;
     private double rating;
     private ArrayList<Pedidos> pedidos;
 
-    public Profissional(String nome, String telefone, String cpf, String ramo, double rating) {
+    public Profissional(String nome, String telefone, String cpf, String ramo, double rating,String email) {
         this.Nome = nome;
         this.telefone = telefone;
         this.cpf = cpf;
         this.ramo = ramo;
         this.rating = rating;
         this.pedidos = new ArrayList<>();
+        this.email = email;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getNome() {
