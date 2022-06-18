@@ -152,6 +152,19 @@
             />
 
 
+        <ImageView
+            android:id="@+id/login6"
+            android:layout_width="158dp"
+            android:layout_height="126dp"
+            android:layout_marginTop="36dp"
+            android:layout_marginBottom="15dp"
+            android:src="@drawable/obra_prima"
+            app:layout_constraintBottom_toBottomOf="@+id/editPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/bt_cadastrar"
             style="@style/ButtonEntrar"

@@ -38,6 +38,7 @@ public class TelaServicosCliente extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela_servicos_cliente);
         IniciarComponentes();
+        getSupportActionBar().hide();
         LoginAtual l = Database.getLoginAtual();
         pd = new ArrayList<>();
         nomeCliente = l.getCliente().getNome();

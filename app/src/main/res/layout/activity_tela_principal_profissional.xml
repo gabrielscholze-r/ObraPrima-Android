@@ -15,6 +15,18 @@
         tools:ignore="ExtraText">
 
 
+        <ImageView
+            android:id="@+id/login5"
+            android:layout_width="102dp"
+            android:layout_height="87dp"
+            android:layout_marginBottom="43dp"
+            android:src="@drawable/obra_prima"
+            app:layout_constraintBottom_toTopOf="@+id/containerComponents"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <View
             android:id="@+id/containerComponents"
             style="@style/ContainerComponents"
@@ -48,28 +60,30 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0" />
 
+
         <View
             android:id="@+id/containerProfile"
             android:layout_width="72dp"
             android:layout_height="69dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="20dp"
             android:background="@drawable/container_profile"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.952"
+            app:layout_constraintHorizontal_bias="0.501"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            app:tint="@color/black"
             android:id="@+id/containerIcon"
             android:layout_width="79dp"
             android:layout_height="61dp"
             android:src="@drawable/ic_profile"
             app:layout_constraintBottom_toBottomOf="@id/containerProfile"
             app:layout_constraintEnd_toEndOf="@id/containerProfile"
+            app:layout_constraintHorizontal_bias="0.571"
             app:layout_constraintStart_toStartOf="@id/containerProfile"
-            app:layout_constraintTop_toTopOf="@id/containerProfile" />
-
+            app:layout_constraintTop_toTopOf="@id/containerProfile"
+            app:layout_constraintVertical_bias="0.875"
+            app:tint="@color/black" />
 
         <Button
             android:id="@+id/bt_deslogar"
@@ -113,8 +127,6 @@
             android:textStyle="bold"
             app:flow_verticalAlign="center"
             app:layout_constraintBottom_toTopOf="@+id/calendarView2"
-            app:layout_constraintEnd_toStartOf="@+id/containerProfile"
-            app:layout_constraintHorizontal_bias="0.8"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0" />

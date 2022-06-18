@@ -13,6 +13,42 @@
         android:background="@drawable/background">
 
         <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="MEUS PEDIDOS"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.173"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+
+            android:id="@+id/button_home"
+            android:layout_width="48dp"
+            android:layout_height="39dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_arrow_back" />
+
+        <ImageView
+            android:id="@+id/login3"
+            android:layout_width="102dp"
+            android:layout_height="87dp"
+            android:layout_marginBottom="24dp"
+            android:src="@drawable/obra_prima"
+            app:layout_constraintBottom_toTopOf="@+id/textTitulo2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
             android:id="@+id/textTitulo2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -52,39 +88,6 @@
 
         </androidx.recyclerview.widget.RecyclerView>
 
-
-        <Button
-            android:id="@+id/button_home"
-            android:layout_width="79dp"
-            android:layout_height="56dp"
-            android:layout_marginTop="4dp"
-            android:background="@android:color/transparent"
-            android:drawableRight="@drawable/ic_baseline_home_24"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <EditText
-            android:id="@+id/pesquisa"
-            android:layout_width="258dp"
-            android:layout_height="48dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="63dp"
-            android:backgroundTint="@color/black"
-
-            android:drawableRight="@drawable/ic_search"
-            android:drawableTint="#FFFFFF"
-            android:ems="10"
-            android:hint="Pesquisar serviços"
-            android:inputType="textPersonName"
-            android:textColorHint="@color/black"
-            android:textSize="21dp"
-            app:layout_constraintBottom_toTopOf="@+id/textTitulo2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.516"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
 
         <Button
             android:id="@+id/bt_deslogar"

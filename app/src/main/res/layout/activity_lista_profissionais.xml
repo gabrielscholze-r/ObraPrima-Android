@@ -13,6 +13,18 @@
         android:backgroundTintMode="src_in">
 
 
+        <ImageView
+            android:id="@+id/login4"
+            android:layout_width="102dp"
+            android:layout_height="87dp"
+            android:layout_marginBottom="9dp"
+            android:src="@drawable/obra_prima"
+            app:layout_constraintBottom_toTopOf="@+id/lista_profissionais"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/lista_profissionais"
             android:layout_width="411dp"

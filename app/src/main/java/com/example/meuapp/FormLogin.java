@@ -42,39 +42,41 @@ public class FormLogin extends AppCompatActivity {
                 EditText login = (EditText) findViewById(R.id.edit_email);
                 EditText password = (EditText) findViewById(R.id.password);
                 boolean logged = false;
-                for (Cliente cliente : clientes) {
-                    if (login.getText().toString().equals(cliente.getEmail())) {
-                        if (password.getText().toString().equals(cliente.getSenha())) {
-                            loginAtual.setCliente(cliente);
-                            Intent intent = new Intent(FormLogin.this, TelaPrincipalCliente.class);
-                            startActivity(intent);
-                            logged = true;
-                            break;
-                        } else {
-                            TextView error = findViewById(R.id.errorMessage);
-                            error.setText("Email ou senha incorretos");
+                TextView error = findViewById(R.id.errorMessage);
+                if (login.getText().length()==0 || password.getText().length()==0) {
+                    error.setText("Insira email e senha!");
+                } else {
+                    for (Cliente cliente : clientes) {
+                        if (login.getText().toString().equals(cliente.getEmail())) {
+                            if (password.getText().toString().equals(cliente.getSenha())) {
+                                loginAtual.setCliente(cliente);
+                                Intent intent = new Intent(FormLogin.this, TelaPrincipalCliente.class);
+                                startActivity(intent);
+                                logged = true;
+                                break;
+                            } else {
+                                error.setText("Email ou senha incorretos");
+                            }
+
+
                         }
+                    }
+                    for (Profissional profissional : profissionais) {
+                        if (login.getText().toString().equals(profissional.getEmail())) {
+                            if (password.getText().toString().equals(profissional.getEmail())) {
+                                loginAtual.setProfissional(profissional);
+                                Intent intent = new Intent(FormLogin.this, TelaPrincipalProfissional.class);
+                                startActivity(intent);
+                                logged = true;
+                                break;
+                            } else {
+                                error.setText("Email ou senha incorretos");
+                            }
 
-
+                        }
                     }
                 }
-                for (Profissional profissional : profissionais) {
-                    if (login.getText().toString().equals(profissional.getEmail())) {
-                        if (password.getText().toString().equals(profissional.getEmail())) {
-                            loginAtual.setProfissional(profissional);
-                            Intent intent = new Intent(FormLogin.this, TelaPrincipalProfissional.class);
-                            startActivity(intent);
-                            logged = true;
-                            break;
-                        } else {
-                            TextView error = findViewById(R.id.errorMessage);
-                            error.setText("Email ou senha incorretos");
-                        }
-
-                    }
-                }
-                if(!logged){
-                    TextView error = findViewById(R.id.errorMessage);
+                if (!logged && error.getText() == "") {
                     error.setText("Email não encontrado");
                 }
 
