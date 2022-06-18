@@ -20,7 +20,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="@string/title_cadastro"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="30dp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
@@ -40,24 +40,8 @@
             app:layout_constraintTop_toBottomOf="@+id/title_cadastre"
             app:layout_constraintVertical_bias="0.094" />
 
-        <TextView
-            android:id="@+id/errorMessage3"
-            android:layout_width="295dp"
-            android:layout_height="29dp"
-            android:layout_marginTop="1dp"
-            android:layout_marginBottom="8dp"
-            android:text=""
-            android:textAlignment="center"
-            android:textColor="#FF0505"
-            android:textSize="15dp"
-            app:layout_constraintBottom_toTopOf="@+id/containerComponents"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.517"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/title_cadastre" />
-
         <EditText
-            android:drawableTint="@color/black"
+            android:drawableTint="@color/white"
             android:textColorHint="@color/black"
             android:textColor="@color/black"
             android:id="@+id/editPersonName"
@@ -182,6 +166,22 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/confirmPassword"
             app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/errorMessage3"
+            android:layout_width="295dp"
+            android:layout_height="29dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginBottom="8dp"
+            android:text=""
+            android:textAlignment="center"
+            android:textColor="#FF0505"
+            android:textSize="15dp"
+            app:layout_constraintBottom_toTopOf="@+id/containerComponents"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.517"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title_cadastre" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

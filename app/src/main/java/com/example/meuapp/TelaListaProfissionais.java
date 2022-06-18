@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DefaultItemAnimator;
@@ -20,7 +21,7 @@ public class TelaListaProfissionais extends AppCompatActivity {
 
     private RecyclerView RView;
     private ArrayList<Profissional> profissionais;
-    private Button bt_voltar;
+    private ImageView bt_voltar;
     private RecycleAdapter.RecyclerViewClickListener listener;
 
     @Override

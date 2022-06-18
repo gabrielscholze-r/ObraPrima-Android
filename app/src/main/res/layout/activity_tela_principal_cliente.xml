@@ -23,7 +23,7 @@
             android:layout_marginTop="24dp"
             android:layout_marginBottom="57dp"
             android:text="Bem vindo -----"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="40dp"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/bt_historico2"
@@ -87,13 +87,12 @@
             android:id="@+id/bt_historico2"
             android:layout_width="271dp"
             android:layout_height="78dp"
-            android:layout_marginBottom="27dp"
+            android:layout_marginBottom="20dp"
             android:backgroundTint="@android:color/black"
             android:text="Meus pedidos"
             android:textColor="@color/white"
             app:layout_constraintBottom_toTopOf="@+id/bt_lista_pro"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.45"
             app:layout_constraintStart_toStartOf="parent" />
 
         <androidx.recyclerview.widget.RecyclerView

@@ -23,18 +23,44 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
-            android:id="@+id/bt_voltar"
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="264dp"
+            android:layout_height="26dp"
+            android:layout_marginTop="36dp"
+            android:text="LISTA DE PROFISSIONAIS"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+        <TextView
+            android:id="@+id/textView8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:backgroundTint="@color/black"
-            android:drawableRight="@drawable/ic_arrow_back"
-            android:drawableTint="@color/white"
-            android:text="Voltar"
+            android:layout_marginTop="6dp"
+            android:text="FAZER PEDIDO"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="normal"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.173"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+
+            android:id="@+id/bt_voltar"
+            android:layout_width="48dp"
+            android:layout_height="39dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_arrow_back" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
