@@ -39,7 +39,6 @@ public class FormLogin extends AppCompatActivity {
 
         bt_entrar.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                //Para testar a outra tela mudar o "TelaServicosCliente.class" por "TelaPrincipalCliente.class"
                 EditText login = (EditText) findViewById(R.id.edit_email);
                 EditText password = (EditText) findViewById(R.id.password);
                 boolean logged = false;

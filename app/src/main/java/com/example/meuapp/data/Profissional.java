@@ -8,10 +8,11 @@ public class Profissional {
     private String cpf;
     private String ramo;
     private String email;
+    private String senha;
     private double rating;
     private ArrayList<Pedidos> pedidos;
 
-    public Profissional(String nome, String telefone, String cpf, String ramo, double rating,String email) {
+    public Profissional(String nome, String telefone, String cpf, String ramo, double rating,String email,String senha) {
         this.Nome = nome;
         this.telefone = telefone;
         this.cpf = cpf;
@@ -19,6 +20,15 @@ public class Profissional {
         this.rating = rating;
         this.pedidos = new ArrayList<>();
         this.email = email;
+        this.senha = senha;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
     }
 
     public String getEmail() {
