@@ -54,6 +54,7 @@ public class FormLogin extends AppCompatActivity {
                                 Intent intent = new Intent(FormLogin.this, TelaPrincipalCliente.class);
                                 startActivity(intent);
                                 logged = true;
+                                finish();
                                 break;
                             } else {
                                 error.setText("Email ou senha incorretos");
@@ -69,6 +70,7 @@ public class FormLogin extends AppCompatActivity {
                                 Intent intent = new Intent(FormLogin.this, TelaPrincipalProfissional.class);
                                 startActivity(intent);
                                 logged = true;
+                                finish();
                                 break;
                             } else {
                                 error.setText("Email ou senha incorretos");
@@ -80,7 +82,6 @@ public class FormLogin extends AppCompatActivity {
                 if (!logged && error.getText() == "") {
                     error.setText("Email não encontrado");
                 }
-                finish();
             }
         });
 

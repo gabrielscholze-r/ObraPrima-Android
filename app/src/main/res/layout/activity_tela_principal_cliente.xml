@@ -56,17 +56,17 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/containerIcon"
+            android:id="@+id/ProfileIcon"
             android:layout_width="146dp"
             android:layout_height="135dp"
             android:layout_marginTop="26dp"
             android:src="@drawable/ic_profile"
             app:layout_constraintBottom_toBottomOf="@+id/containerProfile"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.505"
+            app:layout_constraintHorizontal_bias="0.501"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.783"
+            app:layout_constraintVertical_bias="0.692"
             app:tint="@color/black" />
 
         <Button

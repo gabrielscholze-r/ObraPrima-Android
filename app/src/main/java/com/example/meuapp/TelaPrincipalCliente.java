@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView.Adapter;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -86,6 +87,18 @@ public class TelaPrincipalCliente extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        ImageView bt_EditProfile = findViewById(R.id.ProfileIcon);
+
+        bt_EditProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(TelaPrincipalCliente.this, TelaEditPerfilCliente.class);
+//                intent.setFlags(Intent.FLAG_ACTIVITY_PREVIOUS_IS_TOP);
+                startActivity(intent);
+                finish();
+            }
+        });
     }
 
 
@@ -97,5 +110,10 @@ public class TelaPrincipalCliente extends AppCompatActivity {
 //        bt_contratar1 = findViewById(R.id.bt_Contratar1);
 //        bt_contratar2 = findViewById(R.id.bt_Contratar2);
 //        bt_contratar3 = findViewById(R.id.bt_Contratar3);
+    }
+
+    @Override
+    public void onBackPressed() {
+//        super.onBackPressed();
     }
 }

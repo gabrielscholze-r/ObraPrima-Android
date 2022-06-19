@@ -6,6 +6,7 @@ import android.text.Editable;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,6 +31,7 @@ public class TelaEditPerfilCliente extends AppCompatActivity {
     private String ConfirmaNovaSenha;
     private TextView error;
 
+
     @Override
     protected void onPostCreate(@Nullable Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
@@ -45,7 +47,7 @@ public class TelaEditPerfilCliente extends AppCompatActivity {
         cpf.setText(cliente.getCpf());
         TextView telefone = findViewById(R.id.user_phone);
         telefone.setText(cliente.getTelefone());
-        error = findViewById(R.id.errorMessage);
+        error = findViewById(R.id.error_message);
 
         Button bt_aplicar = findViewById(R.id.bt_attdados);
         bt_aplicar.setOnClickListener(new View.OnClickListener() {
@@ -55,10 +57,23 @@ public class TelaEditPerfilCliente extends AppCompatActivity {
                 ValidarDados();
             }
         });
+
+        ImageView bt_home = findViewById(R.id.button_back);
+
+        bt_home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(TelaEditPerfilCliente.this, TelaPrincipalCliente.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+            }
+
+        } );
     }
     private void getFormInfo(){
+//        error.setText("");
         EditText novonome = (EditText) findViewById(R.id.edit_nome);
-        EditText novoemail = (EditText) findViewById(R.id.edit_email);
+        EditText novoemail = (EditText) findViewById(R.id.edit_useremail);
         EditText novocpf = (EditText) findViewById(R.id.edit_CPF);
         EditText novophone = (EditText) findViewById(R.id.edit_phone);
         EditText novasenha = (EditText) findViewById(R.id.edit_senha);
@@ -73,7 +88,12 @@ public class TelaEditPerfilCliente extends AppCompatActivity {
         SenhaAtual = senhaatual.getText().toString();
     }
     private void ValidarDados(){
+        boolean erro = false;
         int index = Database.clientes.indexOf(cliente);
+        if(NovoNome.isEmpty() && NovoEmail.isEmpty() && NovoCPF.isEmpty() && NovoPhone.isEmpty() &&
+                NovaSenha.isEmpty()){
+            erro = true;
+        }
         if(!NovoNome.isEmpty()){
             novoCliente.setNome(NovoNome);
         }if(!NovoEmail.isEmpty()){
@@ -84,27 +104,37 @@ public class TelaEditPerfilCliente extends AppCompatActivity {
         if(!NovoPhone.isEmpty()){
             novoCliente.setTelefone(NovoPhone);
         }if(!NovaSenha.isEmpty()){
-            if(SenhaAtual==novoCliente.getSenha()){
-                if(NovaSenha==ConfirmaNovaSenha){
+            if(SenhaAtual.equals(novoCliente.getSenha())){
+                if(NovaSenha.equals(ConfirmaNovaSenha)){
                     novoCliente.setSenha(NovaSenha);
                 }
                 else{
                     error.setText("Novas senhas devem ser iguais!");
+                    erro = true;
                 }
             }
             else{
                 error.setText("Senha atual incorreta");
+                erro = true;
             }
         }
-        ArrayList<Cliente> clientes = Database.getClientes();
-        clientes.add(index, novoCliente);
-        Database.setClientes(clientes);
-        Intent intent = new Intent(TelaEditPerfilCliente.this, FormLogin.class);
+        if(!erro){
+            ArrayList<Cliente> clientes = Database.getClientes();
+            clientes.add(index, novoCliente);
+            Database.setClientes(clientes);
+            Intent intent = new Intent(TelaEditPerfilCliente.this, TelaPrincipalCliente.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            LoginAtual.setCliente(novoCliente);
+            Toast.makeText(getApplicationContext(),"Dados Alterados!",Toast.LENGTH_SHORT).show();
+            startActivity(intent);
+            finish();
+        }
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(TelaEditPerfilCliente.this, TelaPrincipalCliente.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
-        LoginAtual.setCliente(null);
-        LoginAtual.setProfissional(null);
-        Toast.makeText(getApplicationContext(),"Dados Alterados! Login Necessário",Toast.LENGTH_SHORT).show();
-        finish();
     }
 }
