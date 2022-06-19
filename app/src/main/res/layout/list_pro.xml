@@ -8,8 +8,8 @@
     android:clickable="true"
     android:maxLength="100"
     android:text="TEXTO EXEMPLO"
-    android:drawableRight="@drawable/ic_service"
+    android:drawableRight="@drawable/ic_next"
     android:textColor="@color/black"
     android:textColorHint="@color/black"
-    android:textSize="25sp"
+    android:textSize="20sp"
     android:textStyle="bold" />

@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.meuapp.adapter.RecycleAdapter;
 import com.example.meuapp.data.Database;
+import com.example.meuapp.data.Perfil;
 import com.example.meuapp.data.Profissional;
 
 import java.util.ArrayList;
@@ -56,11 +57,18 @@ public class TelaListaProfissionais extends AppCompatActivity {
             @Override
             public void onClick(View v, int position) {
                 Intent intent = new Intent(TelaListaProfissionais.this, TelaPerfilProfissional.class);
-                intent.putExtra("nomeProfissional", profissionais.get(position).getNome());
+//                intent.putExtra("nomeProfissional", profissionais.get(position).getNome());
+                Perfil.setProfissional(profissionais.get(position));
                 startActivity(intent);
             }
         };
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
+
     public void iniciarComponentes(){
         bt_voltar = findViewById(R.id.bt_voltar);
     }

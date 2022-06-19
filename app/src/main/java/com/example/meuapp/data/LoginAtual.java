@@ -4,11 +4,6 @@ public class LoginAtual {
     public static Cliente cliente;
     public static Profissional profissional;
 
-    public LoginAtual() {
-        this.cliente = null;
-        this.profissional = null;
-    }
-
     public static Cliente getCliente() {
         return cliente;
     }

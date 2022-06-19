@@ -16,20 +16,20 @@
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="6dp"
+            android:layout_marginTop="4dp"
             android:text="MEUS PEDIDOS"
             android:textAlignment="center"
             android:textColor="@color/black"
-            android:textSize="20dp"
+            android:textSize="25dp"
             android:textStyle="normal"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.173"
+            app:layout_constraintHorizontal_bias="0.255"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
 
-            android:id="@+id/button_home"
+            android:id="@+id/button_back"
             android:layout_width="48dp"
             android:layout_height="39dp"
             app:layout_constraintStart_toStartOf="parent"
@@ -40,85 +40,26 @@
             android:id="@+id/login3"
             android:layout_width="102dp"
             android:layout_height="87dp"
-            android:layout_marginBottom="24dp"
             android:src="@drawable/obra_prima"
-            app:layout_constraintBottom_toTopOf="@+id/textTitulo2"
+            app:layout_constraintBottom_toTopOf="@+id/recyclerView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/textTitulo2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="69dp"
-            android:text="Bem vindo -----"
-            android:textColor="@color/black"
-            android:textSize="40dp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/textView3"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="291dp"
-            android:layout_height="29dp"
-            android:layout_marginBottom="20dp"
-            android:text="Serviços Solicitados"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="25dp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/recyclerView"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
             style="@style/Recycler_view"
-            android:layout_width="356dp"
-            android:layout_height="468dp"
-            android:layout_marginBottom="44dp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="610dp"
             android:background="#FFFFFF"
-            app:layout_constraintBottom_toTopOf="@+id/bt_deslogar"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent">
 
         </androidx.recyclerview.widget.RecyclerView>
-
-
-        <Button
-            android:id="@+id/bt_deslogar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:layout_marginBottom="52dp"
-            android:backgroundTint="@color/black"
-            android:padding="20dp"
-            android:text="Deslogar"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.4"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="358dp"
-            android:layout_height="16dp"
-            android:text="CLIQUE EM QUALQUER SERVIÇO PARA CANCELAR"
-            android:textAlignment="center"
-            android:textColor="#FF0000"
-            android:textSize="15dp"
-            app:layout_constraintBottom_toTopOf="@+id/recyclerView"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

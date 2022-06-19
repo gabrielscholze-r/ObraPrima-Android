@@ -13,13 +13,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.meuapp.data.Database;
 import com.example.meuapp.data.LoginAtual;
 import com.example.meuapp.data.Pedidos;
+import com.example.meuapp.data.Perfil;
 import com.example.meuapp.data.Profissional;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class TelaPerfilProfissional extends AppCompatActivity {
-    private String nome;
     private LoginAtual loginAtual;
     private ArrayList<Profissional> profissionais;
     private Profissional profissional;
@@ -27,18 +27,15 @@ public class TelaPerfilProfissional extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Bundle extras = getIntent().getExtras();
-        if (extras != null) {
-            nome = extras.getString("nomeProfissional");
-        }
-        loginAtual = Database.loginAtual;
-        profissionais = Database.getProfissionais();
-        profissional = Database.findProfissionalByName(nome);
         setContentView(R.layout.activity_tela_perfil_profissional);
+        getSupportActionBar().hide();
+        loginAtual = Database.getLoginAtual();
+        profissionais = Database.getProfissionais();
+        profissional = Perfil.getProfissional();
+
 
         TextView nome_pro = findViewById(R.id.nome_pro);
-        nome_pro.setText(nome);
-        getSupportActionBar().hide();
+        nome_pro.setText(profissional.getNome());
 
         TextView profissao = findViewById(R.id.profissao_pro);
         profissao.setText(profissional.getRamo());
@@ -47,7 +44,7 @@ public class TelaPerfilProfissional extends AppCompatActivity {
         bio.setText(profissional.getBio());
 
         TextView rating = findViewById(R.id.pro_rating);
-        rating.setText((int) profissional.getRating());
+        rating.setText(profissional.getRating()+"");
 
         Button bt_contratar = findViewById(R.id.bt_contratar);
         bt_contratar.setOnClickListener(new View.OnClickListener() {

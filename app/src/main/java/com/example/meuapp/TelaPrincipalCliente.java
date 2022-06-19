@@ -53,10 +53,9 @@ public class TelaPrincipalCliente extends AppCompatActivity {
         IniciarComponentes();
         profissionais = Database.getProfissionais();
         LoginAtual loginAtual = Database.getLoginAtual();
-        ClienteNome = loginAtual.getCliente().getNome();
         ArrayList<String> views = new ArrayList<>();
         TextView titulo = findViewById(R.id.textTitulo);
-        titulo.setText("Bem vindo\n"+loginAtual.getCliente().getNome()+"!");
+        titulo.setText("Bem vindo "+loginAtual.getCliente().getNome()+"!");
 
         bt_deslogar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,7 +73,7 @@ public class TelaPrincipalCliente extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(TelaPrincipalCliente.this, TelaServicosCliente.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_PREVIOUS_IS_TOP);
+//                intent.setFlags(Intent.FLAG_ACTIVITY_PREVIOUS_IS_TOP);
                 startActivity(intent);
             }
 
@@ -83,7 +82,7 @@ public class TelaPrincipalCliente extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(TelaPrincipalCliente.this, TelaListaProfissionais.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_PREVIOUS_IS_TOP);
+//                intent.setFlags(Intent.FLAG_ACTIVITY_PREVIOUS_IS_TOP);
                 startActivity(intent);
             }
         });

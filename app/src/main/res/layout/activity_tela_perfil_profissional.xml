@@ -1,139 +1,167 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:fillViewport="true">
 
-    <Button
-        android:id="@+id/bt_contratar"
-        android:layout_width="219dp"
-        android:layout_height="52dp"
-        android:layout_marginBottom="391dp"
-        android:backgroundTint="@android:color/black"
-        android:text="CONTRATAR"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background"
+        android:backgroundTintMode="src_in">
 
-    <ImageView
+        <Button
+            android:id="@+id/bt_contratar"
+            android:layout_width="219dp"
+            android:layout_height="52dp"
+            android:backgroundTint="@android:color/black"
+            android:text="CONTRATAR"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        android:id="@+id/bt_voltar2"
-        android:layout_width="66dp"
-        android:layout_height="47dp"
-        android:layout_marginTop="4dp"
-        app:layout_constraintEnd_toStartOf="@+id/textView7"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_arrow_back" />
+        <ImageView
 
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="195dp"
-        android:layout_height="43dp"
-        android:layout_marginTop="6dp"
-        android:layout_marginBottom="41dp"
-        android:text="PROFISSIONAL"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="26sp"
-        android:textStyle="normal|bold"
-        app:layout_constraintBottom_toTopOf="@+id/nome_pro"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.306"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            android:id="@+id/bt_voltar2"
+            android:layout_width="66dp"
+            android:layout_height="47dp"
+            android:layout_marginTop="4dp"
+            app:layout_constraintBottom_toTopOf="@+id/nome_pro"
+            app:layout_constraintEnd_toStartOf="@+id/textView7"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.042"
+            app:srcCompat="@drawable/ic_arrow_back" />
 
-    <ImageView
-        android:id="@+id/login8"
-        android:layout_width="102dp"
-        android:layout_height="87dp"
-        android:src="@drawable/obra_prima"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="195dp"
+            android:layout_height="43dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="41dp"
+            android:text="PROFISSIONAL"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="26sp"
+            android:textStyle="normal|bold"
+            app:layout_constraintBottom_toTopOf="@+id/nome_pro"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.306"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/nome_pro"
-        android:layout_width="412dp"
-        android:layout_height="54dp"
-        android:text="TextView"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="40dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/profissao_pro"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        <ImageView
+            android:id="@+id/login8"
+            android:layout_width="102dp"
+            android:layout_height="87dp"
+            android:layout_marginBottom="11dp"
+            android:src="@drawable/obra_prima"
+            app:layout_constraintBottom_toTopOf="@+id/nome_pro"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/profissao_pro"
-        android:layout_width="411dp"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/pro_rating"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        <TextView
+            android:id="@+id/nome_pro"
+            android:layout_width="412dp"
+            android:layout_height="54dp"
+            android:layout_marginTop="98dp"
+            android:text="TextView"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="40dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/profissao_pro"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/pro_bio"
-        style="@style/text_border"
-        android:layout_width="362dp"
-        android:layout_height="119dp"
-        android:layout_marginBottom="33dp"
-        android:text="TextView"
-        android:textAlignment="viewStart"
-        app:layout_constraintBottom_toTopOf="@+id/bt_contratar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.489"
-        app:layout_constraintStart_toStartOf="parent" />
+        <TextView
+            android:id="@+id/profissao_pro"
+            android:layout_width="411dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="150dp"
+            android:text="TextView"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@+id/pro_rating"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView11"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="DESCRIÇÃO"
-        android:textColor="#000000"
-        android:textSize="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/pro_bio"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        <TextView
+            android:id="@+id/pro_bio"
+            style="@style/text_border"
+            android:layout_width="362dp"
+            android:layout_height="119dp"
+            android:layout_marginTop="296dp"
+            android:layout_marginBottom="33dp"
+            android:text="TextView"
+            android:textAlignment="viewStart"
+            android:textColor="@color/black"
+            android:textSize="24dp"
+            app:layout_constraintBottom_toTopOf="@+id/bt_contratar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.489"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="267dp"
+            android:text="DESCRIÇÃO"
+            android:textColor="#000000"
+            android:textSize="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/pro_bio"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        android:id="@+id/pro_rating"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="136dp"
-        android:layout_marginBottom="36dp"
-        android:shadowColor="#E9FF00"
-        android:shadowDx="2"
-        android:shadowDy="2"
-        android:shadowRadius="0.1"
-        android:text="10.0"
-        android:textColor="#000000"
-        android:textSize="40dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/textView11"
-        app:layout_constraintStart_toStartOf="parent" />
+        <TextView
 
-    <ImageView
+            android:id="@+id/pro_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="184dp"
+            android:layout_marginBottom="36dp"
+            android:shadowColor="#E9FF00"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="0.1"
+            android:text="10.0"
+            android:textColor="#000000"
+            android:textSize="40dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/textView11"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.407"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        android:id="@+id/imageView"
-        android:layout_width="57dp"
-        android:layout_height="53dp"
-        android:layout_marginEnd="135dp"
-        android:layout_marginBottom="36dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView11"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/pro_rating"
-        app:srcCompat="@mipmap/ic_star" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageView
+
+            android:id="@+id/imageView"
+            android:layout_width="57dp"
+            android:layout_height="53dp"
+            android:layout_marginTop="185dp"
+            android:layout_marginEnd="135dp"
+            android:layout_marginBottom="36dp"
+            app:layout_constraintBottom_toTopOf="@+id/textView11"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/pro_rating"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@mipmap/ic_star" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

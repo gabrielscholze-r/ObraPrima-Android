@@ -22,7 +22,8 @@ public class FormLogin extends AppCompatActivity {
     private TextView text_cadastro_profissional;
     private TextView text_cadastro_cliente;
     private Button bt_entrar;
-
+    private ArrayList<Profissional> profissionais;
+    private ArrayList<Cliente> clientes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,8 +34,8 @@ public class FormLogin extends AppCompatActivity {
         getSupportActionBar().hide();
         IniciarComponentes();
 
-        ArrayList<Profissional> profissionais = Database.getProfissionais();
-        ArrayList<Cliente> clientes = Database.getClientes();
+        profissionais = Database.getProfissionais();
+        clientes = Database.getClientes();
         LoginAtual loginAtual = Database.getLoginAtual();
 
         bt_entrar.setOnClickListener(new View.OnClickListener() {
@@ -43,7 +44,7 @@ public class FormLogin extends AppCompatActivity {
                 EditText password = (EditText) findViewById(R.id.password);
                 boolean logged = false;
                 TextView error = findViewById(R.id.errorMessage);
-                if (login.getText().length()==0 || password.getText().length()==0) {
+                if (login.getText().length() == 0 || password.getText().length() == 0) {
                     error.setText("Insira email e senha!");
                 } else {
                     for (Cliente cliente : clientes) {
@@ -79,7 +80,7 @@ public class FormLogin extends AppCompatActivity {
                 if (!logged && error.getText() == "") {
                     error.setText("Email não encontrado");
                 }
-
+                finish();
             }
         });
 

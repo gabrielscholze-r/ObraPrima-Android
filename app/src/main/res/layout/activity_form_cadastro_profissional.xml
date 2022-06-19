@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<androidx.core.widget.NestedScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fillViewport="true"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    android:layout_height="wrap_content"
+    android:fillViewport="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -14,164 +14,146 @@
         tools:context=".FormCadastroProfissional">
 
 
-        <TextView
-            android:id="@+id/errorMessage2"
-            android:layout_width="295dp"
-            android:layout_height="29dp"
-            android:text=""
-            android:textAlignment="center"
-            android:textColor="#FF0505"
-            android:textSize="15dp"
-            app:layout_constraintBottom_toTopOf="@+id/containerComponents"
+        <View
+            android:id="@+id/containerComponents"
+            style="@style/text_border"
+            android:layout_width="307dp"
+            android:layout_height="800dp"
+            android:layout_marginBottom="91dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+        <EditText
+            android:id="@+id/editPersonName"
+            style="@style/text_border"
+            android:layout_width="227dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:drawableRight="@drawable/ic_name"
+            android:drawableTint="@color/black"
+            android:ems="10"
+            android:hint="Digite seu nome"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:padding="8dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/title_cadastro_profissional" />
 
-        <TextView
-            android:id="@+id/title_cadastro_profissional"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="@string/title_cadastro_profissional"
-            android:textColor="@color/black"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-
-        <View
-            android:id="@+id/containerComponents"
-            style="@style/ContainerComponents"
-            android:layout_width="304dp"
-            android:layout_height="675dp"
-            app:layout_constraintBottom_toTopOf="@+id/bt_cadastrar"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.495"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/title_cadastro_profissional"
-            app:layout_constraintVertical_bias="0.257" />
-
-        <EditText
-
-            android:drawableTint="@color/black"
-            android:textColorHint="@color/black"
-            android:textColor="@color/black"
-            android:id="@+id/editPersonName"
-            android:drawableRight="@drawable/ic_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="104dp"
-            android:ems="10"
-            android:hint="Digite seu nome"
-            android:inputType="textPersonName"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            />
-
-
         <EditText
             android:id="@+id/editTextEmailAddress"
-            android:layout_width="wrap_content"
+            style="@style/text_border"
+            android:layout_width="227dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="8dp"
             android:drawableRight="@drawable/ic_email"
             android:drawableTint="@color/black"
             android:ems="10"
             android:hint="E-mail"
             android:inputType="textEmailAddress"
+            android:minHeight="48dp"
+            android:padding="8dp"
             android:textColor="@color/black"
             android:textColorHint="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.502"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editPersonName" />
 
         <EditText
-            android:drawableTint="@color/black"
-            android:textColorHint="@color/black"
-            android:textColor="@color/black"
             android:id="@+id/editTextCPF"
-            android:drawableRight="@drawable/ic_cpf"
-            android:layout_width="wrap_content"
+            style="@style/text_border"
+            android:layout_width="227dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="16dp"
+            android:drawableRight="@drawable/ic_cpf"
+            android:drawableTint="@color/black"
             android:ems="10"
-            android:inputType="number"
             android:hint="Digite seu CPF"
+            android:inputType="number"
+            android:minHeight="48dp"
+            android:padding="8dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.502"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextEmailAddress"
-            />
-
+            app:layout_constraintTop_toBottomOf="@+id/editTextEmailAddress" />
 
         <EditText
-            android:drawableTint="@color/black"
-            android:textColorHint="@color/black"
-            android:textColor="@color/black"
             android:id="@+id/editTextPhone"
-            android:drawableRight="@drawable/ic_phone_android"
-            android:layout_width="wrap_content"
+            style="@style/text_border"
+            android:layout_width="227dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="16dp"
+            android:drawableRight="@drawable/ic_phone_android"
+            android:drawableTint="@color/black"
             android:ems="10"
             android:hint="Telefone"
             android:inputType="phone"
+            android:minHeight="48dp"
+            android:padding="8dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.502"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextCPF"
-            />
-
+            app:layout_constraintTop_toBottomOf="@+id/editTextCPF" />
 
         <EditText
             android:id="@+id/editBio"
-            android:layout_width="204dp"
-            android:layout_height="108dp"
-            android:layout_marginTop="44dp"
+            style="@style/text_border"
+            android:layout_width="227dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="16dp"
             android:drawableRight="@drawable/ic_service"
             android:drawableTint="@color/black"
             android:ems="10"
             android:hint="Descrição"
-            android:inputType="phone"
+            android:inputType="text"
+            android:padding="8dp"
             android:textColor="@color/black"
             android:textColorHint="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextPhone" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextPhone"
+            tools:ignore="TouchTargetSizeCheck" />
 
         <EditText
             android:id="@+id/createPassword"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="41dp"
+            style="@style/text_border"
+            android:layout_width="227dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="12dp"
             android:drawableRight="@drawable/ic_password"
             android:drawableTint="@color/black"
             android:ems="10"
             android:hint="Crie sua senha"
             android:inputType="textPassword"
+            android:padding="8dp"
             android:textColor="@color/black"
             android:textColorHint="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintHorizontal_bias="0.502"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editBio" />
 
         <EditText
             android:id="@+id/confirmPassword"
-            android:layout_width="wrap_content"
+            style="@style/text_border"
+            android:layout_width="227dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="28dp"
+            android:layout_marginTop="20dp"
             android:drawableRight="@drawable/ic_password_confirm"
             android:drawableTint="@color/black"
             android:ems="10"
             android:hint="Confirme sua senha"
             android:inputType="textPassword"
+            android:minHeight="48dp"
+            android:padding="8dp"
             android:textColor="@color/black"
             android:textColorHint="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
@@ -179,14 +161,31 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/createPassword" />
 
+        <TextView
+            android:id="@+id/title_cadastro_profissional"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="116dp"
+            android:text="@string/title_cadastro_profissional"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <AutoCompleteTextView
+
             android:id="@+id/ramodoservico"
-            android:layout_width="218dp"
-            android:layout_height="45dp"
-            android:layout_marginTop="24dp"
+            style="@style/text_border"
+            android:layout_width="227dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="12dp"
             android:drawableRight="@drawable/ic_service"
             android:drawableTint="@color/black"
             android:hint="Ramo de serviço"
+            android:padding="8dp"
             android:textColor="@color/black"
             android:textColorHint="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
@@ -196,13 +195,11 @@
 
         <ImageView
             android:id="@+id/login7"
-            android:layout_width="135dp"
-            android:layout_height="108dp"
-            android:layout_marginTop="28dp"
-            android:layout_marginBottom="13dp"
+            android:layout_width="195dp"
+            android:layout_height="130dp"
             android:src="@drawable/obra_prima"
-            app:layout_constraintBottom_toBottomOf="@+id/editPersonName"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.504"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -211,12 +208,25 @@
             style="@style/ButtonEntrar"
             android:layout_width="197dp"
             android:layout_height="77dp"
-            android:layout_marginBottom="36dp"
+            android:layout_marginBottom="100dp"
             android:text="Cadastrar"
             android:textSize="30dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/errorMessage2"
+            android:layout_width="295dp"
+            android:layout_height="29dp"
+            android:layout_marginTop="8dp"
+            android:text=""
+            android:textAlignment="center"
+            android:textColor="#FF0505"
+            android:textSize="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ramodoservico" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

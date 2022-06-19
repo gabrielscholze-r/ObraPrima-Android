@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,8 +26,7 @@ import java.util.ArrayList;
 
 public class TelaServicosCliente extends AppCompatActivity {
 
-    private Button bt_deslogar;
-    private Button bt_home;
+    private ImageView bt_home;
     private RecyclerView recyclerView;
     private RecycleAdapterPedidos.RecyclerViewClickListener listener;
     private ArrayList<Profissional> profissionais;
@@ -44,28 +44,15 @@ public class TelaServicosCliente extends AppCompatActivity {
         nomeCliente = l.getCliente().getNome();
         profissionais = Database.getProfissionais();
         recyclerView = findViewById(R.id.recyclerView);
-        TextView t = findViewById(R.id.textTitulo2);
-        t.setText("Bem vindo " + l.getCliente().getNome()+"!");
         setAdapter();
 
-
-        bt_deslogar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(TelaServicosCliente.this, FormLogin.class);
-                LoginAtual l = new LoginAtual();
-                Database.setLoginAtual(l);
-                startActivity(intent);
-                finish();
-            }
-
-        });
         bt_home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(TelaServicosCliente.this, TelaPrincipalCliente.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
-                finish();
+//                finish();
             }
 
         } );
@@ -94,24 +81,24 @@ public class TelaServicosCliente extends AppCompatActivity {
         listener = new RecycleAdapterPedidos.RecyclerViewClickListener() {
             @Override
             public void onClick(View v, int position) {
-                Pedidos pedido = pd.get(position);
-                for (Profissional p : profissionais){
-                    if(p.getNome()==pedido.getNomeProfissional()){
-                        ArrayList<Pedidos> lp = p.getPedidos();
-                        lp.remove(pedido);
-                        p.setPedidos(lp);
-                        break;
-                    }
-                }
-                Database.setProfissionais(profissionais);
-                Toast.makeText(getApplicationContext(),"PEDIDO EXCLUÍDO!",Toast.LENGTH_SHORT).show();
-                setAdapter();
+//                Pedidos pedido = pd.get(position);
+//                for (Profissional p : profissionais){
+//                    if(p.getNome()==pedido.getNomeProfissional()){
+//                        ArrayList<Pedidos> lp = p.getPedidos();
+//                        lp.remove(pedido);
+//                        p.setPedidos(lp);
+//                        break;
+//                    }
+//                }
+//                Database.setProfissionais(profissionais);
+//                Toast.makeText(getApplicationContext(),"PEDIDO EXCLUÍDO!",Toast.LENGTH_SHORT).show();
+//                setAdapter();
             }
         };
 
     }
     private void IniciarComponentes(){
-        bt_deslogar = findViewById(R.id.bt_deslogar);
-        bt_home = findViewById(R.id.button_home);
+        bt_home = findViewById(R.id.button_back);
     }
+
 }
