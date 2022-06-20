@@ -58,7 +58,7 @@ public class TelaEditPerfilCliente extends AppCompatActivity {
             }
         });
 
-        ImageView bt_home = findViewById(R.id.button_back);
+        ImageView bt_home = findViewById(R.id.button_back2);
 
         bt_home.setOnClickListener(new View.OnClickListener() {
             @Override

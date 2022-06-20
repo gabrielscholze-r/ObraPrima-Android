@@ -17,7 +17,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
-            android:text="MEUS PEDIDOS"
+            android:text="MEUS SERVIÇOS"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="25dp"

@@ -1,14 +1,14 @@
 package com.example.meuapp;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.DefaultItemAnimator;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.meuapp.adapter.RecycleAdapterPedidos;
 import com.example.meuapp.data.Database;
@@ -19,32 +19,29 @@ import com.example.meuapp.data.Profissional;
 
 import java.util.ArrayList;
 
-public class TelaServicosCliente extends AppCompatActivity {
+public class TelaServicosProfissional extends AppCompatActivity {
 
     private ImageView bt_home;
     private RecyclerView recyclerView;
     private RecycleAdapterPedidos.RecyclerViewClickListener listener;
-    private ArrayList<Profissional> profissionais;
-    private ArrayList<Pedidos> pd;
-    private String nomeCliente;
+    private Profissional profissional;
+    ArrayList<Pedidos> pedidos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tela_servicos_cliente);
+        setContentView(R.layout.activity_lista_pedidos_profissional);
         IniciarComponentes();
         getSupportActionBar().hide();
         LoginAtual l = Database.getLoginAtual();
-        pd = new ArrayList<>();
-        nomeCliente = l.getCliente().getNome();
-        profissionais = Database.getProfissionais();
+        profissional = l.getProfissional();
         recyclerView = findViewById(R.id.recycler_services);
         setAdapter();
 
         bt_home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(TelaServicosCliente.this, TelaPrincipalCliente.class);
+                Intent intent = new Intent(TelaServicosProfissional.this, TelaPrincipalProfissional.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
             }
@@ -56,16 +53,7 @@ public class TelaServicosCliente extends AppCompatActivity {
 
     private void setAdapter() {
         setOnClickListener();
-        ArrayList<Pedidos> pedidos = new ArrayList<>();
-        for (Profissional p : profissionais){
-            for(Pedidos p2 : p.getPedidos()){
-                if(p2.getNomeCliente()==nomeCliente){
-                    pedidos.add(p2);
-                }
-            }
-        }
-        pd = pedidos;
-        RecycleAdapterPedidos adapter = new RecycleAdapterPedidos(pedidos, listener);
+        RecycleAdapterPedidos adapter = new RecycleAdapterPedidos(profissional.getPedidos(), listener);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
@@ -75,9 +63,9 @@ public class TelaServicosCliente extends AppCompatActivity {
         listener = new RecycleAdapterPedidos.RecyclerViewClickListener() {
             @Override
             public void onClick(View v, int position) {
-                Perfil.setPedido(pd.get(position));
-                Intent intent = new Intent(TelaServicosCliente.this,TelaPedido.class);
-                Perfil.setId(1);
+                Perfil.setPedido(profissional.getPedidos().get(position));
+                Intent intent = new Intent(TelaServicosProfissional.this,TelaPedido.class);
+                Perfil.setId(0);
                 startActivity(intent);
                 finish();
             }

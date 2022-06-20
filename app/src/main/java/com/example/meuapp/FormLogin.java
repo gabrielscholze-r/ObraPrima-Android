@@ -48,7 +48,7 @@ public class FormLogin extends AppCompatActivity {
                     error.setText("Insira email e senha!");
                 } else {
                     for (Cliente cliente : clientes) {
-                        if (login.getText().toString().equals(cliente.getEmail())) {
+                        if (login.getText().toString().toLowerCase(Locale.ROOT).equals(cliente.getEmail())) {
                             if (password.getText().toString().equals(cliente.getSenha())) {
                                 loginAtual.setCliente(cliente);
                                 Intent intent = new Intent(FormLogin.this, TelaPrincipalCliente.class);
@@ -64,14 +64,15 @@ public class FormLogin extends AppCompatActivity {
                         }
                     }
                     for (Profissional profissional : profissionais) {
-                        if (login.getText().toString().equals(profissional.getEmail())) {
-                            if (password.getText().toString().equals(profissional.getEmail())) {
+                        if (login.getText().toString().toLowerCase(Locale.ROOT).equals(profissional.getEmail())) {
+                            if (password.getText().toString().equals(profissional.getSenha())) {
                                 loginAtual.setProfissional(profissional);
                                 Intent intent = new Intent(FormLogin.this, TelaPrincipalProfissional.class);
                                 startActivity(intent);
                                 logged = true;
                                 finish();
                                 break;
+
                             } else {
                                 error.setText("Email ou senha incorretos");
                             }
@@ -82,6 +83,7 @@ public class FormLogin extends AppCompatActivity {
                 if (!logged && error.getText() == "") {
                     error.setText("Email não encontrado");
                 }
+
             }
         });
 

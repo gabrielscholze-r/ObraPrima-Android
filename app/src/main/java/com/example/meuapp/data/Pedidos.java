@@ -6,13 +6,33 @@ public class Pedidos {
     private String tituloPedido;
     private String nomeCliente;
     private String nomeProfissional;
+    private String tipoServiço;
+    private String descricao;
 
-    public Pedidos(int dia, String mes, String tituloPedido, String nomeCliente, String nomeProfissional) {
+    public Pedidos(int dia, String mes, String tituloPedido, String tipoServico,String nomeCliente, String nomeProfissional, String descricao) {
         this.dia = dia;
         this.mes = mes;
-        this.tituloPedido = tituloPedido;
+        this.tipoServiço = tipoServico;
         this.nomeCliente = nomeCliente;
         this.nomeProfissional = nomeProfissional;
+        this.descricao = descricao;
+        this.tituloPedido = tituloPedido;
+    }
+
+    public String getTipoServiço() {
+        return tipoServiço;
+    }
+
+    public void setTipoServiço(String tipoServiço) {
+        this.tipoServiço = tipoServiço;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 
     public String getNomeProfissional() {

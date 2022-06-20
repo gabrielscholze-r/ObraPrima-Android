@@ -27,7 +27,7 @@
 
         <ImageView
 
-            android:id="@+id/bt_voltar2"
+            android:id="@+id/bt_voltar5"
             android:layout_width="66dp"
             android:layout_height="47dp"
             android:layout_marginTop="4dp"

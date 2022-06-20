@@ -225,8 +225,7 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <ImageView
-
-            android:id="@+id/button_back"
+            android:id="@+id/button_back2"
             android:layout_width="48dp"
             android:layout_height="39dp"
             app:layout_constraintStart_toStartOf="parent"
@@ -253,9 +252,9 @@
             android:text="Nome:"
             android:textColor="#000000"
             android:textSize="16sp"
+            app:layout_constraintEnd_toStartOf="@+id/user_name"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.121"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/containerComponents2" />
 
         <TextView
@@ -271,10 +270,13 @@
             app:layout_constraintStart_toStartOf="@+id/containerComponents3"
             app:layout_constraintTop_toBottomOf="@+id/containerComponents2" />
 
+
         <TextView
             android:id="@+id/textView12"
             android:layout_width="48dp"
             android:layout_height="25dp"
+            android:layout_marginStart="3dp"
+            android:layout_marginEnd="2dp"
             android:text="CPF:"
             android:textAlignment="center"
             android:textColor="#000000"
@@ -307,12 +309,12 @@
             android:text="Nome"
             android:textColor="#000000"
             android:textSize="20sp"
-            app:layout_constraintBottom_toTopOf="@+id/edit_nome"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/textView3"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintTop_toTopOf="@+id/containerComponents2"
+            app:layout_constraintVertical_bias="0.01" />
 
         <TextView
             android:id="@+id/user_phone"
@@ -332,15 +334,14 @@
             android:id="@+id/user_email"
             android:layout_width="280dp"
             android:layout_height="29dp"
-            android:layout_marginStart="90dp"
             android:layout_marginTop="4dp"
+            android:layout_marginStart="90dp"
             android:text="Email"
             android:textColor="#000000"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="@+id/containerComponents3"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edit_nome" />
+            app:layout_constraintTop_toBottomOf="@+id/containerComponents2" />
 
         <TextView
             android:id="@+id/user_cpf"

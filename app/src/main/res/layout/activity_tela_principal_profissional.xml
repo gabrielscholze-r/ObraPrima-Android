@@ -15,74 +15,57 @@
         tools:ignore="ExtraText">
 
 
+        <Button
+            android:id="@+id/bt_verpedidos"
+            android:layout_width="352dp"
+            android:layout_height="77dp"
+            android:layout_marginBottom="381dp"
+            android:backgroundTint="@android:color/black"
+            android:text="MEUS SERVIÇOS"
+            android:textColor="@color/white"
+            android:textSize="30dp"
+            app:layout_constraintBottom_toTopOf="@+id/bt_deslogar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.491"
+            app:layout_constraintStart_toStartOf="parent" />
+
         <ImageView
             android:id="@+id/login5"
             android:layout_width="102dp"
             android:layout_height="87dp"
-            android:layout_marginBottom="43dp"
             android:src="@drawable/obra_prima"
-            app:layout_constraintBottom_toTopOf="@+id/containerComponents"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <View
-            android:id="@+id/containerComponents"
-            style="@style/ContainerComponents"
-            android:layout_width="282dp"
-            android:layout_height="276dp"
-            android:layout_marginBottom="123dp"
-            app:layout_constraintBottom_toTopOf="@+id/textView"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.488"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <CalendarView
-            android:id="@+id/calendarView2"
-            android:layout_width="280dp"
-            android:layout_height="319dp"
-            android:layout_marginTop="88dp"
-            android:layout_marginBottom="19dp"
-            android:backgroundTint="@color/black"
-            android:dateTextAppearance="@style/CalenderViewDateCustomText"
-            android:drawableTint="#000000"
-            android:focusedMonthDateColor="@style/CalenderViewDateCustomText"
-            android:selectedWeekBackgroundColor="@style/CalenderViewDateCustomText"
-            android:textColorHint="@color/black"
-            android:theme="@style/CalenderViewCustom"
-            android:unfocusedMonthDateColor="@style/CalenderViewDateCustomText"
-            android:weekDayTextAppearance="@color/black"
-            app:layout_constraintBottom_toTopOf="@+id/textView"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.496"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
-
 
         <View
             android:id="@+id/containerProfile"
-            android:layout_width="72dp"
-            android:layout_height="69dp"
-            android:layout_marginTop="20dp"
+            android:layout_width="147dp"
+            android:layout_height="143dp"
+            android:layout_marginTop="44dp"
+            android:layout_marginBottom="25dp"
             android:background="@drawable/container_profile"
+            app:layout_constraintBottom_toTopOf="@+id/textTituloPro"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.501"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/containerIcon"
-            android:layout_width="79dp"
-            android:layout_height="61dp"
+            android:layout_width="146dp"
+            android:layout_height="135dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginEnd="1dp"
+            android:layout_marginBottom="7dp"
             android:src="@drawable/ic_profile"
-            app:layout_constraintBottom_toBottomOf="@id/containerProfile"
-            app:layout_constraintEnd_toEndOf="@id/containerProfile"
-            app:layout_constraintHorizontal_bias="0.571"
-            app:layout_constraintStart_toStartOf="@id/containerProfile"
-            app:layout_constraintTop_toTopOf="@id/containerProfile"
-            app:layout_constraintVertical_bias="0.875"
+            app:layout_constraintBottom_toBottomOf="@+id/containerProfile"
+            app:layout_constraintEnd_toEndOf="@+id/containerProfile"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/containerProfile"
+            app:layout_constraintTop_toTopOf="@+id/containerProfile"
+            app:layout_constraintVertical_bias="1.0"
             app:tint="@color/black" />
 
         <Button
@@ -117,55 +100,18 @@
 
         <TextView
             android:id="@+id/textTituloPro"
-            android:layout_width="303dp"
-            android:layout_height="93dp"
-            android:layout_marginTop="12dp"
-            android:layout_marginBottom="52dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="86dp"
             android:text="Olá ------!"
+            android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="30dp"
             android:textStyle="bold"
             app:flow_verticalAlign="center"
-            app:layout_constraintBottom_toTopOf="@+id/calendarView2"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="255dp"
-            android:layout_height="29dp"
-            android:layout_marginBottom="20dp"
-            android:text="Lista de Pedidos"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="20dp"
-            app:layout_constraintBottom_toTopOf="@+id/recyclerView2"
+            app:layout_constraintBottom_toTopOf="@+id/bt_verpedidos"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerView2"
-            android:layout_width="342dp"
-            android:layout_height="334dp"
-            android:layout_marginBottom="1dp"
-            android:background="#FFFFFF"
-            app:layout_constraintBottom_toTopOf="@+id/bt_deslogar"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <TextView
-            android:id="@+id/textView5"
-            android:layout_width="340dp"
-            android:layout_height="17dp"
-            android:layout_marginTop="2dp"
-            android:layout_marginBottom="1dp"
-            android:text="CLIQUE PARA CANCELAR UM SERVIÇO"
-            android:textAlignment="center"
-            android:textColor="#FF0000"
-            app:layout_constraintBottom_toTopOf="@+id/recyclerView2"
-            app:layout_constraintTop_toBottomOf="@+id/textView"
-            tools:layout_editor_absoluteX="35dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -46,23 +47,32 @@ public class TelaPerfilProfissional extends AppCompatActivity {
         TextView rating = findViewById(R.id.pro_rating);
         rating.setText(profissional.getRating()+"");
 
+        ImageView bt_voltar = findViewById(R.id.bt_voltar5);
         Button bt_contratar = findViewById(R.id.bt_contratar);
+        bt_voltar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
         bt_contratar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                int index = Database.getProfissionais().indexOf(profissional);
                 ArrayList<Pedidos> pedidos = profissional.getPedidos();
                 LocalDate d = LocalDate.now();
-                pedidos.add(new Pedidos(d.getDayOfMonth(), d.getMonth().toString(), "Visita Tecnica", loginAtual.getCliente().getNome()
-                        , profissional.getNome()));
-                profissionais.remove(profissional);
+                pedidos.add(new Pedidos(d.getDayOfMonth(), d.getMonth().toString(), "Visita Tecnica",profissional.getRamo(), loginAtual.getCliente().getNome()
+                        , profissional.getNome(), "Realizar Orçamento"));
+//                profissionais.remove(profissional);
                 profissional.setPedidos(pedidos);
-                profissionais.add(profissional);
+                profissionais.add(index, profissional);
                 Database.setProfissionais(profissionais);
                 Intent intent = new Intent(TelaPerfilProfissional.this, TelaPrincipalCliente.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                Toast.makeText(getApplicationContext(),"PEDIDO REALIZADO!",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),"PEDIDO REALIZADO!",Toast.LENGTH_LONG).show();
                 startActivity(intent);
-
+                finish();
 
             }
         });
