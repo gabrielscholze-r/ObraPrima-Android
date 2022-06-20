@@ -78,11 +78,12 @@ public class TelaPedido extends AppCompatActivity {
                 Intent i2 = new Intent(TelaPedido.this,TelaServicosCliente.class);
                 if(id==0){
                     startActivity(i1);
-                    finish();
+
                 }else{
                     startActivity(i2);
-                    finish();
+
                 }
+                finish();
 
             }
         });

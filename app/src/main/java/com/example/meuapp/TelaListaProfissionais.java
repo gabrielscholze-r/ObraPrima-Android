@@ -60,6 +60,7 @@ public class TelaListaProfissionais extends AppCompatActivity {
 //                intent.putExtra("nomeProfissional", profissionais.get(position).getNome());
                 Perfil.setProfissional(profissionais.get(position));
                 startActivity(intent);
+
             }
         };
     }
