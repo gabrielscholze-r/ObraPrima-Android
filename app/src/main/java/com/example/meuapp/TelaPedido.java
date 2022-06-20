@@ -71,7 +71,7 @@ public class TelaPedido extends AppCompatActivity {
                 ArrayList<Pedidos> pedidos = pro.getPedidos();
                 pedidos.remove(p);
                 pro.setPedidos(pedidos);
-                profissionais.add(index, pro);
+//                profissionais.add(index, pro);
                 Database.setProfissionais(profissionais);
                 Toast.makeText(getApplicationContext(),"PEDIDO CANCELADO!",Toast.LENGTH_LONG).show();
                 Intent i1= new Intent(TelaPedido.this, TelaServicosProfissional.class);
@@ -81,10 +81,8 @@ public class TelaPedido extends AppCompatActivity {
 
                 }else{
                     startActivity(i2);
-
                 }
                 finish();
-
             }
         });
 
