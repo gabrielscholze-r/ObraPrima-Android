@@ -5,5 +5,10 @@
     <string name="text_cadastro_profissional">Deseja oferecer serviços? Começe agora!</string>
     <string name="title_cadastro">Seja bem vindo(a)!</string>
     <string name="title_cadastro_profissional">Ofereça já seus serviços!</string>
+    <string-array name="ramos_array">
+        <item>Eletricista</item>
+        <item>Pedreiro</item>
+        <item>Encanador</item>
+    </string-array>
 
 </resources>

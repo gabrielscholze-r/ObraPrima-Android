@@ -5,8 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.example.meuapp.data.Cliente;
@@ -28,6 +30,14 @@ public class FormCadastroProfissional extends AppCompatActivity {
         getSupportActionBar().hide();
         IniciarComponentes();
 
+        Spinner ramo = (Spinner) findViewById(R.id.spinner);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+                R.array.ramos_array, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        ramo.setAdapter(adapter);
+
+
+
         bt_cadastrar.setOnClickListener(new View.OnClickListener() {
 
             private ArrayList<Profissional> profissionais = Database.getProfissionais();
@@ -45,8 +55,7 @@ public class FormCadastroProfissional extends AppCompatActivity {
                 String senhaString = senha.getText().toString();
                 EditText confirmarSenha = (EditText)findViewById(R.id.confirmPassword);
                 String confirmarSenhaString = confirmarSenha.getText().toString();
-                EditText ramoServico = (EditText)findViewById(R.id.ramodoservico);
-                String ramoServicoString = ramoServico.getText().toString();
+                String ramoServicoString = ramo.getSelectedItem().toString();
                 EditText bio = (EditText) findViewById(R.id.editBio);
                 String bioString = bio.getText().toString();
                 if(senhaString.equals(confirmarSenhaString)){

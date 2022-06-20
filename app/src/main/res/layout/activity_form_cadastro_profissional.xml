@@ -175,24 +175,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <AutoCompleteTextView
-
-            android:id="@+id/ramodoservico"
-            style="@style/text_border"
-            android:layout_width="227dp"
-            android:layout_height="48dp"
-            android:layout_marginTop="12dp"
-            android:drawableRight="@drawable/ic_service"
-            android:drawableTint="@color/black"
-            android:hint="Ramo de serviço"
-            android:padding="8dp"
-            android:textColor="@color/black"
-            android:textColorHint="@color/black"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/confirmPassword" />
-
         <ImageView
             android:id="@+id/login7"
             android:layout_width="195dp"
@@ -219,14 +201,40 @@
             android:id="@+id/errorMessage2"
             android:layout_width="295dp"
             android:layout_height="29dp"
-            android:layout_marginTop="8dp"
             android:text=""
             android:textAlignment="center"
             android:textColor="#FF0505"
             android:textSize="15dp"
+            app:layout_constraintBottom_toTopOf="@+id/bt_cadastrar"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ramodoservico" />
+            app:layout_constraintTop_toBottomOf="@+id/confirmPassword"
+            app:layout_constraintVertical_bias="0.923" />
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="224dp"
+            android:layout_height="45dp"
+            app:layout_constraintBottom_toTopOf="@+id/errorMessage2"
+            app:layout_constraintEnd_toEndOf="@+id/containerComponents"
+            app:layout_constraintHorizontal_bias="0.337"
+            app:layout_constraintStart_toStartOf="@+id/containerComponents" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="185dp"
+            android:layout_height="41dp"
+            android:padding="8dp"
+            android:text="Escolha seu ramo:"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:textSize="19dp"
+            app:layout_constraintBottom_toTopOf="@+id/spinner"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.353"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/confirmPassword"
+            app:layout_constraintVertical_bias="1.0" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
