@@ -25,6 +25,7 @@ import com.example.meuapp.adapter.RecycleAdapterPro;
 import com.example.meuapp.data.Database;
 import com.example.meuapp.data.LoginAtual;
 import com.example.meuapp.data.Pedidos;
+import com.example.meuapp.data.Perfil;
 import com.example.meuapp.data.Profissional;
 
 import java.util.ArrayList;
@@ -41,6 +42,7 @@ public class TelaPrincipalProfissional extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         LoginAtual l = Database.getLoginAtual();
+        Perfil.setId(0);
         setContentView(R.layout.activity_tela_principal_profissional);
         getSupportActionBar().hide();
         IniciarComponentes();

@@ -87,8 +87,13 @@
 
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/bt_entrar"
+
             style="@style/ButtonEntrar"
+            android:shadowDy="2"
+            android:shadowDx="2"
+            android:shadowRadius="1"
+            android:shadowColor="@color/black"
+            android:id="@+id/bt_entrar"
             android:text="@string/entrar"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

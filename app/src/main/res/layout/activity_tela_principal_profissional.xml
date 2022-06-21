@@ -15,12 +15,17 @@
         tools:ignore="ExtraText">
 
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
+
+            style="@style/ButtonEntrar"
+            android:shadowDy="2"
+            android:shadowDx="2"
+            android:shadowRadius="1"
+            android:shadowColor="@color/black"
             android:id="@+id/bt_verpedidos"
             android:layout_width="352dp"
             android:layout_height="77dp"
-            android:layout_marginBottom="381dp"
-            android:backgroundTint="@android:color/black"
+            android:layout_marginBottom="380dp"
             android:text="MEUS SERVIÇOS"
             android:textColor="@color/white"
             android:textSize="30dp"
@@ -68,14 +73,19 @@
             app:layout_constraintVertical_bias="1.0"
             app:tint="@color/black" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
+
+            style="@style/ButtonEntrar"
+            android:shadowDy="2"
+            android:shadowDx="2"
+            android:shadowRadius="1"
+            android:shadowColor="@color/black"
             android:id="@+id/bt_deslogar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
             android:layout_marginEnd="20dp"
             android:layout_marginBottom="16dp"
-            android:backgroundTint="@color/black"
             android:padding="20dp"
             android:text="Deslogar"
             android:textAllCaps="false"

@@ -69,13 +69,18 @@
             app:layout_constraintVertical_bias="0.692"
             app:tint="@color/black" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
+
+            style="@style/ButtonEntrar"
+            android:shadowDy="2"
+            android:shadowDx="2"
+            android:shadowRadius="1"
+            android:shadowColor="@color/black"
             android:id="@+id/bt_deslogar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
             android:layout_marginBottom="198dp"
-            android:backgroundTint="@color/black"
             android:padding="20dp"
             android:text="Deslogar"
             android:textAllCaps="false"
@@ -86,12 +91,16 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/bt_lista_pro"
+            style="@style/ButtonEntrar"
+            android:shadowDy="2"
+            android:shadowDx="2"
+            android:shadowRadius="1"
+            android:shadowColor="@color/black"
             android:layout_width="352dp"
             android:layout_height="77dp"
             android:layout_marginBottom="271dp"
-            android:backgroundTint="@android:color/black"
             android:text="Fazer Pedido"
             android:textColor="@color/white"
             android:textSize="30dp"
@@ -100,14 +109,18 @@
             app:layout_constraintHorizontal_bias="0.491"
             app:layout_constraintStart_toStartOf="parent" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/bt_historico2"
+            style="@style/ButtonEntrar"
             android:layout_width="352dp"
             android:layout_height="77dp"
             android:layout_marginBottom="44dp"
-            android:backgroundTint="@android:color/black"
             android:text="Meus pedidos"
             android:textColor="@color/white"
+            android:shadowDy="2"
+            android:shadowDx="2"
+            android:shadowRadius="1"
+            android:shadowColor="@color/black"
             android:textSize="30dp"
             app:layout_constraintBottom_toTopOf="@+id/bt_lista_pro"
             app:layout_constraintEnd_toEndOf="parent"

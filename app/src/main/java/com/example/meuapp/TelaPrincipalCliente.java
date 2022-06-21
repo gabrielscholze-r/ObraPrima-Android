@@ -25,6 +25,7 @@ import com.example.meuapp.adapter.RecycleAdapter;
 import com.example.meuapp.data.Database;
 import com.example.meuapp.data.LoginAtual;
 import com.example.meuapp.data.Pedidos;
+import com.example.meuapp.data.Perfil;
 import com.example.meuapp.data.Profissional;
 
 import org.w3c.dom.Text;
@@ -52,6 +53,7 @@ public class TelaPrincipalCliente extends AppCompatActivity {
         setContentView(R.layout.activity_tela_principal_cliente);
         getSupportActionBar().hide();
         IniciarComponentes();
+        Perfil.setId(1);
         profissionais = Database.getProfissionais();
         LoginAtual loginAtual = Database.getLoginAtual();
         ArrayList<String> views = new ArrayList<>();

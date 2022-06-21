@@ -184,8 +184,13 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/bt_cadastrar"
+
             style="@style/ButtonEntrar"
+            android:shadowDy="2"
+            android:shadowDx="2"
+            android:shadowRadius="1"
+            android:shadowColor="@color/black"
+            android:id="@+id/bt_cadastrar"
             android:layout_width="197dp"
             android:layout_height="77dp"
             android:layout_marginBottom="100dp"

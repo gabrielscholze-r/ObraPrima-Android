@@ -12,11 +12,16 @@
         android:background="@drawable/background"
         android:backgroundTintMode="src_in">
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
+
             android:id="@+id/bt_contratar"
+            style="@style/ButtonEntrar"
             android:layout_width="219dp"
-            android:layout_height="52dp"
-            android:backgroundTint="@android:color/black"
+            android:layout_height="wrap_content"
+            android:shadowColor="@color/black"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="1"
             android:text="CONTRATAR"
             android:textColor="@color/white"
             android:textSize="20sp"
