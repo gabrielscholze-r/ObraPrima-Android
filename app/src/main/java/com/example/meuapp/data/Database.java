@@ -40,6 +40,15 @@ public class Database {
 
         encanador.setPedidos(pedidosEncanador);
 
+        ArrayList<Pedidos> historicoEncanador = encanador.getHistorico();
+
+        historicoEncanador.add(new Pedidos(10, "06", "Visita tecnica feito","Encanamento", "Sergio", "Antonio", "Visita técnica feito para encontrar fonte de um vazamento na casa!"));
+        historicoEncanador.add(new Pedidos(20, "06", "Visita tecnica feito","Encanamento", "Claudio", "Antonio", "Visita técnica feito para encontrar fonte de um vazamento na casa!"));
+        historicoEncanador.add(new Pedidos(10, "07", "Visita tecnica feito","Encanamento", "Roberto", "Antonio", "Visita técnica feito para encontrar fonte de um vazamento na casa!"));
+        historicoEncanador.add(new Pedidos(20, "07", "Visita tecnica feito","Encanamento", "Sergio", "Antonio", "Visita técnica feito para encontrar fonte de um vazamento na casa!"));
+
+        encanador.setHistorico(historicoEncanador);
+
         ArrayList<Pedidos> pedidosPedreiro = pedreiro.getPedidos();
 
         pedidosPedreiro.add(new Pedidos(10, "06", "Visita tecnica","Construção", "Sergio","Luis","Contrução de parede"));

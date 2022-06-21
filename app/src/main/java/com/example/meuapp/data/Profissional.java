@@ -12,6 +12,7 @@ public class Profissional {
     private double rating;
     private String bio;
     private ArrayList<Pedidos> pedidos;
+    private ArrayList<Pedidos> historico;
 
     public Profissional(String nome, String telefone, String cpf, String ramo, double rating,String email,String senha, String bio) {
         this.Nome = nome;
@@ -20,6 +21,7 @@ public class Profissional {
         this.ramo = ramo;
         this.rating = rating;
         this.pedidos = new ArrayList<>();
+        this.historico = new ArrayList<>();
         this.email = email;
         this.senha = senha;
         this.bio = bio;
@@ -99,6 +101,14 @@ public class Profissional {
 
     public void setPedidos(ArrayList<Pedidos> pedidos) {
         this.pedidos = pedidos;
+    }
+
+    public ArrayList<Pedidos> getHistorico() {
+        return historico;
+    }
+
+    public void setHistorico(ArrayList<Pedidos> historico) {
+        this.historico = historico;
     }
 }
 

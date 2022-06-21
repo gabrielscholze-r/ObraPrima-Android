@@ -8,6 +8,7 @@ public class Pedidos {
     private String nomeProfissional;
     private String tipoServiço;
     private String descricao;
+    private double rating;
 
     public Pedidos(int dia, String mes, String tituloPedido, String tipoServico,String nomeCliente, String nomeProfissional, String descricao) {
         this.dia = dia;
@@ -17,6 +18,7 @@ public class Pedidos {
         this.nomeProfissional = nomeProfissional;
         this.descricao = descricao;
         this.tituloPedido = tituloPedido;
+        this.rating = -1;
     }
 
     public String getTipoServiço() {
@@ -73,5 +75,13 @@ public class Pedidos {
 
     public void setTituloPedido(String tituloPedido) {
         this.tituloPedido = tituloPedido;
+    }
+
+    public double getRating() {
+        return rating;
+    }
+
+    public void setRating(double rating) {
+        this.rating = rating;
     }
 }
