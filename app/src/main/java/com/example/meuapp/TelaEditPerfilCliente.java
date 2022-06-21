@@ -2,7 +2,6 @@ package com.example.meuapp;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.Editable;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -47,9 +46,9 @@ public class TelaEditPerfilCliente extends AppCompatActivity {
         cpf.setText(cliente.getCpf());
         TextView telefone = findViewById(R.id.user_phone);
         telefone.setText(cliente.getTelefone());
-        error = findViewById(R.id.error_message);
+        error = findViewById(R.id.error_message2);
 
-        Button bt_aplicar = findViewById(R.id.bt_attdados);
+        Button bt_aplicar = findViewById(R.id.bt_attdados3);
         bt_aplicar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -58,7 +57,7 @@ public class TelaEditPerfilCliente extends AppCompatActivity {
             }
         });
 
-        ImageView bt_home = findViewById(R.id.button_back2);
+        ImageView bt_home = findViewById(R.id.button_voltar);
 
         bt_home.setOnClickListener(new View.OnClickListener() {
             @Override

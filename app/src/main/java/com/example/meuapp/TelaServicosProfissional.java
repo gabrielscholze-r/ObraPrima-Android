@@ -73,7 +73,7 @@ public class TelaServicosProfissional extends AppCompatActivity {
 
     }
     private void IniciarComponentes(){
-        bt_home = findViewById(R.id.button_back2);
+        bt_home = findViewById(R.id.button_voltar);
     }
 
 }

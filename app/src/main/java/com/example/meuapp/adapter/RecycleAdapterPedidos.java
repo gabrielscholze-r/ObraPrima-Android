@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.meuapp.R;
 import com.example.meuapp.data.Pedidos;
+import com.example.meuapp.data.Perfil;
 import com.example.meuapp.data.Profissional;
 
 import java.util.ArrayList;
@@ -47,7 +48,15 @@ public class RecycleAdapterPedidos extends RecyclerView.Adapter<RecycleAdapterPe
 
     @Override
     public void onBindViewHolder(@NonNull RecycleAdapterPedidos.MyViewHolder holder, int position) {
-        String text = pedidos.get(position).getNomeProfissional() + " - " + pedidos.get(position).getTituloPedido() + " - " + pedidos.get(position).getDia()+"/"+pedidos.get(position).getMes();
+        String text = "";
+        if(Perfil.getId()==0){
+            text = pedidos.get(position).getNomeCliente() + " - " + pedidos.get(position).getTituloPedido() + " - " + pedidos.get(position).getDia()+"/"+pedidos.get(position).getMes();
+
+        }
+        else{
+            text = pedidos.get(position).getNomeProfissional() + " - " + pedidos.get(position).getTituloPedido() + " - " + pedidos.get(position).getDia()+"/"+pedidos.get(position).getMes();
+
+        }
         holder.nameText.setText(text);
 
     }

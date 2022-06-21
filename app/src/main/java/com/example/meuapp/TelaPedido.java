@@ -41,7 +41,13 @@ public class TelaPedido extends AppCompatActivity {
         p = Perfil.getPedido();
         titulo.setText(p.getTituloPedido());
         tipo_pedido.setText(p.getTipoServiço());
-        nome_profissional.setText("Profissional: " + p.getNomeProfissional());
+        if(Perfil.getId()==0){
+            nome_profissional.setText("Cliente: " + p.getNomeCliente());
+        }
+        else{
+            nome_profissional.setText("Profissional: " + p.getNomeProfissional());
+        }
+
         data.setText("Data Prevista: "+p.getDia() + "/" + p.getMes());
         description.setText(p.getDescricao());
 

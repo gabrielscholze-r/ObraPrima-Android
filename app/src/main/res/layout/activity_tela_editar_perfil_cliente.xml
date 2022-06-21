@@ -13,7 +13,7 @@
         android:background="@drawable/background">
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/bt_attdados"
+            android:id="@+id/bt_attdados3"
             style="@style/ButtonEntrar"
             android:layout_width="197dp"
             android:layout_height="77dp"
@@ -27,7 +27,7 @@
         <View
             android:id="@+id/containerComponents2"
             style="@style/text_border"
-            android:layout_width="330dp"
+            android:layout_width="fill_parent"
             android:layout_height="94dp"
             app:layout_constraintBottom_toTopOf="@+id/containerComponents3"
             app:layout_constraintEnd_toEndOf="parent"
@@ -37,7 +37,7 @@
         <View
             android:id="@+id/containerComponents3"
             style="@style/text_border"
-            android:layout_width="330dp"
+            android:layout_width="fill_parent"
             android:layout_height="94dp"
             app:layout_constraintBottom_toTopOf="@+id/containerComponents4"
             app:layout_constraintEnd_toEndOf="parent"
@@ -47,7 +47,7 @@
         <View
             android:id="@+id/containerComponents4"
             style="@style/text_border"
-            android:layout_width="330dp"
+            android:layout_width="fill_parent"
             android:layout_height="94dp"
             app:layout_constraintBottom_toTopOf="@+id/containerComponents5"
             app:layout_constraintEnd_toEndOf="parent"
@@ -57,7 +57,7 @@
         <View
             android:id="@+id/containerComponents5"
             style="@style/text_border"
-            android:layout_width="330dp"
+            android:layout_width="fill_parent"
             android:layout_height="94dp"
             app:layout_constraintBottom_toTopOf="@+id/containerComponents7"
             app:layout_constraintEnd_toEndOf="parent"
@@ -67,9 +67,9 @@
         <View
             android:id="@+id/containerComponents7"
             style="@style/text_border"
-            android:layout_width="330dp"
+            android:layout_width="fill_parent"
             android:layout_height="188dp"
-            app:layout_constraintBottom_toTopOf="@+id/error_message"
+            app:layout_constraintBottom_toTopOf="@+id/error_message2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.493"
             app:layout_constraintStart_toStartOf="parent" />
@@ -225,7 +225,7 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <ImageView
-            android:id="@+id/button_back2"
+            android:id="@+id/button_voltar"
             android:layout_width="48dp"
             android:layout_height="39dp"
             app:layout_constraintStart_toStartOf="parent"
@@ -370,14 +370,14 @@
 
         <TextView
             android:text=""
-            android:id="@+id/error_message"
+            android:id="@+id/error_message2"
             android:layout_width="328dp"
             android:layout_height="29dp"
             android:layout_marginBottom="30dp"
             android:textAlignment="center"
             android:textColor="#FF0000"
             android:textSize="16sp"
-            app:layout_constraintBottom_toTopOf="@+id/bt_attdados"
+            app:layout_constraintBottom_toTopOf="@+id/bt_attdados3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 

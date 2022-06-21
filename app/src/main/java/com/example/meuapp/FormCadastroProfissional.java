@@ -32,7 +32,7 @@ public class FormCadastroProfissional extends AppCompatActivity {
 
         Spinner ramo = (Spinner) findViewById(R.id.spinner);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-                R.array.ramos_array, android.R.layout.simple_spinner_item);
+                R.array.ramos_array, R.layout.spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         ramo.setAdapter(adapter);
 

@@ -13,7 +13,9 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -44,7 +46,6 @@ public class TelaPrincipalProfissional extends AppCompatActivity {
         IniciarComponentes();
         TextView titulo = findViewById(R.id.textTituloPro);
         titulo.setText("Bem vindo " + l.getProfissional().getNome() + "!");
-
         Button bt_verpedidos = findViewById(R.id.bt_verpedidos);
 
         bt_verpedidos.setOnClickListener(new View.OnClickListener() {
@@ -52,6 +53,18 @@ public class TelaPrincipalProfissional extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(TelaPrincipalProfissional.this, TelaServicosProfissional.class);
                 startActivity(intent);
+            }
+        });
+
+        ImageView bt_perfil = findViewById(R.id.containerIcon);
+
+        bt_perfil.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(TelaPrincipalProfissional.this, TelaEditPerfilProfissional.class);
+//                intent.setFlags(Intent.FLAG_ACTIVITY_PREVIOUS_IS_TOP);
+                startActivity(intent);
+                finish();
             }
         });
 

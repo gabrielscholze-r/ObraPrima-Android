@@ -19,12 +19,10 @@
             style="@style/text_border"
             android:layout_width="307dp"
             android:layout_height="800dp"
-            android:layout_marginBottom="91dp"
+            android:layout_marginBottom="88dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.495"
             app:layout_constraintStart_toStartOf="parent" />
-
 
         <EditText
             android:id="@+id/editPersonName"
@@ -212,6 +210,7 @@
             app:layout_constraintVertical_bias="0.923" />
 
         <Spinner
+            android:backgroundTint="@color/black"
             android:id="@+id/spinner"
             android:layout_width="224dp"
             android:layout_height="45dp"
