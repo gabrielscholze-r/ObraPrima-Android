@@ -12,6 +12,7 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.meuapp.data.Database;
 import com.example.meuapp.data.Pedidos;
 import com.example.meuapp.data.Perfil;
 
@@ -29,7 +30,7 @@ public class TelaAvaliar extends AppCompatActivity {
 
         TextView titulo = findViewById(R.id.titulo_pedido2);
         TextView tipo_pedido = findViewById(R.id.tipo_pedido2);
-        TextView nome_profissional = findViewById(R.id.nome_profissional2);
+        TextView nome_profissional = findViewById(R.id.nome_profissional3);
         TextView data = findViewById(R.id.data_pedido2);
         TextView description = findViewById(R.id.desc_pedido2);
         dropbox = (Spinner) findViewById(R.id.spinner_nota);
@@ -41,6 +42,7 @@ public class TelaAvaliar extends AppCompatActivity {
 
         p = Perfil.getPedido();
         titulo.setText(p.getTituloPedido());
+        nome_profissional.setText("Profissional: "+p.getNomeProfissional());
         tipo_pedido.setText(p.getTipoServiço());
         data.setText("Data Prevista: "+p.getDia() + "/" + p.getMes());
         description.setText(p.getDescricao());
@@ -51,6 +53,7 @@ public class TelaAvaliar extends AppCompatActivity {
                 double nota = Double.parseDouble(dropbox.getSelectedItem().toString());
                 p.setRating(nota);
                 Toast.makeText(getApplicationContext(), "PEDIDO AVALIADO!", Toast.LENGTH_SHORT).show();
+                Database.updateRating(p.getNomeProfissional());
                 Intent intent = new Intent(TelaAvaliar.this,TelaServicosCliente.class);
                 startActivity(intent);
                 finish();
@@ -60,7 +63,6 @@ public class TelaAvaliar extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-//
         Intent intent = new Intent(TelaAvaliar.this,TelaServicosCliente.class);
         startActivity(intent);
         finish();

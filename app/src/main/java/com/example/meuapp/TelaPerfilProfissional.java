@@ -101,4 +101,12 @@ public class TelaPerfilProfissional extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    public void onBackPressed() {
+//        super.onBackPressed();
+        Intent intent = new Intent(TelaPerfilProfissional.this, TelaListaProfissionais.class);
+        startActivity(intent);
+        finish();
+    }
 }

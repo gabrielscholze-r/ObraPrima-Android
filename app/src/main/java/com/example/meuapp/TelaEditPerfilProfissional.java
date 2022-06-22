@@ -151,7 +151,6 @@ public class TelaEditPerfilProfissional extends AppCompatActivity {
             profissionais.add(index, novoProfissional);
             Database.setProfissionais(profissionais);
             Intent intent = new Intent(TelaEditPerfilProfissional.this, TelaPrincipalProfissional.class);
-            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             LoginAtual.setProfissional(novoProfissional);
             Toast.makeText(getApplicationContext(), "Dados Alterados!", Toast.LENGTH_SHORT).show();
             startActivity(intent);
@@ -161,7 +160,6 @@ public class TelaEditPerfilProfissional extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-//        super.onBackPressed();
         Intent intent = new Intent(TelaEditPerfilProfissional.this, TelaPrincipalProfissional.class);
         startActivity(intent);
         finish();

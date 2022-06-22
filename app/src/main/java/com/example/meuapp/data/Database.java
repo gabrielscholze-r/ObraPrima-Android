@@ -13,9 +13,9 @@ public class Database {
 
 
     public static void loadDatabase() {
-        Profissional encanador = new Profissional("Antonio", "41988888888", "1234567891", "Encanador", 4.5, "antonio@gmail.com","1234","Antonio Encanador");
-        Profissional pedreiro = new Profissional("Luis", "41977777777", "1234567891", "Pedreiro", 3.0,"luis@gmail.com","1234","Luis Encanador");
-        Profissional eletricista = new Profissional("Rogerio", "4199999999", "1234567891", "Eletricista", 5.0,"rogerio@gmail.com","1234","Rogerio Encanador");
+        Profissional encanador = new Profissional("Antonio", "41988888888", "1234567891", "Encanador", 0.0, "antonio@gmail.com","1234","Antonio Encanador");
+        Profissional pedreiro = new Profissional("Luis", "41977777777", "1234567891", "Pedreiro", 0.0,"luis@gmail.com","1234","Luis Encanador");
+        Profissional eletricista = new Profissional("Rogerio", "4199999999", "1234567891", "Eletricista", 0.0,"rogerio@gmail.com","1234","Rogerio Encanador");
 
         Cliente cliente1 = new Cliente("Sergio", "sergio123@gmail.com", "12345678912", "999999999", "1234");
         Cliente cliente2 = new Cliente("Claudio", "claudio123@gmail.com", "12345678912", "999999999", "1234");
@@ -99,5 +99,23 @@ public class Database {
                 profissionais.remove(p);
             }
         }
+    }
+
+    public static void updateRating(String name){
+        double count=0;
+        double soma=0;
+        Profissional p = findProfissionalByName(name);
+        for (Pedidos p2 : p.getHistorico()){
+            if(p2.getRating()!=-1.0){
+                count++;
+                soma+=p2.getRating();
+            }
+        }
+        if(soma>0){
+            p.setRating(soma/count);
+        }else{
+            p.setRating(0.0);
+        }
+
     }
 }

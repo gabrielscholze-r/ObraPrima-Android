@@ -82,7 +82,7 @@ public class TelaServicosCliente extends AppCompatActivity {
         else{
             for (Profissional p : profissionais){
                 for(Pedidos p2 : p.getHistorico()){
-                    if(p2.getNomeCliente()==nomeCliente && p2.getTipoPedido()==1 && p2.getRating()==-1){
+                    if(p2.getNomeCliente()==nomeCliente && p2.getTipoPedido()==1 && p2.getRating()==-1.0){
                         pedidos.add(p2);
                     }
                 }
