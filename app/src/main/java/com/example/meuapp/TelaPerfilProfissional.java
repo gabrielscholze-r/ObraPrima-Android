@@ -68,6 +68,8 @@ public class TelaPerfilProfissional extends AppCompatActivity {
         bt_voltar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent = new Intent(TelaPerfilProfissional.this,TelaListaProfissionais.class);
+                startActivity(intent);
                 finish();
             }
         });

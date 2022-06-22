@@ -107,7 +107,7 @@
             android:layout_height="119dp"
             android:layout_marginBottom="32dp"
             android:text="TextView"
-            android:textAlignment="viewStart"
+            android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="24dp"
             app:layout_constraintBottom_toTopOf="@+id/textView2"
@@ -174,7 +174,7 @@
         <EditText
 
             android:id="@+id/edit_desc_job"
-            style="@style/text_border"
+            style="@style/Edit_Text"
             android:layout_width="341dp"
             android:layout_height="103dp"
             android:layout_marginBottom="41dp"
@@ -223,7 +223,7 @@
             android:id="@+id/textView19"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="89dp"
+            android:layout_marginTop="41dp"
             android:layout_marginBottom="10dp"
             android:text="Mês"
             android:textAlignment="center"
@@ -231,7 +231,10 @@
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/spinner_month"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.795"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edit_desc_job" />
 
         <Spinner
             android:backgroundTint="@color/black"

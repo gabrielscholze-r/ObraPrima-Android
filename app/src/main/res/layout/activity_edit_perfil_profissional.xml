@@ -56,18 +56,18 @@
         <View
             android:id="@+id/containerComponents6"
             style="@style/text_border"
-            android:layout_width="410dp"
-            android:layout_height="87dp"
-            android:layout_marginTop="16dp"
+            android:layout_width="fill_parent"
+            android:layout_height="95dp"
+            android:layout_marginTop="52dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="0.428"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/text_titulo" />
 
         <View
             android:id="@+id/containerComponents8"
             style="@style/text_border"
-            android:layout_width="410dp"
+            android:layout_width="fill_parent"
             android:layout_height="94dp"
             android:layout_marginTop="3dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -78,7 +78,7 @@
         <View
             android:id="@+id/containerComponents9"
             style="@style/text_border"
-            android:layout_width="408dp"
+            android:layout_width="fill_parent"
             android:layout_height="111dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
@@ -88,7 +88,7 @@
         <View
             android:id="@+id/containerComponents10"
             style="@style/text_border"
-            android:layout_width="406dp"
+            android:layout_width="fill_parent"
             android:layout_height="122dp"
             android:layout_marginTop="1dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -99,7 +99,7 @@
         <View
             android:id="@+id/containerComponents11"
             style="@style/text_border"
-            android:layout_width="393dp"
+            android:layout_width="fill_parent"
             android:layout_height="166dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.333"
@@ -109,7 +109,7 @@
         <View
             android:id="@+id/containerComponents12"
             style="@style/text_border"
-            android:layout_width="403dp"
+            android:layout_width="fill_parent"
             android:layout_height="240dp"
             android:layout_marginTop="5dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -430,6 +430,7 @@
             android:id="@+id/textView17"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="11dp"
             android:layout_marginBottom="84dp"
             android:text="Telefone:"
@@ -437,7 +438,8 @@
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="@+id/containerComponents10"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/containerComponents10" />
+            app:layout_constraintTop_toTopOf="@+id/containerComponents10"
+            app:layout_constraintVertical_bias="0.0" />
 
         <TextView
             android:id="@+id/textView16"
