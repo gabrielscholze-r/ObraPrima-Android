@@ -6,6 +6,7 @@ public class Cliente {
      private String cpf;
      private String telefone;
      private String senha;
+     private int TipoPedido;
 
 
      public Cliente(String nome, String email, String cpf, String telefone, String senha) {
@@ -14,6 +15,15 @@ public class Cliente {
           this.cpf = cpf;
           this.telefone = telefone;
           this.senha = senha;
+          this.TipoPedido = 0;
+     }
+
+     public int getTipoPedido() {
+          return TipoPedido;
+     }
+
+     public void setTipoPedido(int tipoPedido) {
+          TipoPedido = tipoPedido;
      }
 
      public String getNome() {

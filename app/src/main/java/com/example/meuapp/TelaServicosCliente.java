@@ -22,6 +22,7 @@ import java.util.ArrayList;
 public class TelaServicosCliente extends AppCompatActivity {
 
     private ImageView bt_home;
+    private LoginAtual loginAtual;
     private RecyclerView recyclerView;
     private RecycleAdapterPedidos.RecyclerViewClickListener listener;
     private ArrayList<Profissional> profissionais;
@@ -30,13 +31,16 @@ public class TelaServicosCliente extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //0 = meus pedidos pendentes
+        //1 = pedidos ja concluidos
+        //2 = pedidos concluidos que requerem avaliação
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela_servicos_cliente);
         IniciarComponentes();
         getSupportActionBar().hide();
-        LoginAtual l = new LoginAtual();
+        loginAtual = new LoginAtual();
         pd = new ArrayList<>();
-        nomeCliente = l.getCliente().getNome();
+        nomeCliente = loginAtual.getCliente().getNome();
         profissionais = Database.getProfissionais();
         recyclerView = findViewById(R.id.recycler_services);
         setAdapter();
@@ -58,10 +62,30 @@ public class TelaServicosCliente extends AppCompatActivity {
     private void setAdapter() {
         setOnClickListener();
         ArrayList<Pedidos> pedidos = new ArrayList<>();
-        for (Profissional p : profissionais){
-            for(Pedidos p2 : p.getPedidos()){
-                if(p2.getNomeCliente()==nomeCliente){
-                    pedidos.add(p2);
+        if(loginAtual.getCliente().getTipoPedido()==0){
+            for (Profissional p : profissionais){
+                for(Pedidos p2 : p.getPedidos()){
+                    if(p2.getNomeCliente()==nomeCliente && p2.getTipoPedido()==0){
+                        pedidos.add(p2);
+                    }
+                }
+            }
+        }
+        else if(loginAtual.getCliente().getTipoPedido()==1){
+            for (Profissional p : profissionais){
+                for(Pedidos p2 : p.getHistorico()){
+                    if(p2.getNomeCliente()==nomeCliente && p2.getTipoPedido()==1){
+                        pedidos.add(p2);
+                    }
+                }
+            }
+        }
+        else{
+            for (Profissional p : profissionais){
+                for(Pedidos p2 : p.getHistorico()){
+                    if(p2.getNomeCliente()==nomeCliente && p2.getTipoPedido()==1 && p2.getRating()!=-1){
+                        pedidos.add(p2);
+                    }
                 }
             }
         }

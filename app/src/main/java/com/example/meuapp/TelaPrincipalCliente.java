@@ -39,12 +39,9 @@ public class TelaPrincipalCliente extends AppCompatActivity {
 
     private Button bt_deslogar;
     private Button bt_historico;
-    private Button bt_contratar1;
-    private Button bt_contratar2;
-    private Button bt_contratar3;
     private Button bt_lista_pro;
-    private int x,y,z;
-    private String ClienteNome;
+    private Button bt_avaliar;
+    private Button bt_historico_pedidos;
     private ArrayList<Profissional> profissionais;
 
     @Override
@@ -54,6 +51,8 @@ public class TelaPrincipalCliente extends AppCompatActivity {
         getSupportActionBar().hide();
         IniciarComponentes();
         Perfil.setId(1);
+        bt_avaliar = findViewById(R.id.bt_avaliar);
+        bt_historico_pedidos = findViewById(R.id.bt_historico_pedidos);
         profissionais = Database.getProfissionais();
         LoginAtual loginAtual = new LoginAtual();
         ArrayList<String> views = new ArrayList<>();
@@ -74,12 +73,36 @@ public class TelaPrincipalCliente extends AppCompatActivity {
         bt_historico.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                LoginAtual loginAtual = new LoginAtual();
+                loginAtual.getCliente().setTipoPedido(0);
                 Intent intent = new Intent(TelaPrincipalCliente.this, TelaServicosCliente.class);
 //                intent.setFlags(Intent.FLAG_ACTIVITY_PREVIOUS_IS_TOP);
                 startActivity(intent);
             }
 
         });
+
+        bt_historico_pedidos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                LoginAtual loginAtual = new LoginAtual();
+                loginAtual.getCliente().setTipoPedido(1);
+                Intent intent = new Intent(TelaPrincipalCliente.this, TelaServicosCliente.class);
+//                intent.setFlags(Intent.FLAG_ACTIVITY_PREVIOUS_IS_TOP);
+                startActivity(intent);
+            }
+        });
+        bt_avaliar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                LoginAtual loginAtual = new LoginAtual();
+                loginAtual.getCliente().setTipoPedido(2);
+                Intent intent = new Intent(TelaPrincipalCliente.this, TelaServicosCliente.class);
+//                intent.setFlags(Intent.FLAG_ACTIVITY_PREVIOUS_IS_TOP);
+                startActivity(intent);
+            }
+        });
+
         bt_lista_pro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
