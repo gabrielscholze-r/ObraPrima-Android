@@ -16,7 +16,6 @@
 
         <View
             android:id="@+id/containerComponents"
-            style="@style/text_border"
             android:layout_width="285dp"
             android:layout_height="686dp"
             android:layout_marginBottom="205dp"
@@ -39,8 +38,8 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
+            style="@style/Edit_Text"
             android:id="@+id/editPersonName"
-            style="@style/text_border"
             android:padding="10dp"
             android:layout_width="277dp"
             android:layout_height="wrap_content"
@@ -58,8 +57,8 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
+            style="@style/Edit_Text"
             android:id="@+id/editTextEmailAddress"
-            style="@style/text_border"
             android:padding="10dp"
             android:layout_width="277dp"
             android:layout_height="wrap_content"
@@ -78,8 +77,8 @@
 
 
         <EditText
+            style="@style/Edit_Text"
             android:id="@+id/editTextCPF"
-            style="@style/text_border"
             android:padding="10dp"
             android:layout_width="277dp"
             android:layout_height="wrap_content"
@@ -98,8 +97,8 @@
 
 
         <EditText
+            style="@style/Edit_Text"
             android:id="@+id/editTextPhone"
-            style="@style/text_border"
             android:padding="10dp"
             android:layout_width="277dp"
             android:layout_height="wrap_content"
@@ -118,8 +117,8 @@
 
 
         <EditText
+            style="@style/Edit_Text"
             android:id="@+id/createPassword"
-            style="@style/text_border"
             android:padding="10dp"
             android:layout_width="277dp"
             android:layout_height="wrap_content"
@@ -139,8 +138,7 @@
 
         <EditText
             android:id="@+id/confirmPassword"
-            style="@style/text_border"
-            android:padding="10dp"
+            style="@style/Edit_Text"
             android:layout_width="277dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="28dp"
@@ -149,13 +147,14 @@
             android:ems="10"
             android:hint="Confirme sua senha"
             android:inputType="textPassword"
+            android:padding="10dp"
             android:textColor="@color/black"
             android:textColorHint="@color/black"
+            app:layout_constraintBottom_toTopOf="@+id/errorMessage3"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.502"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/createPassword" />
-
+            app:layout_constraintTop_toBottomOf="@+id/createPassword"
+            app:layout_constraintVertical_bias="0.0" />
 
         <ImageView
             android:id="@+id/login6"
@@ -180,7 +179,7 @@
             android:layout_height="77dp"
             android:layout_marginTop="52dp"
             android:text="Cadastrar"
-            android:textSize="30dp"
+            android:textSize="26dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/confirmPassword" />
@@ -189,13 +188,14 @@
             android:id="@+id/errorMessage3"
             android:layout_width="281dp"
             android:layout_height="30dp"
+            android:layout_marginBottom="94dp"
             android:text=""
             android:textAlignment="center"
             android:textColor="#FF0505"
             android:textSize="15dp"
+            app:layout_constraintBottom_toBottomOf="@+id/containerComponents"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="562dp" />
+            app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

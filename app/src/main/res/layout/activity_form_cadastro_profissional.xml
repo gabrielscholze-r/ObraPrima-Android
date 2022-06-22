@@ -16,7 +16,6 @@
 
         <View
             android:id="@+id/containerComponents"
-            style="@style/text_border"
             android:layout_width="307dp"
             android:layout_height="800dp"
             android:layout_marginBottom="88dp"
@@ -25,8 +24,8 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <EditText
+            style="@style/Edit_Text"
             android:id="@+id/editPersonName"
-            style="@style/text_border"
             android:layout_width="227dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -45,7 +44,7 @@
 
         <EditText
             android:id="@+id/editTextEmailAddress"
-            style="@style/text_border"
+            style="@style/Edit_Text"
             android:layout_width="227dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -64,7 +63,7 @@
 
         <EditText
             android:id="@+id/editTextCPF"
-            style="@style/text_border"
+            style="@style/Edit_Text"
             android:layout_width="227dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -83,7 +82,7 @@
 
         <EditText
             android:id="@+id/editTextPhone"
-            style="@style/text_border"
+            style="@style/Edit_Text"
             android:layout_width="227dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -102,9 +101,9 @@
 
         <EditText
             android:id="@+id/editBio"
-            style="@style/text_border"
+            style="@style/Edit_Text"
             android:layout_width="227dp"
-            android:layout_height="match_parent"
+            android:layout_height="48dp"
             android:layout_marginTop="16dp"
             android:drawableRight="@drawable/ic_service"
             android:drawableTint="@color/black"
@@ -122,7 +121,7 @@
 
         <EditText
             android:id="@+id/createPassword"
-            style="@style/text_border"
+            style="@style/Edit_Text"
             android:layout_width="227dp"
             android:layout_height="48dp"
             android:layout_marginTop="12dp"
@@ -141,7 +140,7 @@
 
         <EditText
             android:id="@+id/confirmPassword"
-            style="@style/text_border"
+            style="@style/Edit_Text"
             android:layout_width="227dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -195,7 +194,7 @@
             android:layout_height="77dp"
             android:layout_marginBottom="100dp"
             android:text="Cadastrar"
-            android:textSize="30dp"
+            android:textSize="26dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />

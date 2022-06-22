@@ -72,8 +72,8 @@
         <View
             android:id="@+id/containerComponents7"
             style="@style/text_border"
-            android:layout_width="fill_parent"
-            android:layout_height="188dp"
+            android:layout_width="411dp"
+            android:layout_height="248dp"
             app:layout_constraintBottom_toTopOf="@+id/error_message2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.493"
@@ -98,6 +98,7 @@
             app:layout_constraintVertical_bias="0.0" />
 
         <EditText
+            style="@style/Edit_Text"
             android:id="@+id/edit_nome"
             android:layout_width="323dp"
             android:layout_height="63dp"
@@ -117,6 +118,7 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <EditText
+            style="@style/Edit_Text"
             android:id="@+id/edit_senhaatual"
             android:layout_width="323dp"
             android:layout_height="63dp"
@@ -135,6 +137,7 @@
             app:layout_constraintTop_toTopOf="@+id/containerComponents7" />
 
         <EditText
+            style="@style/Edit_Text"
             android:id="@+id/edit_senha2"
             android:layout_width="323dp"
             android:layout_height="63dp"
@@ -153,6 +156,7 @@
             app:layout_constraintTop_toBottomOf="@+id/edit_senha" />
 
         <EditText
+            style="@style/Edit_Text"
             android:id="@+id/edit_senha"
             android:layout_width="323dp"
             android:layout_height="63dp"
@@ -171,6 +175,7 @@
             app:layout_constraintTop_toBottomOf="@+id/edit_senhaatual" />
 
         <EditText
+            style="@style/Edit_Text"
             android:id="@+id/edit_CPF"
             android:layout_width="323dp"
             android:layout_height="63dp"
@@ -191,6 +196,7 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <EditText
+            style="@style/Edit_Text"
             android:id="@+id/edit_phone"
             android:layout_width="323dp"
             android:layout_height="63dp"
@@ -211,6 +217,7 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <EditText
+            style="@style/Edit_Text"
             android:id="@+id/edit_useremail"
             android:layout_width="323dp"
             android:layout_height="63dp"
@@ -374,16 +381,17 @@
             app:layout_constraintTop_toBottomOf="@+id/containerComponents3" />
 
         <TextView
-            android:text=""
             android:id="@+id/error_message2"
             android:layout_width="328dp"
             android:layout_height="29dp"
-            android:layout_marginBottom="30dp"
+            android:layout_marginBottom="8dp"
+            android:text=""
             android:textAlignment="center"
             android:textColor="#FF0000"
             android:textSize="16sp"
             app:layout_constraintBottom_toTopOf="@+id/bt_attdados3"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.506"
             app:layout_constraintStart_toStartOf="parent" />
 
 

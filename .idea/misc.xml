@@ -11,10 +11,13 @@
         <entry key="..\:/AndroidStudio/ObraPrima-Android/app/src/main/res/drawable/ic_calender.xml" value="0.1935" />
         <entry key="..\:/AndroidStudio/ObraPrima-Android/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2695" />
         <entry key="..\:/AndroidStudio/ObraPrima-Android/app/src/main/res/drawable/ic_positivo.xml" value="0.2695" />
+        <entry key="..\:/AndroidStudio/ObraPrima-Android/app/src/main/res/layout/activity_edit_perfil_profissional.xml" value="0.33" />
         <entry key="..\:/AndroidStudio/ObraPrima-Android/app/src/main/res/layout/activity_form_cadastro_cliente.xml" value="0.31567028985507245" />
-        <entry key="..\:/AndroidStudio/ObraPrima-Android/app/src/main/res/layout/activity_form_cadastro_profissional.xml" value="0.31567028985507245" />
+        <entry key="..\:/AndroidStudio/ObraPrima-Android/app/src/main/res/layout/activity_form_cadastro_profissional.xml" value="0.25" />
         <entry key="..\:/AndroidStudio/ObraPrima-Android/app/src/main/res/layout/activity_form_login.xml" value="0.33" />
         <entry key="..\:/AndroidStudio/ObraPrima-Android/app/src/main/res/layout/activity_main.xml" value="0.31567028985507245" />
+        <entry key="..\:/AndroidStudio/ObraPrima-Android/app/src/main/res/layout/activity_tela_editar_perfil_cliente.xml" value="0.22" />
+        <entry key="..\:/AndroidStudio/ObraPrima-Android/app/src/main/res/layout/activity_tela_perfil_profissional.xml" value="0.25" />
         <entry key="..\:/AndroidStudio/ObraPrima-Android/app/src/main/res/layout/activity_tela_principal_cliente.xml" value="0.3211050724637681" />
         <entry key="..\:/AndroidStudio/ObraPrima-Android/app/src/main/res/layout/activity_tela_principal_profissional.xml" value="0.3211050724637681" />
         <entry key="..\:/AndroidStudio/ObraPrima-Android/app/src/main/res/layout/activity_tela_servicos_cliente.xml" value="0.3211050724637681" />
@@ -31,7 +34,6 @@
         <entry key="..\:/Users/House/Desktop/MeuApp/app/src/main/res/drawable/prolist.xml" value="0.1" />
         <entry key="..\:/Users/House/Desktop/MeuApp/app/src/main/res/drawable/spinner_item.xml" value="0.1965" />
         <entry key="..\:/Users/House/Desktop/MeuApp/app/src/main/res/drawable/text_border.xml" value="0.174" />
-        <entry key="..\:/Users/House/Desktop/MeuApp/app/src/main/res/layout/acitvity_avaliar_pedido.xml" value="0.33" />
         <entry key="..\:/Users/House/Desktop/MeuApp/app/src/main/res/layout/activity_edit_perfil_profissional.xml" value="0.25" />
         <entry key="..\:/Users/House/Desktop/MeuApp/app/src/main/res/layout/activity_form_cadastro_cliente.xml" value="0.25" />
         <entry key="..\:/Users/House/Desktop/MeuApp/app/src/main/res/layout/activity_form_cadastro_profissional.xml" value="0.3211963589076723" />
@@ -41,14 +43,13 @@
         <entry key="..\:/Users/House/Desktop/MeuApp/app/src/main/res/layout/activity_main.xml" value="0.11286874732791792" />
         <entry key="..\:/Users/House/Desktop/MeuApp/app/src/main/res/layout/activity_tela_editar_perfil_cliente.xml" value="0.33" />
         <entry key="..\:/Users/House/Desktop/MeuApp/app/src/main/res/layout/activity_tela_pedido.xml" value="0.25" />
-        <entry key="..\:/Users/House/Desktop/MeuApp/app/src/main/res/layout/activity_tela_perfil_profissional.xml" value="0.32087628865979384" />
+        <entry key="..\:/Users/House/Desktop/MeuApp/app/src/main/res/layout/activity_tela_perfil_profissional.xml" value="0.14" />
         <entry key="..\:/Users/House/Desktop/MeuApp/app/src/main/res/layout/activity_tela_principal_cliente.xml" value="0.16877637130801687" />
         <entry key="..\:/Users/House/Desktop/MeuApp/app/src/main/res/layout/activity_tela_principal_profissional.xml" value="0.2" />
         <entry key="..\:/Users/House/Desktop/MeuApp/app/src/main/res/layout/activity_tela_servicos_cliente.xml" value="0.33" />
         <entry key="..\:/Users/House/Desktop/MeuApp/app/src/main/res/layout/list_item.xml" value="0.22" />
         <entry key="..\:/Users/House/Desktop/MeuApp/app/src/main/res/layout/list_pro.xml" value="0.2" />
         <entry key="..\:/Users/House/Desktop/MeuApp/app/src/main/res/layout/lista_profissionais.xml" value="0.25" />
-        <entry key="..\:/Users/House/Desktop/MeuApp/app/src/main/res/layout/spinner_item.xml" value="0.11628901239846089" />
         <entry key="..\:/Users/User/Desktop/MeuApp/app/src/main/res/drawable/ic_profile.xml" value="0.178" />
         <entry key="..\:/Users/User/Desktop/MeuApp/app/src/main/res/layout/activity_form_cadastro_cliente.xml" value="0.264" />
         <entry key="..\:/Users/User/Desktop/MeuApp/app/src/main/res/layout/activity_form_login.xml" value="0.2157676348547718" />
