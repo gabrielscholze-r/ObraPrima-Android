@@ -47,6 +47,19 @@ public class TelaPedido extends AppCompatActivity {
         tipo_pedido.setText(p.getTipoServiço());
         if(p.getTipoPedido()==0){
             rating.setText("");
+            bt_concluir.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    p.setTipoPedido(1);
+                    Database.findProfissionalByName(p.getNomeProfissional()).getPedidos().remove(p);
+                    Database.findProfissionalByName(p.getNomeProfissional()).getHistorico().add(p);
+                    Intent intent = new Intent(TelaPedido.this, TelaServicosCliente.class);
+                    Toast.makeText(getApplicationContext(),"PEDIDO CONCLUIDO!",Toast.LENGTH_LONG).show();
+
+                    startActivity(intent);
+                    finish();
+                }
+            });
             cancelar_pedido.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -70,6 +83,7 @@ public class TelaPedido extends AppCompatActivity {
                 }
             });
         }else{
+            bt_concluir.setVisibility(View.GONE);
             cancelar_pedido.setVisibility(View.GONE);
             if(p.getRating()==-1){
                 rating.setText("Avaliação pendente");
@@ -113,8 +127,15 @@ public class TelaPedido extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        Intent intent = new Intent(TelaPedido.this, TelaServicosProfissional.class);
-        startActivity(intent);
-        finish();
+        if(Perfil.getId()==0){
+            Intent intent = new Intent(TelaPedido.this, TelaServicosProfissional.class);
+            startActivity(intent);
+            finish();
+        }else{
+            Intent intent = new Intent(TelaPedido.this, TelaServicosCliente.class);
+            startActivity(intent);
+            finish();
+        }
+
     }
 }
