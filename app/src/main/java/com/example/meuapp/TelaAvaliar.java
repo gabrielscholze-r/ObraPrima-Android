@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -39,6 +40,7 @@ public class TelaAvaliar extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         dropbox.setAdapter(adapter);
         avaliar = findViewById(R.id.bt_enviar_avaliacao);
+        ImageView button_voltar_avaliar = findViewById(R.id.button_voltar_avaliar);
 
         p = Perfil.getPedido();
         titulo.setText(p.getTituloPedido());
@@ -46,6 +48,16 @@ public class TelaAvaliar extends AppCompatActivity {
         tipo_pedido.setText(p.getTipoServiço());
         data.setText("Data Prevista: "+p.getDia() + "/" + p.getMes());
         description.setText(p.getDescricao());
+
+        button_voltar_avaliar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(TelaAvaliar.this,TelaServicosCliente.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
 
         avaliar.setOnClickListener(new View.OnClickListener() {
             @Override
