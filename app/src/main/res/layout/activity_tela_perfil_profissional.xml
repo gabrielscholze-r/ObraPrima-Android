@@ -28,7 +28,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.79" />
 
         <ImageView
 
@@ -109,12 +110,12 @@
             android:layout_width="362dp"
             android:layout_height="119dp"
             android:layout_marginTop="296dp"
-            android:layout_marginBottom="33dp"
+            android:layout_marginBottom="32dp"
             android:text="TextView"
             android:textAlignment="viewStart"
             android:textColor="@color/black"
             android:textSize="24dp"
-            app:layout_constraintBottom_toTopOf="@+id/bt_contratar"
+            app:layout_constraintBottom_toTopOf="@+id/textView2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.489"
             app:layout_constraintStart_toStartOf="parent"
@@ -125,13 +126,26 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="267dp"
-            android:text="DESCRIÇÃO"
+            android:text="RESUMO DO PROFISSIONAL"
             android:textColor="#000000"
             android:textSize="16dp"
             app:layout_constraintBottom_toTopOf="@+id/pro_bio"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="18dp"
+            android:text="INSIRA A DESCRIÇÃO DA ATIVIDADE DESEJADA"
+            android:textColor="#000000"
+            android:textSize="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/edit_desc_job"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
 
@@ -168,5 +182,38 @@
             app:layout_constraintStart_toEndOf="@+id/pro_rating"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@mipmap/ic_star" />
+
+        <EditText
+
+            style="@style/text_border"
+            android:padding="5dp"
+            android:id="@+id/edit_desc_job"
+            android:layout_width="341dp"
+            android:layout_height="103dp"
+            android:layout_marginBottom="42dp"
+            android:ems="10"
+            android:textColorHint="@color/black"
+            android:hint="Descrição"
+            android:inputType="textPersonName"
+            android:text=""
+            android:textColor="#000000"
+            app:layout_constraintBottom_toTopOf="@+id/bt_contratar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/error_text"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="248dp"
+            android:textAlignment="center"
+            android:textColor="#DD0000"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>

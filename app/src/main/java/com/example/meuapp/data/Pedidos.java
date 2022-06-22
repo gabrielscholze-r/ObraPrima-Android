@@ -2,7 +2,7 @@ package com.example.meuapp.data;
 
 public class Pedidos {
     private int dia;
-    private String mes;
+    private int mes;
     private String tituloPedido;
     private String nomeCliente;
     private String nomeProfissional;
@@ -11,7 +11,7 @@ public class Pedidos {
     private double rating;
     private int TipoPedido;
 
-    public Pedidos(int dia, String mes, String tituloPedido, String tipoServico,String nomeCliente, String nomeProfissional, String descricao, int TipoPedido) {
+    public Pedidos(int dia, int mes, String tituloPedido, String tipoServico,String nomeCliente, String nomeProfissional, String descricao, int TipoPedido) {
         this.dia = dia;
         this.mes = mes;
         this.tipoServiço = tipoServico;
@@ -71,11 +71,11 @@ public class Pedidos {
         this.dia = dia;
     }
 
-    public String getMes() {
+    public int getMes() {
         return mes;
     }
 
-    public void setMes(String mes) {
+    public void setMes(int mes) {
         this.mes = mes;
     }
 

@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -34,13 +35,13 @@ public class TelaPerfilProfissional extends AppCompatActivity {
         profissionais = Database.getProfissionais();
         profissional = Perfil.getProfissional();
 
-
+        EditText edit_desc_job = (EditText) findViewById(R.id.edit_desc_job);
         TextView nome_pro = findViewById(R.id.nome_pro);
         nome_pro.setText(profissional.getNome());
 
         TextView profissao = findViewById(R.id.profissao_pro);
         profissao.setText(profissional.getRamo());
-
+        TextView error_text = findViewById(R.id.error_text);
         TextView bio = findViewById(R.id.pro_bio);
         bio.setText(profissional.getBio());
 
@@ -59,20 +60,22 @@ public class TelaPerfilProfissional extends AppCompatActivity {
         bt_contratar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int index = Database.getProfissionais().indexOf(profissional);
-                ArrayList<Pedidos> pedidos = profissional.getPedidos();
-                LocalDate d = LocalDate.now();
-                pedidos.add(new Pedidos(d.getDayOfMonth(), d.getMonth().toString(), "Visita Tecnica",profissional.getRamo(), loginAtual.getCliente().getNome()
-                        , profissional.getNome(), "Realizar Orçamento", 0));
-//                profissionais.remove(profissional);
-                profissional.setPedidos(pedidos);
-                profissionais.add(index, profissional);
-                Database.setProfissionais(profissionais);
-                Intent intent = new Intent(TelaPerfilProfissional.this, TelaPrincipalCliente.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                Toast.makeText(getApplicationContext(),"PEDIDO REALIZADO!",Toast.LENGTH_LONG).show();
-                startActivity(intent);
-                finish();
+                if(edit_desc_job.getText().length()==0){
+                    error_text.setText("INSIRA UMA DESCRIÇÃO");
+                }else{
+                    error_text.setText("");
+//                    int index = Database.getProfissionais().indexOf(profissional);
+                    LocalDate d = LocalDate.now();
+                    profissional.getPedidos().add(new Pedidos(d.getDayOfMonth(), d.getMonth().getValue(), "Visita Tecnica",profissional.getRamo(), loginAtual.getCliente().getNome()
+                            , profissional.getNome(), edit_desc_job.getText().toString(), 0));
+//                    Database.setProfissionais(profissionais);
+                    Intent intent = new Intent(TelaPerfilProfissional.this, TelaPrincipalCliente.class);
+//                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    Toast.makeText(getApplicationContext(),"PEDIDO REALIZADO!",Toast.LENGTH_LONG).show();
+                    startActivity(intent);
+                    finish();
+                }
+
 
             }
         });
