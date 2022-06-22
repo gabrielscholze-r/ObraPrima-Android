@@ -41,6 +41,7 @@ public class TelaListaProfissionais extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(TelaListaProfissionais.this, TelaPrincipalCliente.class);
                 startActivity(intent);
+                finish();
             }
         });
     }
@@ -60,6 +61,7 @@ public class TelaListaProfissionais extends AppCompatActivity {
 //                intent.putExtra("nomeProfissional", profissionais.get(position).getNome());
                 Perfil.setProfissional(profissionais.get(position));
                 startActivity(intent);
+                finish();
 
             }
         };
@@ -67,7 +69,11 @@ public class TelaListaProfissionais extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
+//
+            Intent intent = new Intent(TelaListaProfissionais.this,TelaPrincipalCliente.class);
+            startActivity(intent);
+            finish();
+
     }
 
     public void iniciarComponentes(){

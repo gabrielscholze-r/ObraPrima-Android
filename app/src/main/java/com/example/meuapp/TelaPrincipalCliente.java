@@ -78,6 +78,7 @@ public class TelaPrincipalCliente extends AppCompatActivity {
                 Intent intent = new Intent(TelaPrincipalCliente.this, TelaServicosCliente.class);
 //                intent.setFlags(Intent.FLAG_ACTIVITY_PREVIOUS_IS_TOP);
                 startActivity(intent);
+                finish();
             }
 
         });
@@ -90,6 +91,7 @@ public class TelaPrincipalCliente extends AppCompatActivity {
                 Intent intent = new Intent(TelaPrincipalCliente.this, TelaServicosCliente.class);
 //                intent.setFlags(Intent.FLAG_ACTIVITY_PREVIOUS_IS_TOP);
                 startActivity(intent);
+                finish();
             }
         });
         bt_avaliar.setOnClickListener(new View.OnClickListener() {
@@ -100,6 +102,7 @@ public class TelaPrincipalCliente extends AppCompatActivity {
                 Intent intent = new Intent(TelaPrincipalCliente.this, TelaServicosCliente.class);
 //                intent.setFlags(Intent.FLAG_ACTIVITY_PREVIOUS_IS_TOP);
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -109,6 +112,7 @@ public class TelaPrincipalCliente extends AppCompatActivity {
                 Intent intent = new Intent(TelaPrincipalCliente.this, TelaListaProfissionais.class);
 //                intent.setFlags(Intent.FLAG_ACTIVITY_PREVIOUS_IS_TOP);
                 startActivity(intent);
+                finish();
             }
         });
 

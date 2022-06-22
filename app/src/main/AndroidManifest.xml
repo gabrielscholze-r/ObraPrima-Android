@@ -27,7 +27,7 @@
         <activity android:name=".TelaServicosProfissional" android:launchMode="singleTask" />
         <activity android:name=".TelaPedido" android:launchMode="singleTask" />
         <activity android:name=".TelaEditPerfilProfissional" android:launchMode="singleTask" />
-
+        <activity android:name=".TelaAvaliar" android:launchMode="singleTask" />
     </application>
 
 </manifest>

@@ -49,7 +49,6 @@ public class TelaServicosCliente extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(TelaServicosCliente.this, TelaPrincipalCliente.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
                 finish();
             }
@@ -83,7 +82,7 @@ public class TelaServicosCliente extends AppCompatActivity {
         else{
             for (Profissional p : profissionais){
                 for(Pedidos p2 : p.getHistorico()){
-                    if(p2.getNomeCliente()==nomeCliente && p2.getTipoPedido()==1 && p2.getRating()!=-1){
+                    if(p2.getNomeCliente()==nomeCliente && p2.getTipoPedido()==1 && p2.getRating()==-1){
                         pedidos.add(p2);
                     }
                 }
@@ -101,10 +100,17 @@ public class TelaServicosCliente extends AppCompatActivity {
             @Override
             public void onClick(View v, int position) {
                 Perfil.setPedido(pd.get(position));
-                Intent intent = new Intent(TelaServicosCliente.this,TelaPedido.class);
                 Perfil.setId(1);
-                startActivity(intent);
-                finish();
+                if(loginAtual.getCliente().getTipoPedido()==2){
+                    Intent intent = new Intent(TelaServicosCliente.this,TelaAvaliar.class);
+                    startActivity(intent);
+                    finish();
+                }else{
+                    Intent intent = new Intent(TelaServicosCliente.this,TelaPedido.class);
+                    startActivity(intent);
+                    finish();
+                }
+
             }
         };
 
@@ -112,5 +118,11 @@ public class TelaServicosCliente extends AppCompatActivity {
     private void IniciarComponentes(){
         bt_home = findViewById(R.id.button_voltar);
     }
-
+    @Override
+    public void onBackPressed() {
+//
+        Intent intent = new Intent(TelaServicosCliente.this,TelaPrincipalCliente.class);
+        startActivity(intent);
+        finish();
+    }
 }
