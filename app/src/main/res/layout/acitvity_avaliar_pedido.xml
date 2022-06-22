@@ -165,6 +165,7 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <Spinner
+            android:textAlignment="center"
             android:id="@+id/spinner_nota"
             android:layout_width="225dp"
             android:layout_height="62dp"

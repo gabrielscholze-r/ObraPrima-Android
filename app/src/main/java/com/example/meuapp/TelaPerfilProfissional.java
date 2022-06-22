@@ -4,9 +4,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -35,6 +37,19 @@ public class TelaPerfilProfissional extends AppCompatActivity {
         profissionais = Database.getProfissionais();
         profissional = Perfil.getProfissional();
 
+        Spinner day = (Spinner) findViewById(R.id.spinner_day);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+                R.array.day_array, R.layout.spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        day.setAdapter(adapter);
+
+        Spinner month = (Spinner) findViewById(R.id.spinner_month);
+        ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(this,
+                R.array.month_array, R.layout.spinner_item);
+        adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        month.setAdapter(adapter2);
+
+
         EditText edit_desc_job = (EditText) findViewById(R.id.edit_desc_job);
         TextView nome_pro = findViewById(R.id.nome_pro);
         nome_pro.setText(profissional.getNome());
@@ -60,17 +75,23 @@ public class TelaPerfilProfissional extends AppCompatActivity {
         bt_contratar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                int dia = Integer.parseInt(day.getSelectedItem().toString());
+                int mes = Integer.parseInt(month.getSelectedItem().toString());
                 if(edit_desc_job.getText().length()==0){
                     error_text.setText("INSIRA UMA DESCRIÇÃO");
                 }else{
                     error_text.setText("");
-//                    int index = Database.getProfissionais().indexOf(profissional);
                     LocalDate d = LocalDate.now();
-                    profissional.getPedidos().add(new Pedidos(d.getDayOfMonth(), d.getMonth().getValue(), "Visita Tecnica",profissional.getRamo(), loginAtual.getCliente().getNome()
-                            , profissional.getNome(), edit_desc_job.getText().toString(), 0));
-//                    Database.setProfissionais(profissionais);
+                    if((mes>d.getMonth().getValue()) || (mes==d.getMonth().getValue() && dia>=d.getDayOfMonth())){
+                        profissional.getPedidos().add(new Pedidos(dia, mes, "Visita Tecnica",profissional.getRamo(), loginAtual.getCliente().getNome()
+                                , profissional.getNome(), edit_desc_job.getText().toString(), 0));
+                    }
+                    else{
+                        profissional.getPedidos().add(new Pedidos(d.getDayOfMonth(), d.getMonth().getValue(), "Visita Tecnica",profissional.getRamo(), loginAtual.getCliente().getNome()
+                                , profissional.getNome(), edit_desc_job.getText().toString(), 0));
+                    }
                     Intent intent = new Intent(TelaPerfilProfissional.this, TelaPrincipalCliente.class);
-//                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
                     Toast.makeText(getApplicationContext(),"PEDIDO REALIZADO!",Toast.LENGTH_LONG).show();
                     startActivity(intent);
                     finish();

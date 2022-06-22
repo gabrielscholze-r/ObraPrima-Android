@@ -18,6 +18,7 @@
             style="@style/ButtonEntrar"
             android:layout_width="219dp"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
             android:shadowColor="@color/black"
             android:shadowDx="2"
             android:shadowDy="2"
@@ -27,9 +28,7 @@
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.79" />
+            app:layout_constraintStart_toStartOf="parent" />
 
         <ImageView
 
@@ -78,7 +77,6 @@
             android:id="@+id/nome_pro"
             android:layout_width="412dp"
             android:layout_height="54dp"
-            android:layout_marginTop="98dp"
             android:text="TextView"
             android:textAlignment="center"
             android:textColor="#000000"
@@ -87,29 +85,26 @@
             app:layout_constraintBottom_toTopOf="@+id/profissao_pro"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/profissao_pro"
             android:layout_width="411dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="150dp"
             android:text="TextView"
             android:textAlignment="center"
             android:textColor="#000000"
             android:textSize="24sp"
             app:layout_constraintBottom_toTopOf="@+id/pro_rating"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
+            android:padding="8dp"
             android:id="@+id/pro_bio"
             style="@style/text_border"
             android:layout_width="362dp"
             android:layout_height="119dp"
-            android:layout_marginTop="296dp"
             android:layout_marginBottom="32dp"
             android:text="TextView"
             android:textAlignment="viewStart"
@@ -118,21 +113,18 @@
             app:layout_constraintBottom_toTopOf="@+id/textView2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.489"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/textView11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="267dp"
             android:text="RESUMO DO PROFISSIONAL"
             android:textColor="#000000"
             android:textSize="16dp"
             app:layout_constraintBottom_toTopOf="@+id/pro_bio"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/textView2"
@@ -152,7 +144,6 @@
             android:id="@+id/pro_rating"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="184dp"
             android:layout_marginBottom="36dp"
             android:shadowColor="#E9FF00"
             android:shadowDx="2"
@@ -165,39 +156,36 @@
             app:layout_constraintBottom_toTopOf="@+id/textView11"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.407"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintStart_toStartOf="parent" />
 
         <ImageView
 
             android:id="@+id/imageView"
             android:layout_width="57dp"
             android:layout_height="53dp"
-            android:layout_marginTop="185dp"
             android:layout_marginEnd="135dp"
             android:layout_marginBottom="36dp"
             app:layout_constraintBottom_toTopOf="@+id/textView11"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/pro_rating"
-            app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@mipmap/ic_star" />
 
         <EditText
 
-            style="@style/text_border"
-            android:padding="5dp"
             android:id="@+id/edit_desc_job"
+            style="@style/text_border"
             android:layout_width="341dp"
             android:layout_height="103dp"
-            android:layout_marginBottom="42dp"
+            android:layout_marginBottom="41dp"
             android:ems="10"
-            android:textColorHint="@color/black"
             android:hint="Descrição"
             android:inputType="textPersonName"
+            android:padding="5dp"
             android:text=""
             android:textColor="#000000"
-            app:layout_constraintBottom_toTopOf="@+id/bt_contratar"
+            android:textColorHint="@color/black"
+            app:layout_constraintBottom_toTopOf="@+id/textView10"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
@@ -205,15 +193,69 @@
             android:id="@+id/error_text"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="248dp"
+            android:layout_marginBottom="24dp"
             android:textAlignment="center"
             android:textColor="#DD0000"
             android:textSize="16sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/bt_contratar"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="66dp"
+            android:layout_marginEnd="188dp"
+            android:layout_marginBottom="10dp"
+            android:text="Dia"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/spinner_day"
+            app:layout_constraintEnd_toStartOf="@+id/textView19"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/textView19"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="89dp"
+            android:layout_marginBottom="10dp"
+            android:text="Mês"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/spinner_month"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <Spinner
+            android:backgroundTint="@color/black"
+            android:textAlignment="center"
+            android:id="@+id/spinner_day"
+            android:layout_width="132dp"
+            android:layout_height="42dp"
+            android:layout_marginStart="35dp"
+            android:layout_marginEnd="77dp"
+            android:layout_marginBottom="58dp"
+            app:layout_constraintBottom_toTopOf="@+id/error_text"
+            app:layout_constraintEnd_toStartOf="@+id/spinner_month"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Spinner
+            android:backgroundTint="@color/black"
+            android:textAlignment="center"
+            android:id="@+id/spinner_month"
+            android:layout_width="132dp"
+            android:layout_height="42dp"
+            android:layout_marginEnd="35dp"
+            android:layout_marginBottom="54dp"
+            app:layout_constraintBottom_toTopOf="@+id/error_text"
+            app:layout_constraintEnd_toEndOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>
