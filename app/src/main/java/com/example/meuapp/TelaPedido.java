@@ -30,21 +30,59 @@ public class TelaPedido extends AppCompatActivity {
         getSupportActionBar().hide();
         id = Perfil.getId();
         ImageView bt_voltar3 = findViewById(R.id.button_back3);
-        Button cancelar_pedido = findViewById(R.id.bt_cancelar);
+        Button cancelar_pedido = findViewById(R.id.bt_cancelar2);
+        Button bt_concluir = findViewById(R.id.bt_concluir);
 
         TextView titulo = findViewById(R.id.titulo_pedido);
         TextView tipo_pedido = findViewById(R.id.tipo_pedido);
         TextView nome_profissional = findViewById(R.id.nome_profissional);
         TextView data = findViewById(R.id.data_pedido);
         TextView description = findViewById(R.id.desc_pedido);
+        TextView rating = findViewById(R.id.text_avaliacao);
+
+
 
         p = Perfil.getPedido();
         titulo.setText(p.getTituloPedido());
         tipo_pedido.setText(p.getTipoServiço());
+        if(p.getTipoPedido()==0){
+            rating.setText("");
+            cancelar_pedido.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    ArrayList<Profissional> profissionais = Database.getProfissionais();
+                    Profissional pro = Database.findProfissionalByName(p.getNomeProfissional());
+                    int index = profissionais.indexOf(pro);
+                    ArrayList<Pedidos> pedidos = pro.getPedidos();
+                    pedidos.remove(p);
+                    pro.setPedidos(pedidos);
+                    Database.setProfissionais(profissionais);
+                    Toast.makeText(getApplicationContext(),"PEDIDO CANCELADO!",Toast.LENGTH_LONG).show();
+                    Intent i1= new Intent(TelaPedido.this, TelaServicosProfissional.class);
+                    Intent i2 = new Intent(TelaPedido.this,TelaServicosCliente.class);
+                    if(id==0){
+                        startActivity(i1);
+
+                    }else{
+                        startActivity(i2);
+                    }
+                    finish();
+                }
+            });
+        }else{
+            cancelar_pedido.setVisibility(View.GONE);
+            if(p.getRating()==-1){
+                rating.setText("Avaliação pendente");
+            }else{
+                rating.setText("Avaliação: " + p.getRating());
+            }
+        }
         if(Perfil.getId()==0){
+            bt_concluir.setVisibility(View.GONE);
             nome_profissional.setText("Cliente: " + p.getNomeCliente());
         }
         else{
+
             nome_profissional.setText("Profissional: " + p.getNomeProfissional());
         }
 
@@ -68,29 +106,7 @@ public class TelaPedido extends AppCompatActivity {
             }
         });
 
-        cancelar_pedido.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ArrayList<Profissional> profissionais = Database.getProfissionais();
-                Profissional pro = Database.findProfissionalByName(p.getNomeProfissional());
-                int index = profissionais.indexOf(pro);
-                ArrayList<Pedidos> pedidos = pro.getPedidos();
-                pedidos.remove(p);
-                pro.setPedidos(pedidos);
-//                profissionais.add(index, pro);
-                Database.setProfissionais(profissionais);
-                Toast.makeText(getApplicationContext(),"PEDIDO CANCELADO!",Toast.LENGTH_LONG).show();
-                Intent i1= new Intent(TelaPedido.this, TelaServicosProfissional.class);
-                Intent i2 = new Intent(TelaPedido.this,TelaServicosCliente.class);
-                if(id==0){
-                    startActivity(i1);
 
-                }else{
-                    startActivity(i2);
-                }
-                finish();
-            }
-        });
 
 
     }

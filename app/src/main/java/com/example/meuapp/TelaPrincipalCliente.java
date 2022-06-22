@@ -55,7 +55,7 @@ public class TelaPrincipalCliente extends AppCompatActivity {
         IniciarComponentes();
         Perfil.setId(1);
         profissionais = Database.getProfissionais();
-        LoginAtual loginAtual = Database.getLoginAtual();
+        LoginAtual loginAtual = new LoginAtual();
         ArrayList<String> views = new ArrayList<>();
         TextView titulo = findViewById(R.id.textTitulo);
         titulo.setText("Bem vindo "+loginAtual.getCliente().getNome()+"!");
@@ -66,7 +66,6 @@ public class TelaPrincipalCliente extends AppCompatActivity {
                 Intent intent = new Intent(TelaPrincipalCliente.this, FormLogin.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 LoginAtual l = new LoginAtual();
-                Database.setLoginAtual(l);
                 startActivity(intent);
                 finish();
             }

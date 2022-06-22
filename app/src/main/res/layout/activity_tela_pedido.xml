@@ -14,7 +14,27 @@
 
         <androidx.appcompat.widget.AppCompatButton
 
-            android:id="@+id/bt_cancelar"
+            android:id="@+id/bt_concluir"
+            style="@style/ButtonEntrar"
+            android:layout_width="219dp"
+            android:layout_height="wrap_content"
+            android:shadowColor="@color/black"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="1"
+            android:text="CONCLUIR PEDIDO
+"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.8" />
+
+        <androidx.appcompat.widget.AppCompatButton
+
+            android:id="@+id/bt_cancelar2"
             style="@style/ButtonEntrar"
             android:layout_width="219dp"
             android:layout_height="wrap_content"
@@ -29,7 +49,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.755" />
+            app:layout_constraintVertical_bias="0.928" />
 
         <ImageView
 
@@ -41,7 +61,7 @@
             app:srcCompat="@drawable/ic_arrow_back" />
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/textView_pedido"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
@@ -104,12 +124,13 @@
             android:layout_width="fill_parent"
             android:layout_height="152dp"
             android:layout_marginTop="361dp"
+            android:layout_marginBottom="34dp"
             android:padding="10dp"
             android:text="Descrição"
             android:textAlignment="viewStart"
             android:textColor="#000000"
             android:textSize="20sp"
-            app:layout_constraintBottom_toTopOf="@+id/bt_cancelar"
+            app:layout_constraintBottom_toTopOf="@+id/text_avaliacao"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -148,5 +169,20 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/text_avaliacao"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="76dp"
+            android:fontFamily="sans-serif"
+            android:text="TextView"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/bt_concluir"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>

@@ -30,7 +30,7 @@ public class TelaPerfilProfissional extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela_perfil_profissional);
         getSupportActionBar().hide();
-        loginAtual = Database.getLoginAtual();
+        loginAtual = new LoginAtual();
         profissionais = Database.getProfissionais();
         profissional = Perfil.getProfissional();
 
@@ -63,7 +63,7 @@ public class TelaPerfilProfissional extends AppCompatActivity {
                 ArrayList<Pedidos> pedidos = profissional.getPedidos();
                 LocalDate d = LocalDate.now();
                 pedidos.add(new Pedidos(d.getDayOfMonth(), d.getMonth().toString(), "Visita Tecnica",profissional.getRamo(), loginAtual.getCliente().getNome()
-                        , profissional.getNome(), "Realizar Orçamento"));
+                        , profissional.getNome(), "Realizar Orçamento", 0));
 //                profissionais.remove(profissional);
                 profissional.setPedidos(pedidos);
                 profissionais.add(index, profissional);

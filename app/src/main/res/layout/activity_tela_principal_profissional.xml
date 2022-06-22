@@ -17,21 +17,41 @@
 
         <androidx.appcompat.widget.AppCompatButton
 
+            android:id="@+id/bt_verpedidos2"
             style="@style/ButtonEntrar"
-            android:shadowDy="2"
-            android:shadowDx="2"
-            android:shadowRadius="1"
-            android:shadowColor="@color/black"
-            android:id="@+id/bt_verpedidos"
             android:layout_width="352dp"
             android:layout_height="77dp"
-            android:layout_marginBottom="380dp"
-            android:text="MEUS SERVIÇOS"
+            android:layout_marginBottom="214dp"
+            android:shadowColor="@color/black"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="1"
+            android:text="HISTÓRICO
+"
             android:textColor="@color/white"
             android:textSize="30dp"
             app:layout_constraintBottom_toTopOf="@+id/bt_deslogar"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.491"
+            app:layout_constraintHorizontal_bias="0.661"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatButton
+
+            android:id="@+id/bt_verpedidos"
+            style="@style/ButtonEntrar"
+            android:layout_width="352dp"
+            android:layout_height="77dp"
+            android:layout_marginBottom="90dp"
+            android:shadowColor="@color/black"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="1"
+            android:text="MEUS SERVIÇOS"
+            android:textColor="@color/white"
+            android:textSize="30dp"
+            app:layout_constraintBottom_toTopOf="@+id/bt_verpedidos2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.44"
             app:layout_constraintStart_toStartOf="parent" />
 
         <ImageView

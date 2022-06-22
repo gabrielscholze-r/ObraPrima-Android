@@ -45,7 +45,7 @@ public class TelaEditPerfilProfissional extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         dropbox.setAdapter(adapter);
         getSupportActionBar().hide();
-        profissional = Database.getLoginAtual().getProfissional();
+        profissional = new LoginAtual().getProfissional();
         novoProfissional = profissional;
         TextView nome = findViewById(R.id.nome_profissional2);
         TextView email = findViewById(R.id.email_profissional2);

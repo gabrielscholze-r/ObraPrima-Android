@@ -10,7 +10,6 @@ public class Database {
 
     public static ArrayList<Profissional> profissionais = new ArrayList<>();
     public static ArrayList<Cliente> clientes = new ArrayList<>();
-    public static LoginAtual loginAtual = new LoginAtual();
 
 
     public static void loadDatabase() {
@@ -33,37 +32,37 @@ public class Database {
 
         ArrayList<Pedidos> pedidosEncanador = encanador.getPedidos();
 
-        pedidosEncanador.add(new Pedidos(10, "06", "Visita tecnica","Encanamento", "Sergio", "Antonio", "Visita técnica para encontrar fonte de um vazamento na casa!"));
-        pedidosEncanador.add(new Pedidos(20, "06", "Visita tecnica","Encanamento", "Claudio", "Antonio", "Visita técnica para encontrar fonte de um vazamento na casa!"));
-        pedidosEncanador.add(new Pedidos(10, "07", "Visita tecnica","Encanamento", "Roberto", "Antonio", "Visita técnica para encontrar fonte de um vazamento na casa!"));
-        pedidosEncanador.add(new Pedidos(20, "07", "Visita tecnica","Encanamento", "Sergio", "Antonio", "Visita técnica para encontrar fonte de um vazamento na casa!"));
+        pedidosEncanador.add(new Pedidos(10, "06", "Visita tecnica","Encanamento", "Sergio", "Antonio", "Visita técnica para encontrar fonte de um vazamento na casa!",0));
+        pedidosEncanador.add(new Pedidos(20, "06", "Visita tecnica","Encanamento", "Claudio", "Antonio", "Visita técnica para encontrar fonte de um vazamento na casa!",0));
+        pedidosEncanador.add(new Pedidos(10, "07", "Visita tecnica","Encanamento", "Roberto", "Antonio", "Visita técnica para encontrar fonte de um vazamento na casa!",0));
+        pedidosEncanador.add(new Pedidos(20, "07", "Visita tecnica","Encanamento", "Sergio", "Antonio", "Visita técnica para encontrar fonte de um vazamento na casa!",0));
 
         encanador.setPedidos(pedidosEncanador);
 
         ArrayList<Pedidos> historicoEncanador = encanador.getHistorico();
 
-        historicoEncanador.add(new Pedidos(10, "06", "Visita tecnica feito","Encanamento", "Sergio", "Antonio", "Visita técnica feito para encontrar fonte de um vazamento na casa!"));
-        historicoEncanador.add(new Pedidos(20, "06", "Visita tecnica feito","Encanamento", "Claudio", "Antonio", "Visita técnica feito para encontrar fonte de um vazamento na casa!"));
-        historicoEncanador.add(new Pedidos(10, "07", "Visita tecnica feito","Encanamento", "Roberto", "Antonio", "Visita técnica feito para encontrar fonte de um vazamento na casa!"));
-        historicoEncanador.add(new Pedidos(20, "07", "Visita tecnica feito","Encanamento", "Sergio", "Antonio", "Visita técnica feito para encontrar fonte de um vazamento na casa!"));
+        historicoEncanador.add(new Pedidos(10, "06", "Visita tecnica feito","Encanamento", "Sergio", "Antonio", "Visita técnica feito para encontrar fonte de um vazamento na casa!",1));
+        historicoEncanador.add(new Pedidos(20, "06", "Visita tecnica feito","Encanamento", "Claudio", "Antonio", "Visita técnica feito para encontrar fonte de um vazamento na casa!",1));
+        historicoEncanador.add(new Pedidos(10, "07", "Visita tecnica feito","Encanamento", "Roberto", "Antonio", "Visita técnica feito para encontrar fonte de um vazamento na casa!",1));
+        historicoEncanador.add(new Pedidos(20, "07", "Visita tecnica feito","Encanamento", "Sergio", "Antonio", "Visita técnica feito para encontrar fonte de um vazamento na casa!",1));
 
         encanador.setHistorico(historicoEncanador);
 
         ArrayList<Pedidos> pedidosPedreiro = pedreiro.getPedidos();
 
-        pedidosPedreiro.add(new Pedidos(10, "06", "Visita tecnica","Construção", "Sergio","Luis","Contrução de parede"));
-        pedidosPedreiro.add(new Pedidos(20, "06", "Visita tecnica","Construção", "Claudio","Luis","Construção de muro em volta da casa"));
-        pedidosPedreiro.add(new Pedidos(10, "07", "Visita tecnica","Construção", "Roberto","Luis","Contrução de casinha de bonecas em tamanho real"));
-        pedidosPedreiro.add(new Pedidos(20, "07", "Visita tecnica","Construção", "Sergio","Luis", "Construção de muro"));
+        pedidosPedreiro.add(new Pedidos(10, "06", "Visita tecnica","Construção", "Sergio","Luis","Contrução de parede",0));
+        pedidosPedreiro.add(new Pedidos(20, "06", "Visita tecnica","Construção", "Claudio","Luis","Construção de muro em volta da casa",0));
+        pedidosPedreiro.add(new Pedidos(10, "07", "Visita tecnica","Construção", "Roberto","Luis","Contrução de casinha de bonecas em tamanho real",0));
+        pedidosPedreiro.add(new Pedidos(20, "07", "Visita tecnica","Construção", "Sergio","Luis", "Construção de muro",0));
 
         pedreiro.setPedidos(pedidosPedreiro);
 
         ArrayList<Pedidos> pedidosEletricista = eletricista.getPedidos();
 
-        pedidosEletricista.add(new Pedidos(10, "06", "Visita tecnica","Eletricidade", "Roberto","Rogerio","Conserto de fiação da casa"));
-        pedidosEletricista.add(new Pedidos(20, "06", "Visita tecnica","Eletricidade", "Sergio","Rogerio","Conserto de tomadas da casa"));
-        pedidosEletricista.add(new Pedidos(10, "07", "Visita tecnica","Eletricidade", "Claudio","Rogerio", "Instalação de chuveiro elétrico"));
-        pedidosEletricista.add(new Pedidos(20, "07", "Visita tecnica","Eletricidade", "Sergio","Rogerio", "Instalaçào de fiação de apartamento"));
+        pedidosEletricista.add(new Pedidos(10, "06", "Visita tecnica","Eletricidade", "Roberto","Rogerio","Conserto de fiação da casa",0));
+        pedidosEletricista.add(new Pedidos(20, "06", "Visita tecnica","Eletricidade", "Sergio","Rogerio","Conserto de tomadas da casa",0));
+        pedidosEletricista.add(new Pedidos(10, "07", "Visita tecnica","Eletricidade", "Claudio","Rogerio", "Instalação de chuveiro elétrico",0));
+        pedidosEletricista.add(new Pedidos(20, "07", "Visita tecnica","Eletricidade", "Sergio","Rogerio", "Instalaçào de fiação de apartamento",0));
 
         eletricista.setPedidos(pedidosEletricista);
     }
@@ -84,13 +83,6 @@ public class Database {
         Database.clientes = clientes;
     }
 
-    public static LoginAtual getLoginAtual() {
-        return loginAtual;
-    }
-
-    public static void setLoginAtual(LoginAtual loginAtual) {
-        Database.loginAtual = loginAtual;
-    }
 
     public static Profissional findProfissionalByName(String name){
         for(Profissional p : profissionais){

@@ -36,7 +36,7 @@ public class FormLogin extends AppCompatActivity {
 
         profissionais = Database.getProfissionais();
         clientes = Database.getClientes();
-        LoginAtual loginAtual = Database.getLoginAtual();
+        LoginAtual loginAtual = new LoginAtual();
 
         bt_entrar.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {

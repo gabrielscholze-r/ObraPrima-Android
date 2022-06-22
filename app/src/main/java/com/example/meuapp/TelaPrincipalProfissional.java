@@ -41,18 +41,28 @@ public class TelaPrincipalProfissional extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        LoginAtual l = Database.getLoginAtual();
+        LoginAtual loginAtual = new LoginAtual();
         Perfil.setId(0);
         setContentView(R.layout.activity_tela_principal_profissional);
         getSupportActionBar().hide();
         IniciarComponentes();
         TextView titulo = findViewById(R.id.textTituloPro);
-        titulo.setText("Bem vindo " + l.getProfissional().getNome() + "!");
+        titulo.setText("Bem vindo " + loginAtual.getProfissional().getNome() + "!");
         Button bt_verpedidos = findViewById(R.id.bt_verpedidos);
+        Button bt_verpedidos2 = findViewById(R.id.bt_verpedidos2);
 
         bt_verpedidos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                loginAtual.getProfissional().setTipoPedido(0);
+                Intent intent = new Intent(TelaPrincipalProfissional.this, TelaServicosProfissional.class);
+                startActivity(intent);
+            }
+        });
+        bt_verpedidos2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loginAtual.getProfissional().setTipoPedido(1);
                 Intent intent = new Intent(TelaPrincipalProfissional.this, TelaServicosProfissional.class);
                 startActivity(intent);
             }
@@ -75,8 +85,6 @@ public class TelaPrincipalProfissional extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(TelaPrincipalProfissional.this, FormLogin.class);
-                LoginAtual l = new LoginAtual();
-                Database.setLoginAtual(l);
                 startActivity(intent);
                 finish();
             }

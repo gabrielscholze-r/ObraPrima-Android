@@ -9,8 +9,9 @@ public class Pedidos {
     private String tipoServiço;
     private String descricao;
     private double rating;
+    private int TipoPedido;
 
-    public Pedidos(int dia, String mes, String tituloPedido, String tipoServico,String nomeCliente, String nomeProfissional, String descricao) {
+    public Pedidos(int dia, String mes, String tituloPedido, String tipoServico,String nomeCliente, String nomeProfissional, String descricao, int TipoPedido) {
         this.dia = dia;
         this.mes = mes;
         this.tipoServiço = tipoServico;
@@ -19,6 +20,15 @@ public class Pedidos {
         this.descricao = descricao;
         this.tituloPedido = tituloPedido;
         this.rating = -1;
+        this.TipoPedido = TipoPedido;
+    }
+
+    public int getTipoPedido() {
+        return TipoPedido;
+    }
+
+    public void setTipoPedido(int tipoPedido) {
+        TipoPedido = tipoPedido;
     }
 
     public String getTipoServiço() {

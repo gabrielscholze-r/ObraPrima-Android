@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DefaultItemAnimator;
@@ -26,6 +27,7 @@ public class TelaServicosProfissional extends AppCompatActivity {
     private RecycleAdapterPedidos.RecyclerViewClickListener listener;
     private Profissional profissional;
     ArrayList<Pedidos> pedidos;
+    private TextView text_titulo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,38 +35,48 @@ public class TelaServicosProfissional extends AppCompatActivity {
         setContentView(R.layout.activity_lista_pedidos_profissional);
         IniciarComponentes();
         getSupportActionBar().hide();
-        LoginAtual l = Database.getLoginAtual();
+        text_titulo = findViewById(R.id.text_titulo);
+
+        LoginAtual l = new LoginAtual();
         profissional = l.getProfissional();
         recyclerView = findViewById(R.id.recycler_services);
+        verify();
+
         setAdapter();
 
         bt_home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(TelaServicosProfissional.this, TelaPrincipalProfissional.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
+                finish();
             }
 
-        } );
+        });
 
     }
 
 
     private void setAdapter() {
         setOnClickListener();
-        RecycleAdapterPedidos adapter = new RecycleAdapterPedidos(profissional.getPedidos(), listener);
+        RecycleAdapterPedidos adapter = new RecycleAdapterPedidos(pedidos, listener);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(adapter);
     }
+
     private void setOnClickListener() {
         listener = new RecycleAdapterPedidos.RecyclerViewClickListener() {
             @Override
             public void onClick(View v, int position) {
-                Perfil.setPedido(profissional.getPedidos().get(position));
-                Intent intent = new Intent(TelaServicosProfissional.this,TelaPedido.class);
+                if (profissional.getTipoPedido() == 0) {
+                    Perfil.setPedido(profissional.getPedidos().get(position));
+                }else{
+                    Perfil.setPedido(profissional.getHistorico().get(position));
+                }
+
+                Intent intent = new Intent(TelaServicosProfissional.this, TelaPedido.class);
                 Perfil.setId(0);
                 startActivity(intent);
                 finish();
@@ -72,7 +84,21 @@ public class TelaServicosProfissional extends AppCompatActivity {
         };
 
     }
-    private void IniciarComponentes(){
+
+    private void verify() {
+        if (profissional.getTipoPedido() == 0) {
+            text_titulo.setText("MEUS SERVIÇOS");
+        } else {
+            text_titulo.setText("HISTÓRICO");
+        }
+        if (profissional.getTipoPedido() == 0) {
+            pedidos = profissional.getPedidos();
+        } else {
+            pedidos = profissional.getHistorico();
+        }
+    }
+
+    private void IniciarComponentes() {
         bt_home = findViewById(R.id.button_voltar);
     }
 

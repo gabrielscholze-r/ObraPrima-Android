@@ -1,8 +1,8 @@
 package com.example.meuapp.data;
 
 public class LoginAtual {
-    public static Cliente cliente;
-    public static Profissional profissional;
+    private static Cliente cliente;
+    private static Profissional profissional;
 
     public static Cliente getCliente() {
         return cliente;

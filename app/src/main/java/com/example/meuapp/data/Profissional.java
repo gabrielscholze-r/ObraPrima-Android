@@ -13,6 +13,7 @@ public class Profissional {
     private String bio;
     private ArrayList<Pedidos> pedidos;
     private ArrayList<Pedidos> historico;
+    private int TipoPedido;
 
     public Profissional(String nome, String telefone, String cpf, String ramo, double rating,String email,String senha, String bio) {
         this.Nome = nome;
@@ -25,6 +26,16 @@ public class Profissional {
         this.email = email;
         this.senha = senha;
         this.bio = bio;
+        this.TipoPedido = 0;
+    }
+
+
+    public int getTipoPedido() {
+        return TipoPedido;
+    }
+
+    public void setTipoPedido(int tipoPedido) {
+        TipoPedido = tipoPedido;
     }
 
     public String getBio() {

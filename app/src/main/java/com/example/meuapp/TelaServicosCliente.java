@@ -34,7 +34,7 @@ public class TelaServicosCliente extends AppCompatActivity {
         setContentView(R.layout.activity_tela_servicos_cliente);
         IniciarComponentes();
         getSupportActionBar().hide();
-        LoginAtual l = Database.getLoginAtual();
+        LoginAtual l = new LoginAtual();
         pd = new ArrayList<>();
         nomeCliente = l.getCliente().getNome();
         profissionais = Database.getProfissionais();

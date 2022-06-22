@@ -36,7 +36,7 @@ public class TelaEditPerfilCliente extends AppCompatActivity {
         super.onPostCreate(savedInstanceState);
         setContentView(R.layout.activity_tela_editar_perfil_cliente);
         getSupportActionBar().hide();
-        cliente = Database.getLoginAtual().getCliente();
+        cliente = new LoginAtual().getCliente();
         novoCliente = cliente;
         TextView name =  findViewById(R.id.user_name);
         name.setText(cliente.getNome());
