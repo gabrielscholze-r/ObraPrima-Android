@@ -14,8 +14,9 @@ public class Profissional {
     private ArrayList<Pedidos> pedidos;
     private ArrayList<Pedidos> historico;
     private int TipoPedido;
+    private double price;
 
-    public Profissional(String nome, String telefone, String cpf, String ramo, double rating,String email,String senha, String bio) {
+    public Profissional(String nome, String telefone, String cpf, String ramo, double rating,String email,String senha, String bio, double price) {
         this.Nome = nome;
         this.telefone = telefone;
         this.cpf = cpf;
@@ -27,8 +28,16 @@ public class Profissional {
         this.senha = senha;
         this.bio = bio;
         this.TipoPedido = 0;
+        this.price = price;
     }
 
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
 
     public int getTipoPedido() {
         return TipoPedido;

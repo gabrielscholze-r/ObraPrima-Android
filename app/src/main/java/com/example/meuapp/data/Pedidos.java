@@ -10,8 +10,9 @@ public class Pedidos {
     private String descricao;
     private double rating;
     private int TipoPedido;
+    private double price;
 
-    public Pedidos(int dia, int mes, String tituloPedido, String tipoServico,String nomeCliente, String nomeProfissional, String descricao, int TipoPedido) {
+    public Pedidos(int dia, int mes, String tituloPedido, String tipoServico,String nomeCliente, String nomeProfissional, String descricao, int TipoPedido, double price) {
         this.dia = dia;
         this.mes = mes;
         this.tipoServiço = tipoServico;
@@ -21,6 +22,15 @@ public class Pedidos {
         this.tituloPedido = tituloPedido;
         this.rating = -1;
         this.TipoPedido = TipoPedido;
+        this.price = price;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
     }
 
     public int getTipoPedido() {
