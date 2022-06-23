@@ -59,7 +59,10 @@ public class FormCadastroProfissional extends AppCompatActivity {
                 String ramoServicoString = ramo.getSelectedItem().toString();
                 EditText bio = (EditText) findViewById(R.id.editBio);
                 String bioString = bio.getText().toString();
-                if(senhaString.equals(confirmarSenhaString)){
+                if(Database.verificarEmail(emailString)){
+                    TextView error = findViewById(R.id.errorMessage3);
+                    error.setText("Email já cadastrado.");
+                }else if(senhaString.equals(confirmarSenhaString)){
                     if(nomeString.equals("") || emailString.equals("") || cpfString.equals("") || telefoneString.equals("") ||
                             senhaString.equals("") || confirmarSenhaString.equals("") || ramoServicoString.equals("") || price.equals("")){
                         TextView error = findViewById(R.id.errorMessage2);

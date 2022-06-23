@@ -46,7 +46,10 @@ public class FormCadastroCliente extends AppCompatActivity {
                 String senhaString = senha.getText().toString();
                 EditText confirmarSenha = (EditText)findViewById(R.id.confirmPassword);
                 String confirmarSenhaString = confirmarSenha.getText().toString();
-                if(senhaString.equals(confirmarSenhaString)){
+                if(Database.verificarEmail(emailString)){
+                    TextView error = findViewById(R.id.errorMessage3);
+                    error.setText("Email já cadastrado.");
+                }else if(senhaString.equals(confirmarSenhaString)){
                     if(nomeString.equals("") || emailString.equals("") || cpfString.equals("") || telefoneString.equals("") ||
                             senhaString.equals("") || confirmarSenhaString.equals("")){//caso algum dos dados esteja em branco
                         TextView error = findViewById(R.id.errorMessage3);
