@@ -50,7 +50,12 @@ public class TelaPrincipalProfissional extends AppCompatActivity {
         titulo.setText("Bem vindo " + loginAtual.getProfissional().getNome() + "!");
         Button bt_verpedidos = findViewById(R.id.bt_verpedidos);
         Button bt_verpedidos2 = findViewById(R.id.bt_verpedidos2);
-
+        TextView total_ganhos = findViewById(R.id.total_ganhos);
+        double soma = 0;
+        for (Pedidos p : loginAtual.getProfissional().getHistorico()){
+            soma += p.getPrice();
+        }
+        total_ganhos.setText("Total de Ganhos: R$"+soma);
         bt_verpedidos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
