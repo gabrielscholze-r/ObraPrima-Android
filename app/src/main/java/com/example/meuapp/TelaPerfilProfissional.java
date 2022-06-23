@@ -53,6 +53,8 @@ public class TelaPerfilProfissional extends AppCompatActivity {
         EditText edit_desc_job = (EditText) findViewById(R.id.edit_desc_job);
         TextView nome_pro = findViewById(R.id.nome_pro);
         nome_pro.setText(profissional.getNome());
+        TextView text_price = findViewById(R.id.text_price);
+        text_price.setText("Preço: R$"+profissional.getPrice());
 
         TextView profissao = findViewById(R.id.profissao_pro);
         profissao.setText(profissional.getRamo());
@@ -86,11 +88,11 @@ public class TelaPerfilProfissional extends AppCompatActivity {
                     LocalDate d = LocalDate.now();
                     if((mes>d.getMonth().getValue()) || (mes==d.getMonth().getValue() && dia>=d.getDayOfMonth())){
                         profissional.getPedidos().add(new Pedidos(dia, mes, "Visita Tecnica",profissional.getRamo(), loginAtual.getCliente().getNome()
-                                , profissional.getNome(), edit_desc_job.getText().toString(), 0));
+                                , profissional.getNome(), edit_desc_job.getText().toString(), 0, profissional.getPrice()));
                     }
                     else{
                         profissional.getPedidos().add(new Pedidos(d.getDayOfMonth(), d.getMonth().getValue(), "Visita Tecnica",profissional.getRamo(), loginAtual.getCliente().getNome()
-                                , profissional.getNome(), edit_desc_job.getText().toString(), 0));
+                                , profissional.getNome(), edit_desc_job.getText().toString(), 0,profissional.getPrice()));
                     }
                     Intent intent = new Intent(TelaPerfilProfissional.this, TelaPrincipalCliente.class);
 

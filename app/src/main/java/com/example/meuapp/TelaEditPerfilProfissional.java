@@ -18,6 +18,8 @@ import com.example.meuapp.data.Database;
 import com.example.meuapp.data.LoginAtual;
 import com.example.meuapp.data.Profissional;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 
 public class TelaEditPerfilProfissional extends AppCompatActivity {
@@ -34,6 +36,7 @@ public class TelaEditPerfilProfissional extends AppCompatActivity {
     private String ramo;
     private TextView error;
     private Spinner dropbox;
+    private double price;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -58,7 +61,8 @@ public class TelaEditPerfilProfissional extends AppCompatActivity {
         telefone.setText(profissional.getTelefone());
         description.setText(profissional.getBio());
         error = findViewById(R.id.error_message2);
-        System.out.println(profissional.getRamo());
+        TextView price_profissional = findViewById(R.id.price_profissional);
+        price_profissional.setText("R$"+profissional.getPrice());
         if (profissional.getRamo().equals("Eletricista")) {
             dropbox.setSelection(0);
         } else if (profissional.getRamo().equals("Pedreiro")) {
@@ -95,7 +99,10 @@ public class TelaEditPerfilProfissional extends AppCompatActivity {
         EditText nSenhaAtual = (EditText) findViewById(R.id.senha_atual_profissional2);
         EditText nNovaSenha = (EditText) findViewById(R.id.nova_senha_profissional);
         EditText nConfirmaSenha = (EditText) findViewById(R.id.confirmar_senha_profissional);
+        EditText new_price = (EditText) findViewById(R.id.novo_price_profissional2);
 
+
+        price = Double.parseDouble(new_price.getText().toString());
         ramo = dropbox.getSelectedItem().toString();
         novoNome = nNome.getText().toString();
         novoEmail = nEmail.getText().toString();
@@ -111,9 +118,13 @@ public class TelaEditPerfilProfissional extends AppCompatActivity {
         boolean erro = false;
         int index = Database.profissionais.indexOf(profissional);
         if (novoNome.isEmpty() && novoEmail.isEmpty() && novoCPF.isEmpty() && NovoTelefone.isEmpty() &&
-                novaSenha.isEmpty() && profissional.getRamo()==ramo) {
+                novaSenha.isEmpty() && profissional.getRamo()==ramo && price==-1) {
             erro = true;
             error.setText("Modifique algum campo!");
+        }
+        if(price<0){
+            erro=true;
+            error.setText("Novo preço deve ser maior que zero!");
         }
         if (!novoNome.isEmpty()) {
             novoProfissional.setNome(novoNome);
@@ -128,7 +139,10 @@ public class TelaEditPerfilProfissional extends AppCompatActivity {
             novoProfissional.setTelefone(NovoTelefone);
         }
         if(!novaBio.isEmpty()){
-
+            novoProfissional.setBio(novaBio);
+        }
+        if(price!=-1 && price>0){
+            novoProfissional.setPrice(price);
         }
         if (!novaSenha.isEmpty()) {
             if (SenhaAtual.equals(novoProfissional.getSenha())) {

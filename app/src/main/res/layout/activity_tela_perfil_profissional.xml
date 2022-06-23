@@ -65,9 +65,7 @@
             android:id="@+id/login8"
             android:layout_width="102dp"
             android:layout_height="87dp"
-            android:layout_marginBottom="11dp"
             android:src="@drawable/obra_prima"
-            app:layout_constraintBottom_toTopOf="@+id/nome_pro"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -100,12 +98,12 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
-            android:padding="8dp"
             android:id="@+id/pro_bio"
             style="@style/text_border"
             android:layout_width="362dp"
             android:layout_height="119dp"
-            android:layout_marginBottom="32dp"
+            android:layout_marginBottom="8dp"
+            android:padding="8dp"
             android:text="TextView"
             android:textAlignment="center"
             android:textColor="@color/black"
@@ -130,13 +128,12 @@
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="18dp"
+            android:layout_marginBottom="4dp"
             android:text="INSIRA A DESCRIÇÃO DA ATIVIDADE DESEJADA"
             android:textColor="#000000"
             android:textSize="16dp"
             app:layout_constraintBottom_toTopOf="@+id/edit_desc_job"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
@@ -144,7 +141,6 @@
             android:id="@+id/pro_rating"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="36dp"
             android:shadowColor="#E9FF00"
             android:shadowDx="2"
             android:shadowDy="2"
@@ -153,10 +149,10 @@
             android:textColor="#000000"
             android:textSize="40dp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/textView11"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.407"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="174dp" />
 
         <ImageView
 
@@ -165,7 +161,7 @@
             android:layout_height="53dp"
             android:layout_marginEnd="135dp"
             android:layout_marginBottom="36dp"
-            app:layout_constraintBottom_toTopOf="@+id/textView11"
+            app:layout_constraintBottom_toTopOf="@+id/text_price"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/pro_rating"
@@ -177,7 +173,7 @@
             style="@style/Edit_Text"
             android:layout_width="341dp"
             android:layout_height="103dp"
-            android:layout_marginBottom="41dp"
+            android:layout_marginBottom="32dp"
             android:ems="10"
             android:hint="Descrição"
             android:inputType="textPersonName"
@@ -259,6 +255,20 @@
             android:layout_marginBottom="54dp"
             app:layout_constraintBottom_toTopOf="@+id/error_text"
             app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/text_price"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="19dp"
+            android:text="preço"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/textView11"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>

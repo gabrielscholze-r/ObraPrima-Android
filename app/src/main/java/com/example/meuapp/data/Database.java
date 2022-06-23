@@ -13,7 +13,7 @@ public class Database {
 
 
     public static void loadDatabase() {
-        Profissional encanador = new Profissional("Antonio", "41988888888", "1234567891", "Encanador", 0.0, "antonio@gmail.com","1234","Encanador há 20 anos, conheço todos os tipos de encanamento e consigo consertar cobrando um preço justo", 50);
+        Profissional encanador = new Profissional("Antonio", "41988888888", "1234567891", "Encanador", 0.0, "antonio@gmail.com","1234","Encanador há 20 anos, conheço todos os tipos de encanamento e consigo consertar cobrando um preço justo.", 50);
         Profissional pedreiro = new Profissional("Luis", "41977777777", "1234567891", "Pedreiro", 0.0,"luis@gmail.com","1234","Luis",100);
         Profissional eletricista = new Profissional("Rogerio", "4199999999", "1234567891", "Eletricista", 0.0,"rogerio@gmail.com","1234","Rogerio Encanador", 60);
 

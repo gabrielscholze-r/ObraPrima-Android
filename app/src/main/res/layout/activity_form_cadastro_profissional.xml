@@ -16,12 +16,13 @@
 
         <View
             android:id="@+id/containerComponents"
-            android:layout_width="307dp"
-            android:layout_height="800dp"
-            android:layout_marginBottom="88dp"
+            android:layout_width="316dp"
+            android:layout_height="893dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintHorizontal_bias="0.442"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
             style="@style/Edit_Text"
@@ -41,6 +42,29 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/title_cadastro_profissional" />
+
+        <EditText
+            android:id="@+id/edit_price"
+            style="@style/Edit_Text"
+            android:layout_width="227dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="16dp"
+            android:drawableRight="@drawable/ic_money"
+            android:drawableTint="@color/black"
+            android:ems="10"
+            android:hint="Preço a cobrar"
+            android:inputType="numberDecimal"
+            android:minHeight="48dp"
+            android:padding="8dp"
+            android:textColor="@color/black"
+
+            android:textColorHint="@color/black"
+            app:layout_constraintBottom_toTopOf="@+id/createPassword"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editBio"
+            app:layout_constraintVertical_bias="0.0" />
 
         <EditText
             android:id="@+id/editTextEmailAddress"
@@ -124,7 +148,7 @@
             style="@style/Edit_Text"
             android:layout_width="227dp"
             android:layout_height="48dp"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="76dp"
             android:drawableRight="@drawable/ic_password"
             android:drawableTint="@color/black"
             android:ems="10"
@@ -134,7 +158,6 @@
             android:textColor="@color/black"
             android:textColorHint="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.502"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editBio" />
 
@@ -143,7 +166,7 @@
             style="@style/Edit_Text"
             android:layout_width="227dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="16dp"
             android:drawableRight="@drawable/ic_password_confirm"
             android:drawableTint="@color/black"
             android:ems="10"
@@ -154,7 +177,6 @@
             android:textColor="@color/black"
             android:textColorHint="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/createPassword" />
 
@@ -184,15 +206,15 @@
 
         <androidx.appcompat.widget.AppCompatButton
 
-            style="@style/ButtonEntrar"
-            android:shadowDy="2"
-            android:shadowDx="2"
-            android:shadowRadius="1"
-            android:shadowColor="@color/black"
             android:id="@+id/bt_cadastrar"
+            style="@style/ButtonEntrar"
             android:layout_width="197dp"
             android:layout_height="77dp"
-            android:layout_marginBottom="100dp"
+            android:layout_marginBottom="40dp"
+            android:shadowColor="@color/black"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="1"
             android:text="Cadastrar"
             android:textSize="26dp"
             app:layout_constraintBottom_toBottomOf="parent"

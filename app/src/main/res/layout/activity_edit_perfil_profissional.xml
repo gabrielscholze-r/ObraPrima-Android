@@ -26,9 +26,7 @@
             app:layout_constraintBottom_toTopOf="@+id/error_message2"
             app:layout_constraintEnd_toStartOf="@+id/spinner2"
             app:layout_constraintHorizontal_bias="0.515"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/containerComponents12"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintStart_toStartOf="parent" />
 
         <ImageView
             android:id="@+id/button_voltar"
@@ -43,12 +41,12 @@
             android:id="@+id/spinner2"
             android:layout_width="224dp"
             android:layout_height="42dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="20dp"
             android:backgroundTint="@color/black"
             android:entries="@array/ramos_array"
             android:spinnerMode="dropdown"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.823"
+            app:layout_constraintHorizontal_bias="0.846"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/containerComponents12"
             tools:ignore="TouchTargetSizeCheck" />
@@ -109,9 +107,18 @@
         <View
             android:id="@+id/containerComponents12"
             style="@style/text_border"
+            android:layout_width="410dp"
+            android:layout_height="244dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/containerComponents13" />
+
+        <View
+            android:id="@+id/containerComponents13"
+            style="@style/text_border"
             android:layout_width="fill_parent"
-            android:layout_height="240dp"
-            android:layout_marginTop="5dp"
+            android:layout_height="151dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -123,7 +130,8 @@
             style="@style/ButtonEntrar"
             android:layout_width="197dp"
             android:layout_height="77dp"
-            android:layout_marginBottom="4dp"
+            android:layout_marginTop="19dp"
+            android:layout_marginBottom="464dp"
             android:shadowColor="@color/black"
             android:shadowDx="2"
             android:shadowDy="2"
@@ -132,6 +140,7 @@
             android:textSize="30dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.501"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/error_message2" />
 
@@ -195,7 +204,7 @@
             style="@style/Edit_Text"
             android:layout_width="296dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="21dp"
+            android:layout_marginBottom="4dp"
             android:drawableRight="@drawable/ic_profile"
             android:drawableTint="#424242"
             android:ems="10"
@@ -209,7 +218,30 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.486"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/containerComponents6"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <EditText
+            android:id="@+id/novo_price_profissional2"
+            style="@style/Edit_Text"
+            android:layout_width="296dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="64dp"
+            android:layout_marginBottom="21dp"
+            android:drawableRight="@drawable/ic_money"
+            android:drawableTint="#424242"
+            android:ems="10"
+            android:hint="Novo Preço"
+            android:inputType="numberDecimal"
+            android:text="-1"
+            android:textAlignment="viewStart"
+            android:textColor="#000000"
+            android:textColorHint="#494949"
+            android:textSize="19sp"
+            app:layout_constraintBottom_toTopOf="@+id/containerComponents12"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.494"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/containerComponents13"
             tools:ignore="TouchTargetSizeCheck" />
 
         <EditText
@@ -369,47 +401,47 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/containerComponents12"
+            app:layout_constraintVertical_bias="0.181"
             tools:ignore="TouchTargetSizeCheck" />
 
         <TextView
             android:id="@+id/textView14"
-            android:layout_width="wrap_content"
+            android:layout_width="60dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginBottom="60dp"
+            android:layout_marginTop="88dp"
+            android:layout_marginEnd="340dp"
             android:text="Nome:"
             android:textColor="#000000"
             android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="@+id/containerComponents6"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/containerComponents6"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/nome_profissional2"
-            android:layout_width="309dp"
-            android:layout_height="27dp"
-            android:layout_marginBottom="60dp"
+            android:layout_width="367dp"
+            android:layout_height="26dp"
+            android:layout_marginStart="102dp"
             android:text="Nome:"
             android:textColor="#000000"
             android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="@+id/containerComponents6"
+            app:layout_constraintBottom_toTopOf="@+id/novo_nome_profissional"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/containerComponents6"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/containerComponents6" />
 
         <TextView
             android:id="@+id/textView5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
-            android:layout_marginBottom="69dp"
+            android:layout_marginTop="188dp"
             android:text="Email:"
             android:textColor="#000000"
             android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="@+id/containerComponents8"
+            app:layout_constraintEnd_toStartOf="@+id/email_profissional2"
+            app:layout_constraintHorizontal_bias="0.88"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/containerComponents8" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/textView15"
@@ -419,12 +451,28 @@
             android:layout_marginBottom="135dp"
             android:text="Descrição:"
             android:textColor="#000000"
-            android:textSize="20sp"
+            android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="@+id/containerComponents11"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.05"
+            app:layout_constraintHorizontal_bias="0.023"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/containerComponents11" />
+            app:layout_constraintTop_toTopOf="@+id/containerComponents11"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/textView20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="109dp"
+            android:text="Preço:"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/containerComponents13"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.133"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/containerComponents13" />
 
         <TextView
             android:id="@+id/textView17"
@@ -443,17 +491,15 @@
 
         <TextView
             android:id="@+id/textView16"
-            android:layout_width="wrap_content"
+            android:layout_width="43dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
-            android:layout_marginBottom="85dp"
+            android:layout_marginTop="280dp"
             android:text="CPF:"
             android:textColor="#000000"
             android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="@+id/containerComponents9"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/containerComponents9"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/error_message2"
@@ -464,61 +510,78 @@
             android:textColor="#FF0000"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.409"
+            app:layout_constraintHorizontal_bias="0.429"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/spinner2" />
 
         <TextView
             android:id="@+id/CPF_profissional"
-            android:layout_width="324dp"
-            android:layout_height="28dp"
-            android:layout_marginBottom="84dp"
+            android:layout_width="352dp"
+            android:layout_height="29dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="283dp"
             android:text="cpf"
             android:textColor="#000000"
             android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="@+id/containerComponents9"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/containerComponents9" />
+            app:layout_constraintStart_toEndOf="@+id/textView16"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/phone_profissional"
-            android:layout_width="306dp"
-            android:layout_height="27dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="84dp"
+            android:layout_width="312dp"
+            android:layout_height="31dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginBottom="4dp"
             android:text="Telefone"
             android:textColor="#000000"
             android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="@+id/containerComponents10"
+            app:layout_constraintBottom_toTopOf="@+id/novo_phone_prof"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/containerComponents10" />
+            app:layout_constraintStart_toEndOf="@+id/textView17" />
+
+        <TextView
+            android:id="@+id/price_profissional"
+            android:layout_width="274dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="17dp"
+            android:layout_marginEnd="48dp"
+            android:layout_marginBottom="8dp"
+            android:text="Preço"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/novo_price_profissional2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView20" />
 
         <TextView
             android:id="@+id/desc_profissional"
-            android:layout_width="264dp"
-            android:layout_height="66dp"
-            android:layout_marginTop="22dp"
-            android:layout_marginBottom="78dp"
+            android:layout_width="319dp"
+            android:layout_height="74dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="48dp"
+            android:layout_marginBottom="8dp"
             android:text="Descrição"
             android:textColor="#000000"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="@+id/containerComponents11"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/nova_bio_prof"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.821"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/containerComponents11" />
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/textView15" />
 
         <TextView
             android:id="@+id/email_profissional2"
-            android:layout_width="309dp"
-            android:layout_height="27dp"
-            android:layout_marginBottom="69dp"
+            android:layout_width="319dp"
+            android:layout_height="26dp"
+            android:layout_marginStart="57dp"
+            android:layout_marginTop="188dp"
             android:text="Email"
             android:textColor="#000000"
             android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="@+id/containerComponents8"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/containerComponents8" />
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

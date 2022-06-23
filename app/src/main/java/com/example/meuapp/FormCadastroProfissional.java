@@ -43,6 +43,7 @@ public class FormCadastroProfissional extends AppCompatActivity {
             private ArrayList<Profissional> profissionais = Database.getProfissionais();
             @Override
             public void onClick(View view) {
+                EditText price = (EditText) findViewById(R.id.edit_price);
                 EditText nome = (EditText)findViewById(R.id.editPersonName);
                 String nomeString = nome.getText().toString();
                 EditText email = (EditText)findViewById(R.id.editTextEmailAddress);
@@ -60,11 +61,11 @@ public class FormCadastroProfissional extends AppCompatActivity {
                 String bioString = bio.getText().toString();
                 if(senhaString.equals(confirmarSenhaString)){
                     if(nomeString.equals("") || emailString.equals("") || cpfString.equals("") || telefoneString.equals("") ||
-                            senhaString.equals("") || confirmarSenhaString.equals("") || ramoServicoString.equals("")){
+                            senhaString.equals("") || confirmarSenhaString.equals("") || ramoServicoString.equals("") || price.equals("")){
                         TextView error = findViewById(R.id.errorMessage2);
                         error.setText("Informações faltando");
                     } else{
-                        Profissional profissional = new Profissional(nomeString,telefoneString,cpfString,ramoServicoString,0.0,emailString, senhaString,bioString);
+                        Profissional profissional = new Profissional(nomeString,telefoneString,cpfString,ramoServicoString,0.0,emailString, senhaString,bioString,Double.parseDouble(price.getText().toString()));
                         profissionais.add(profissional);
                         Database.setProfissionais(profissionais);
                         Intent intent = new Intent(FormCadastroProfissional.this, FormLogin.class);
