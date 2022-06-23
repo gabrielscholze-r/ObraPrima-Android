@@ -181,6 +181,7 @@
             android:inputType="textPersonName"
             android:padding="5dp"
             android:text=""
+            android:maxLength="200"
             android:textColor="#000000"
             android:textColorHint="@color/black"
             app:layout_constraintBottom_toTopOf="@+id/textView10"
