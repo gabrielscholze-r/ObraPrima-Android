@@ -56,7 +56,7 @@
 
 
         <EditText
-            android:drawableTint="@drawable/background"
+            android:drawableTint="@color/black"
             android:textColorHint="@color/black"
             android:textColor="@color/black"
             android:id="@+id/edit_email"

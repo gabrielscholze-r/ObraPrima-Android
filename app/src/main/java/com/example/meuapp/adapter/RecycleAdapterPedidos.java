@@ -9,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.meuapp.R;
+import com.example.meuapp.data.Database;
 import com.example.meuapp.data.Pedidos;
 import com.example.meuapp.data.Perfil;
 import com.example.meuapp.data.Profissional;
@@ -48,6 +49,7 @@ public class RecycleAdapterPedidos extends RecyclerView.Adapter<RecycleAdapterPe
 
     @Override
     public void onBindViewHolder(@NonNull RecycleAdapterPedidos.MyViewHolder holder, int position) {
+
         String text = "";
         if(Perfil.getId()==0){
             text = pedidos.get(position).getNomeCliente() + " - " + pedidos.get(position).getTituloPedido() + " - " + pedidos.get(position).getDia()+"/"+pedidos.get(position).getMes();

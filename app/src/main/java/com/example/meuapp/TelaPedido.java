@@ -11,6 +11,7 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.meuapp.data.Cliente;
 import com.example.meuapp.data.Database;
 import com.example.meuapp.data.Pedidos;
 import com.example.meuapp.data.Perfil;
@@ -39,7 +40,7 @@ public class TelaPedido extends AppCompatActivity {
         TextView data = findViewById(R.id.data_pedido);
         TextView description = findViewById(R.id.desc_pedido);
         TextView rating = findViewById(R.id.text_avaliacao);
-
+        TextView phone_pedido = findViewById(R.id.phone_pedido);
 
 
         p = Perfil.getPedido();
@@ -47,12 +48,13 @@ public class TelaPedido extends AppCompatActivity {
         tipo_pedido.setText(p.getTipoServiço());
         if(p.getTipoPedido()==0){
             rating.setText("");
+
             bt_concluir.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     p.setTipoPedido(1);
-                    Database.findProfissionalByName(p.getNomeProfissional()).getPedidos().remove(p);
-                    Database.findProfissionalByName(p.getNomeProfissional()).getHistorico().add(p);
+                    Database.findProfissionalByEmail(p.getEmailProfissional()).getPedidos().remove(p);
+                    Database.findProfissionalByEmail(p.getEmailProfissional()).getHistorico().add(p);
                     Intent intent = new Intent(TelaPedido.this, TelaServicosCliente.class);
                     Toast.makeText(getApplicationContext(),"PEDIDO CONCLUIDO!",Toast.LENGTH_LONG).show();
 
@@ -64,7 +66,7 @@ public class TelaPedido extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     ArrayList<Profissional> profissionais = Database.getProfissionais();
-                    Profissional pro = Database.findProfissionalByName(p.getNomeProfissional());
+                    Profissional pro = Database.findProfissionalByEmail(p.getEmailProfissional());
                     int index = profissionais.indexOf(pro);
                     ArrayList<Pedidos> pedidos = pro.getPedidos();
                     pedidos.remove(p);
@@ -92,11 +94,20 @@ public class TelaPedido extends AppCompatActivity {
             }
         }
         if(Perfil.getId()==0){
+            for(Cliente c : Database.getClientes()){
+                if(c.getEmail()==p.getEmailCliente()){
+                    phone_pedido.setText("Telefone Cliente: "+c.getTelefone());
+                }
+            }
             bt_concluir.setVisibility(View.GONE);
             nome_profissional.setText("Cliente: " + p.getNomeCliente());
         }
         else{
-
+            for(Profissional c : Database.getProfissionais()){
+                if(c.getEmail()==p.getEmailProfissional()){
+                    phone_pedido.setText("Telefone Profissional: "+c.getTelefone());
+                }
+            }
             nome_profissional.setText("Profissional: " + p.getNomeProfissional());
         }
 

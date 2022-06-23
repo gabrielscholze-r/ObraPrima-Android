@@ -4,6 +4,7 @@ public class Pedidos {
     private int dia;
     private int mes;
     private String tituloPedido;
+    private String emailCliente;
     private String nomeCliente;
     private String nomeProfissional;
     private String tipoServiço;
@@ -11,8 +12,9 @@ public class Pedidos {
     private double rating;
     private int TipoPedido;
     private double price;
+    private String emailProfissional;
 
-    public Pedidos(int dia, int mes, String tituloPedido, String tipoServico,String nomeCliente, String nomeProfissional, String descricao, int TipoPedido, double price) {
+    public Pedidos(int dia, int mes, String tituloPedido, String tipoServico,String nomeCliente, String nomeProfissional, String descricao, int TipoPedido, double price, String emailCliente,String emailProfissional) {
         this.dia = dia;
         this.mes = mes;
         this.tipoServiço = tipoServico;
@@ -23,6 +25,24 @@ public class Pedidos {
         this.rating = -1;
         this.TipoPedido = TipoPedido;
         this.price = price;
+        this.emailCliente = emailCliente;
+        this.emailProfissional = emailProfissional;
+    }
+
+    public String getEmailProfissional() {
+        return emailProfissional;
+    }
+
+    public void setEmailProfissional(String emailProfissional) {
+        this.emailProfissional = emailProfissional;
+    }
+
+    public String getEmailCliente() {
+        return emailCliente;
+    }
+
+    public void setEmailCliente(String emailCliente) {
+        this.emailCliente = emailCliente;
     }
 
     public double getPrice() {

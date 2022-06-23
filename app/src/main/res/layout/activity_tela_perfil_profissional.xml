@@ -95,6 +95,7 @@
             android:textSize="24sp"
             app:layout_constraintBottom_toTopOf="@+id/pro_rating"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
@@ -107,7 +108,7 @@
             android:text="TextView"
             android:textAlignment="center"
             android:textColor="@color/black"
-            android:textSize="24dp"
+            android:textSize="20dp"
             app:layout_constraintBottom_toTopOf="@+id/textView2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.489"
@@ -141,6 +142,7 @@
             android:id="@+id/pro_rating"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="174dp"
             android:shadowColor="#E9FF00"
             android:shadowDx="2"
             android:shadowDy="2"
@@ -152,7 +154,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.407"
             app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="174dp" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
 
@@ -160,8 +162,8 @@
             android:layout_width="57dp"
             android:layout_height="53dp"
             android:layout_marginEnd="135dp"
-            android:layout_marginBottom="36dp"
-            app:layout_constraintBottom_toTopOf="@+id/text_price"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/pro_phone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/pro_rating"
@@ -233,28 +235,30 @@
             app:layout_constraintTop_toBottomOf="@+id/edit_desc_job" />
 
         <Spinner
-            android:backgroundTint="@color/black"
-            android:textAlignment="center"
             android:id="@+id/spinner_day"
             android:layout_width="132dp"
-            android:layout_height="42dp"
+            android:layout_height="48dp"
             android:layout_marginStart="35dp"
             android:layout_marginEnd="77dp"
             android:layout_marginBottom="58dp"
-            app:layout_constraintBottom_toTopOf="@+id/error_text"
-            app:layout_constraintEnd_toStartOf="@+id/spinner_month"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <Spinner
             android:backgroundTint="@color/black"
             android:textAlignment="center"
+            app:layout_constraintBottom_toTopOf="@+id/error_text"
+            app:layout_constraintEnd_toStartOf="@+id/spinner_month"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <Spinner
             android:id="@+id/spinner_month"
             android:layout_width="132dp"
-            android:layout_height="42dp"
+            android:layout_height="48dp"
             android:layout_marginEnd="35dp"
             android:layout_marginBottom="54dp"
+            android:backgroundTint="@color/black"
+            android:textAlignment="center"
             app:layout_constraintBottom_toTopOf="@+id/error_text"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:ignore="SpeakableTextPresentCheck" />
 
         <TextView
             android:id="@+id/text_price"
@@ -269,6 +273,20 @@
             app:layout_constraintBottom_toTopOf="@+id/textView11"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/pro_phone"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="9dp"
+            android:text="telefone"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/text_price"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pro_rating" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>

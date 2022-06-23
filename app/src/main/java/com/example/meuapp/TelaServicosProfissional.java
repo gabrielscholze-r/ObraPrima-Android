@@ -75,7 +75,6 @@ public class TelaServicosProfissional extends AppCompatActivity {
                 }else{
                     Perfil.setPedido(profissional.getHistorico().get(position));
                 }
-
                 Intent intent = new Intent(TelaServicosProfissional.this, TelaPedido.class);
                 Perfil.setId(0);
                 startActivity(intent);
@@ -88,12 +87,9 @@ public class TelaServicosProfissional extends AppCompatActivity {
     private void verify() {
         if (profissional.getTipoPedido() == 0) {
             text_titulo.setText("MEUS SERVIÇOS");
-        } else {
-            text_titulo.setText("HISTÓRICO");
-        }
-        if (profissional.getTipoPedido() == 0) {
             pedidos = profissional.getPedidos();
         } else {
+            text_titulo.setText("HISTÓRICO");
             pedidos = profissional.getHistorico();
         }
     }

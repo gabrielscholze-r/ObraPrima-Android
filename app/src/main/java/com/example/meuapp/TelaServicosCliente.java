@@ -27,6 +27,7 @@ public class TelaServicosCliente extends AppCompatActivity {
     private RecycleAdapterPedidos.RecyclerViewClickListener listener;
     private ArrayList<Profissional> profissionais;
     private ArrayList<Pedidos> pd;
+    private String emailCliente;
     private String nomeCliente;
 
     @Override
@@ -41,6 +42,7 @@ public class TelaServicosCliente extends AppCompatActivity {
         loginAtual = new LoginAtual();
         pd = new ArrayList<>();
         nomeCliente = loginAtual.getCliente().getNome();
+        emailCliente = loginAtual.getCliente().getEmail();
         profissionais = Database.getProfissionais();
         recyclerView = findViewById(R.id.recycler_services);
         setAdapter();
@@ -64,7 +66,7 @@ public class TelaServicosCliente extends AppCompatActivity {
         if(loginAtual.getCliente().getTipoPedido()==0){
             for (Profissional p : profissionais){
                 for(Pedidos p2 : p.getPedidos()){
-                    if(p2.getNomeCliente()==nomeCliente && p2.getTipoPedido()==0){
+                    if(p2.getEmailCliente()==emailCliente && p2.getTipoPedido()==0){
                         pedidos.add(p2);
                     }
                 }
@@ -73,7 +75,7 @@ public class TelaServicosCliente extends AppCompatActivity {
         else if(loginAtual.getCliente().getTipoPedido()==1){
             for (Profissional p : profissionais){
                 for(Pedidos p2 : p.getHistorico()){
-                    if(p2.getNomeCliente()==nomeCliente && p2.getTipoPedido()==1){
+                    if(p2.getEmailCliente()==emailCliente && p2.getTipoPedido()==1){
                         pedidos.add(p2);
                     }
                 }
@@ -82,7 +84,7 @@ public class TelaServicosCliente extends AppCompatActivity {
         else{
             for (Profissional p : profissionais){
                 for(Pedidos p2 : p.getHistorico()){
-                    if(p2.getNomeCliente()==nomeCliente && p2.getTipoPedido()==1 && p2.getRating()==-1.0){
+                    if(p2.getEmailCliente()==emailCliente && p2.getTipoPedido()==1 && p2.getRating()==-1.0){
                         pedidos.add(p2);
                     }
                 }

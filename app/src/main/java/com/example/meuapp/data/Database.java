@@ -16,15 +16,15 @@ public class Database {
 
         Profissional encanador = new Profissional("Antonio", "41988888888", "1234567891", "Encanador", 0.0, "antonio@gmail.com","1234","Encanador há 20 anos, conheço todos os tipos de encanamento e consigo consertar cobrando um preço justo.", 50);
         ArrayList<Pedidos> pedidosEncanador = encanador.getPedidos();
-        Pedidos p1 = new Pedidos(10, 6, "Visita tecnica","Encanamento", "Sergio", "Antonio", "Visita técnica para encontrar fonte de um vazamento na casa!",0, 50);
-        Pedidos p2 = new Pedidos(20, 6, "Visita tecnica","Encanamento", "Claudio", "Antonio", "Visita técnica para encontrar fonte de um vazamento na casa!",0,50);
-        Pedidos p3 = new Pedidos(10, 7, "Visita tecnica","Encanamento", "Roberto", "Antonio", "Visita técnica para encontrar fonte de um vazamento na casa!",0,50);
-        Pedidos p4 = new Pedidos(20, 7, "Visita tecnica","Encanamento", "Sergio", "Antonio", "Visita técnica para encontrar fonte de um vazamento na casa!",0,50);
+        Pedidos p1 = new Pedidos(10, 6, "Visita tecnica","Encanamento", "Sergio", "Antonio", "Visita técnica para encontrar fonte de um vazamento na casa!",0, 50,"sergio123@gmail.com","antonio@gmail.com");
+        Pedidos p2 = new Pedidos(20, 6, "Visita tecnica","Encanamento", "Claudio", "Antonio", "Visita técnica para encontrar fonte de um vazamento na casa!",0,50,"claudio123@gmail.com","antonio@gmail.com");
+        Pedidos p3 = new Pedidos(10, 7, "Visita tecnica","Encanamento", "Roberto", "Antonio", "Visita técnica para encontrar fonte de um vazamento na casa!",0,50,"roberto123@gmail.com","antonio@gmail.com");
+        Pedidos p4 = new Pedidos(20, 7, "Visita tecnica","Encanamento", "Sergio", "Antonio", "Visita técnica para encontrar fonte de um vazamento na casa!",0,50,"sergio123@gmail.com","antonio@gmail.com");
         ArrayList<Pedidos> historicoEncanador = encanador.getHistorico();
-        Pedidos h1 = new Pedidos(10, 6, "Visita tecnica","Encanamento", "Sergio", "Antonio", "Visita técnica feito para encontrar fonte de um vazamento na casa!",1, 50);
-        Pedidos h2 = new Pedidos(20, 6, "Visita tecnica","Encanamento", "Claudio", "Antonio", "Visita técnica feito para encontrar fonte de um vazamento na casa!",1,50);
-        Pedidos h3 = new Pedidos(10, 7, "Visita tecnica","Encanamento", "Roberto", "Antonio", "Visita técnica feito para encontrar fonte de um vazamento na casa!",1, 50);
-        Pedidos h4 = new Pedidos(20, 7, "Visita tecnica","Encanamento", "Sergio", "Antonio", "Visita técnica feito para encontrar fonte de um vazamento na casa!",1,50);
+        Pedidos h1 = new Pedidos(10, 6, "Visita tecnica","Encanamento", "Sergio", "Antonio", "Visita técnica feito para encontrar fonte de um vazamento na casa!",1, 50,"sergio123@gmail.com","antonio@gmail.com");
+        Pedidos h2 = new Pedidos(20, 6, "Visita tecnica","Encanamento", "Claudio", "Antonio", "Visita técnica feito para encontrar fonte de um vazamento na casa!",1,50,"claudio123@gmail.com","antonio@gmail.com");
+        Pedidos h3 = new Pedidos(10, 7, "Visita tecnica","Encanamento", "Roberto", "Antonio", "Visita técnica feito para encontrar fonte de um vazamento na casa!",1, 50,"roberto123@gmail.com","antonio@gmail.com");
+        Pedidos h4 = new Pedidos(20, 7, "Visita tecnica","Encanamento", "Sergio", "Antonio", "Visita técnica feito para encontrar fonte de um vazamento na casa!",1,50,"sergio123@gmail.com","antonio@gmail.com");
         if(!verificarEmail(encanador.getEmail())){
             profissionais.add(encanador);
             pedidosEncanador.add(p1);
@@ -41,10 +41,10 @@ public class Database {
 
         Profissional pedreiro = new Profissional("Luis", "41977777777", "1234567891", "Pedreiro", 0.0,"luis@gmail.com","1234","Luis",100);
         ArrayList<Pedidos> pedidosPedreiro = pedreiro.getPedidos();
-        p1 = new Pedidos(10, 6, "Visita tecnica","Construção", "Sergio","Luis","Contrução de parede",0,100);
-        p2 = new Pedidos(20, 6, "Visita tecnica","Construção", "Claudio","Luis","Construção de muro em volta da casa",0,100);
-        p3 = new Pedidos(10, 7, "Visita tecnica","Construção", "Roberto","Luis","Contrução de casinha de bonecas em tamanho real",0,100);
-        p4 = new Pedidos(20, 7, "Visita tecnica","Construção", "Sergio","Luis", "Construção de muro",0,100);
+        p1 = new Pedidos(10, 6, "Visita tecnica","Construção", "Sergio","Luis","Contrução de parede",0,100,"sergio123@gmail.com","luis@gmail.com");
+        p2 = new Pedidos(20, 6, "Visita tecnica","Construção", "Claudio","Luis","Construção de muro em volta da casa",0,100,"claudio123@gmail.com","luis@gmail.com");
+        p3 = new Pedidos(10, 7, "Visita tecnica","Construção", "Roberto","Luis","Contrução de casinha de bonecas em tamanho real",0,100,"roberto123@gmail.com","luis@gmail.com");
+        p4 = new Pedidos(20, 7, "Visita tecnica","Construção", "Sergio","Luis", "Construção de muro",0,100,"sergio123@gmail.com","luis@gmail.com");
         if(!verificarEmail(pedreiro.getEmail())){
             profissionais.add(pedreiro);
             pedidosPedreiro.add(p1);
@@ -56,10 +56,10 @@ public class Database {
 
         Profissional eletricista = new Profissional("Rogerio", "4199999999", "1234567891", "Eletricista", 0.0,"rogerio@gmail.com","1234","Rogerio Encanador", 60);
         ArrayList<Pedidos> pedidosEletricista = eletricista.getPedidos();
-        p1 = new Pedidos(10, 6, "Visita tecnica","Eletricidade", "Roberto","Rogerio","Conserto de fiação da casa",0, 60);
-        p2 = new Pedidos(20, 6, "Visita tecnica","Eletricidade", "Sergio","Rogerio","Conserto de tomadas da casa",0,60);
-        p3 = new Pedidos(10, 7, "Visita tecnica","Eletricidade", "Claudio","Rogerio", "Instalação de chuveiro elétrico",0,60);
-        p4 = new Pedidos(20, 7, "Visita tecnica","Eletricidade", "Sergio","Rogerio", "Instalaçào de fiação de apartamento",0,60);
+        p1 = new Pedidos(10, 6, "Visita tecnica","Eletricidade", "Roberto","Rogerio","Conserto de fiação da casa",0, 60,"sergio123@gmail.com","rogerio@gmail.com");
+        p2 = new Pedidos(20, 6, "Visita tecnica","Eletricidade", "Sergio","Rogerio","Conserto de tomadas da casa",0,60,"claudio123@gmail.com","rogerio@gmail.com");
+        p3 = new Pedidos(10, 7, "Visita tecnica","Eletricidade", "Claudio","Rogerio", "Instalação de chuveiro elétrico",0,60,"roberto123@gmail.com","rogerio@gmail.com");
+        p4 = new Pedidos(20, 7, "Visita tecnica","Eletricidade", "Sergio","Rogerio", "Instalaçào de fiação de apartamento",0,60,"sergio123@gmail.com","rogerio@gmail.com");
         if(!verificarEmail(eletricista.getEmail())){
             profissionais.add(eletricista);
             pedidosEletricista.add(p1);
@@ -113,27 +113,27 @@ public class Database {
         Database.clientes = clientes;
     }
 
-    public static Profissional findProfissionalByName(String name){
+    public static Profissional findProfissionalByEmail(String email){
         for(Profissional p : profissionais){
-            if(p.getNome().equals(name)){
+            if(p.getEmail().equals(email)){
                 return p;
             }
         }
         return null;
     }
 
-    public static void removeProfissionalByName(String name){
+    public static void removeProfissionalByEmail(String email){
         for (Profissional p : profissionais){
-            if(p.getNome().equals(name)){
+            if(p.getEmail().equals(email)){
                 profissionais.remove(p);
             }
         }
     }
 
-    public static void updateRating(String name){
+    public static void updateRating(String email){
         double count=0;
         double soma=0;
-        Profissional p = findProfissionalByName(name);
+        Profissional p = findProfissionalByEmail(email);
         for (Pedidos p2 : p.getHistorico()){
             if(p2.getRating()!=-1.0){
                 count++;

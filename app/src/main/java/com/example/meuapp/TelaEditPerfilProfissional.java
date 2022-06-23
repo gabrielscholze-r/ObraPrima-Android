@@ -122,7 +122,7 @@ public class TelaEditPerfilProfissional extends AppCompatActivity {
             erro = true;
             error.setText("Modifique algum campo!");
         }
-        if(price<0){
+        if(price<0 && price != -1){
             erro=true;
             error.setText("Novo preço deve ser maior que zero!");
         }

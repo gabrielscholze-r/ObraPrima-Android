@@ -44,7 +44,8 @@ public class TelaAvaliar extends AppCompatActivity {
 
         p = Perfil.getPedido();
         titulo.setText(p.getTituloPedido());
-        nome_profissional.setText("Profissional: "+p.getNomeProfissional());
+
+        nome_profissional.setText("Profissional: "+Database.findProfissionalByEmail(p.getEmailProfissional()).getNome());
         tipo_pedido.setText(p.getTipoServiço());
         data.setText("Data Prevista: "+p.getDia() + "/" + p.getMes());
         description.setText(p.getDescricao());
@@ -65,7 +66,7 @@ public class TelaAvaliar extends AppCompatActivity {
                 double nota = Double.parseDouble(dropbox.getSelectedItem().toString());
                 p.setRating(nota);
                 Toast.makeText(getApplicationContext(), "PEDIDO AVALIADO!", Toast.LENGTH_SHORT).show();
-                Database.updateRating(p.getNomeProfissional());
+                Database.updateRating(p.getEmailProfissional());
                 Intent intent = new Intent(TelaAvaliar.this,TelaServicosCliente.class);
                 startActivity(intent);
                 finish();

@@ -49,7 +49,8 @@ public class TelaPerfilProfissional extends AppCompatActivity {
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         month.setAdapter(adapter2);
 
-
+        TextView pro_phone = findViewById(R.id.pro_phone);
+        pro_phone.setText("Telefone: "+profissional.getTelefone());
         EditText edit_desc_job = (EditText) findViewById(R.id.edit_desc_job);
         TextView nome_pro = findViewById(R.id.nome_pro);
         nome_pro.setText(profissional.getNome());
@@ -88,11 +89,11 @@ public class TelaPerfilProfissional extends AppCompatActivity {
                     LocalDate d = LocalDate.now();
                     if((mes>d.getMonth().getValue()) || (mes==d.getMonth().getValue() && dia>=d.getDayOfMonth())){
                         profissional.getPedidos().add(new Pedidos(dia, mes, "Visita Tecnica",profissional.getRamo(), loginAtual.getCliente().getNome()
-                                , profissional.getNome(), edit_desc_job.getText().toString(), 0, profissional.getPrice()));
+                                , profissional.getNome(), edit_desc_job.getText().toString(), 0, profissional.getPrice(),loginAtual.getCliente().getEmail(),profissional.getEmail()));
                     }
                     else{
                         profissional.getPedidos().add(new Pedidos(d.getDayOfMonth(), d.getMonth().getValue(), "Visita Tecnica",profissional.getRamo(), loginAtual.getCliente().getNome()
-                                , profissional.getNome(), edit_desc_job.getText().toString(), 0,profissional.getPrice()));
+                                , profissional.getNome(), edit_desc_job.getText().toString(), 0,profissional.getPrice(),loginAtual.getCliente().getEmail(),profissional.getEmail()));
                     }
                     Intent intent = new Intent(TelaPerfilProfissional.this, TelaPrincipalCliente.class);
 
