@@ -92,7 +92,7 @@
             android:id="@+id/titulo_pedido"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="TITULO DO PEDIDO"
+            android:text="TÍTULO DO PEDIDO"
             android:textAlignment="center"
             android:textColor="#000000"
             android:textSize="34sp"

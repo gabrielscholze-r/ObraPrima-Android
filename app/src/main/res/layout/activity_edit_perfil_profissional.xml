@@ -232,7 +232,7 @@
             android:ems="10"
             android:hint="Novo Preço"
             android:inputType="numberDecimal"
-            android:text="-1"
+            android:text="50"
             android:textAlignment="viewStart"
             android:textColor="#000000"
             android:textColorHint="#494949"
@@ -317,7 +317,6 @@
             style="@style/Edit_Text"
             android:layout_width="382dp"
             android:layout_height="79dp"
-            android:layout_marginTop="87dp"
             android:drawableRight="@drawable/ic_service"
             android:drawableTint="#353535"
             android:ems="10"
@@ -330,9 +329,10 @@
             android:textSize="19dp"
             app:layout_constraintBottom_toBottomOf="@+id/containerComponents11"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.586"
+            app:layout_constraintHorizontal_bias="0.482"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/containerComponents11"
+            app:layout_constraintTop_toBottomOf="@+id/containerComponents10"
+            app:layout_constraintVertical_bias="0.919"
             tools:ignore="TouchTargetSizeCheck" />
 
         <EditText
@@ -408,38 +408,36 @@
             android:id="@+id/textView14"
             android:layout_width="60dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
             android:layout_marginTop="88dp"
-            android:layout_marginEnd="340dp"
             android:text="Nome:"
             android:textColor="#000000"
             android:textSize="20sp"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/nome_profissional2"
             android:layout_width="367dp"
             android:layout_height="26dp"
-            android:layout_marginStart="102dp"
+            android:layout_marginStart="8dp"
             android:text="Nome:"
             android:textColor="#000000"
             android:textSize="20sp"
             app:layout_constraintBottom_toTopOf="@+id/novo_nome_profissional"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/containerComponents6" />
+            app:layout_constraintStart_toEndOf="@+id/textView14"
+            app:layout_constraintTop_toTopOf="@+id/containerComponents6"
+            app:layout_constraintVertical_bias="0.0" />
 
         <TextView
             android:id="@+id/textView5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="188dp"
             android:text="Email:"
             android:textColor="#000000"
             android:textSize="20sp"
-            app:layout_constraintEnd_toStartOf="@+id/email_profissional2"
-            app:layout_constraintHorizontal_bias="0.88"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -470,30 +468,28 @@
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="@+id/containerComponents13"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.133"
+            app:layout_constraintHorizontal_bias="0.033"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/containerComponents13" />
+            app:layout_constraintTop_toTopOf="@+id/containerComponents13"
+            app:layout_constraintVertical_bias="0.0" />
 
         <TextView
             android:id="@+id/textView17"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="11dp"
+            android:layout_marginStart="8dp"
             android:layout_marginBottom="84dp"
             android:text="Telefone:"
             android:textColor="#000000"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="@+id/containerComponents10"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/containerComponents10"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/textView16"
             android:layout_width="43dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="280dp"
             android:text="CPF:"
             android:textColor="#000000"
@@ -518,12 +514,11 @@
             android:id="@+id/CPF_profissional"
             android:layout_width="352dp"
             android:layout_height="29dp"
-            android:layout_marginStart="1dp"
-            android:layout_marginTop="283dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="280dp"
             android:text="cpf"
             android:textColor="#000000"
             android:textSize="20sp"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/textView16"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -531,13 +526,12 @@
             android:id="@+id/phone_profissional"
             android:layout_width="312dp"
             android:layout_height="31dp"
-            android:layout_marginStart="1dp"
+            android:layout_marginStart="8dp"
             android:layout_marginBottom="4dp"
             android:text="Telefone"
             android:textColor="#000000"
             android:textSize="20sp"
             app:layout_constraintBottom_toTopOf="@+id/novo_phone_prof"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/textView17" />
 
         <TextView
@@ -560,7 +554,7 @@
             android:layout_height="74dp"
             android:layout_marginStart="4dp"
             android:layout_marginEnd="48dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="4dp"
             android:text="Descrição"
             android:textColor="#000000"
             android:textSize="16sp"
@@ -573,14 +567,13 @@
             android:id="@+id/email_profissional2"
             android:layout_width="319dp"
             android:layout_height="26dp"
-            android:layout_marginStart="57dp"
             android:layout_marginTop="188dp"
             android:text="Email"
             android:textColor="#000000"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.586"
+            app:layout_constraintStart_toEndOf="@+id/textView5"
             app:layout_constraintTop_toTopOf="parent" />
 
 

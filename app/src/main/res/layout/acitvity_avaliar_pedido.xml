@@ -53,7 +53,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="5dp"
-            android:text="TITULO DO PEDIDO"
+            android:text="TÍTULO DO PEDIDO"
             android:textAlignment="center"
             android:textColor="#000000"
             android:textSize="34sp"
